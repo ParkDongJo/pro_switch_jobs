@@ -83,8 +83,23 @@ useEffect 와 나란히 눈에 들어오는 hooks 이 있습니다. 바로 useLa
 - state 가 바뀔 때
 
 이때 useMemo 는 deps(의존성 배열)에 등록된 props, state가 
-- 변경될 때만 변 새로운 값을 Return 하고
+- 변경될 때만 변경된 props, state 을 연산한 새로운 값을 Return 하고
 - 그렇지 않은 경우는 메모제이션된 값을 반환합니다.
+
+
+덕분에 useMemo는 아래와 같은 장점이 있습니다.
+- 불필요한 랜더링에 영향받지 않도록, 성능 최적화를 할 수 있습니다.
+
+하지만 useMemo 는 단점이 있습니다.
+- 남용하게 되면, 불필요한 메모리 사용을 증가시킵니다.
+- useMemo의 상용법에 의해 코드를 늘리고, 가독성을 해치게 됩니다.
+
+
+##### 사용하지 말아야 할 때
+
+
+##### 사용 해야 할 때
+
 
 
 https://javascript.plainenglish.io/stop-using-usememo-now-e5d07d2bbf70#9c12
