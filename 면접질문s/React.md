@@ -15,17 +15,22 @@
 2. render
 4. componentDidMount
 5. (fetch 완료 -> setState 실행)
-6. render
-7. (setState 완료)
-8. componentDidUpdate
-9. componentWillUnmount
+6. shouldComponent
+7. render
+8. (setState 완료)
+9. componentDidUpdate
+10. componentWillUnmount
 
 
+이때 React hooks 등장 이후로 함수형 컴포넌트에서는 hooks 을 활용 하여, 각 주기별로 아래와 같이 사용해야 합니다.
 
-
-
-
-
+|분류|클래스형 컴포넌트|함수형 컴포넌트|
+|------|---|---|
+|Mounting|constructor()|-|
+|Mounting|render()|테스트3|
+|Mounting|componentDidMount()|테스트3|
+|Updating|componentDidUpdate()|테스트3|
+|UnMounting|componentWillUnmount()|테스트3|
 
 
 
