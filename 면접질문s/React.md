@@ -78,8 +78,23 @@ useEffect 와 나란히 눈에 들어오는 hooks 이 있습니다. 바로 useLa
 
 #### useMemo 는 어떤 hooks이고, 언제 사용하나요?
 ------
+리액트는 다음과 같은 상황에서 리랜더링 됩니다.
+- prod 가 바뀔 때
+- state 가 바뀔 때
+
+이때 useMemo 는 deps(의존성 배열)에 등록된 props, state가 
+- 변경될 때만 변 새로운 값을 Return 하고
+- 그렇지 않은 경우는 메모제이션된 값을 반환합니다.
 
 
+https://javascript.plainenglish.io/stop-using-usememo-now-e5d07d2bbf70#9c12
+
+<details>
+<summary><b>참고자료</b></summary>
+	<a href="https://javascript.plainenglish.io/stop-using-usememo-now-e5d07d2bbf70#9c12">
+		# Stop Using useMemo Now!
+	</a>
+</details>
 
 #### useCallback 는 어떤 hooks이고, 언제 사용하나요?
 ------
