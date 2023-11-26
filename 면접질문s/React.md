@@ -4,7 +4,7 @@
 - [useMemo 는 어떤 hooks이고, 언제 사용하나요?](# useMemo 는 어떤 hooks이고, 언제 사용하나요?)
 - [useCallback 는 어떤 hooks이고, 언제 사용하나요?](#useCallback 는 어떤 hooks이고, 언제 사용하나요?)
 
-#### 리액트 라이프사이클에 대해
+## 리액트 라이프사이클에 대해
 ------
 리액트의 라이프 사이클은 크게 3개의 경우에서, 역할에 맞게 배치 되어 있습니다.
 - 생성될 때 (Mounting)
@@ -76,7 +76,7 @@ useEffect 와 나란히 눈에 들어오는 hooks 이 있습니다. 바로 useLa
 </details>
 
 
-#### useMemo 는 어떤 hooks이고, 언제 사용하나요?
+## useMemo 는 어떤 hooks이고, 언제 사용하나요?
 ------
 리액트는 다음과 같은 상황에서 리랜더링 됩니다.
 - prod 가 바뀔 때
@@ -133,8 +133,12 @@ useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, st
 	- 같으면 -> 이전에 저장해둔 callback
 
 자! 여기서 보면 무조건 callback 은 생성을 하게끔 되어 있습니다. 그러니 사실 useCallback 을 통해 함수 생성을 최적화 하는건 말이 안됩니다.
+그래서, 간혹 글들을 보면 함수 생성을 불필요하게 하는 걸 막기위해, useCallback을 사용한다고 하는데, 이건 틀린 말입니다. 또한 함수의 생성은 실행보다 비용이 크지 않습니다.
 
 ##### 사용 해야 할 때
+- 함수가 useEffect 의 deps(의존성 배열)의 요소일 때, useCallback 을 통해 최적화를 시켜줍니다.
+- 자식 컴포넌트가 React.memo()로 최적화를 했고, 이 컴포넌트에게 함수가 전달될 때 최적화를 시켜줍니다.
+- 
 
 
 #### Hydration 에 대해 설명
