@@ -132,14 +132,24 @@ useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, st
 	- 서로 다르면 -> 새로 생성한 callback
 	- 같으면 -> 이전에 저장해둔 callback
 
-자! 여기서 보면 무조건 callback 은 생성을 하게끔 되어 있습니다. 그러니 사실 useCallback 을 통해 함수 생성을 최적화 하는건 말이 안됩니다.
+자! 여기서 보면 무조건 callback 은 생성을 하게끔 되어 있습니다. 다만 비교에 의해 참조값을 새로 가져가냐, 그대로 가져가냐의 차이일 뿐입니다. 그러니 사실 useCallback 을 통해 함수 생성을 최적화 하는건 말이 안됩니다.
 그래서, 간혹 글들을 보면 함수 생성을 불필요하게 하는 걸 막기위해, useCallback을 사용한다고 하는데, 이건 틀린 말입니다. 또한 함수의 생성은 실행보다 비용이 크지 않습니다.
 
 ##### 사용 해야 할 때
 - 함수가 useEffect 의 deps(의존성 배열)의 요소일 때, useCallback 을 통해 최적화를 시켜줍니다.
 - 자식 컴포넌트가 React.memo()로 최적화를 했고, 이 컴포넌트에게 함수가 전달될 때 최적화를 시켜줍니다.
-- 
+- 이벤트 구독의 callback 으로 사용하는 함수를 선언했을 시, 렌더링으로 인해 참조값이 변경되지 않도록 useCallback()으로 감싸주는 것이 좋습니다.
 
+
+<details>
+<summary><b>참고자료</b></summary>
+	<a href="https://velog.io/@woohm402/useCallback-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0">
+		# useCallback 코드단 파보기
+	</a>
+	<a href="https://stackoverflow.com/a/71276243/10425435">
+		# useCallback 사용해야 할 때
+	</a>
+</details>
 
 #### Hydration 에 대해 설명
 ------
