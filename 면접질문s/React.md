@@ -101,10 +101,11 @@ useEffect 와 나란히 눈에 들어오는 hooks 이 있습니다. 바로 useLa
 	- 하지만 memo() 는 업데이트 여부를 판단할 때, 얕은 복사를 합니다. props가 객체일 시 얕은 복사로는 한계가 있습니다. 중첩구조를 가진 props는 큰 효과를 기대하기 힘듭니다.
 - 최적화가 필요한지 확신이 안설때는 하지마세요.
 	- 차라리 최적화가 필요한 시점이 왔을 시, preformance 측정을 통해 정확한 지점에 최적화를 해주는 것이 더 좋습니다.
-- 
+- 종속 배열에 넣어준 props, state가 너무 자주 바뀌는 값이라면, useMemo를 쓰지 않는 것이 낫습니다.
 
 ##### 사용 해야 할 때
-
+- 값 비싼 연산을 할 때, useMemo()를 사용하면 효과가 큽니다.
+- 
 
 
 https://javascript.plainenglish.io/stop-using-usememo-now-e5d07d2bbf70#9c12
