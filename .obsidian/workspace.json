@@ -18,8 +18,57 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "35fe7fd9fa4886ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b23a0f09352ec93b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "cc3c23b9f7c87a92",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c15ed84b080ea464",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -85,6 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,6 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md"
+                "file": "index.md"
               }
             }
           },
@@ -152,10 +203,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0dbd1e804c937360",
+  "active": "c15ed84b080ea464",
   "lastOpenFiles": [
     "면접질문s/React.md",
-    "Untitled.md",
+    "index.md",
+    "\"./면접질문s/React.md\".md",
+    "\"./면접질문s/React.md",
+    "\"./면접질문s",
+    "\".",
     "Untitled",
     "면접질문s"
   ]
