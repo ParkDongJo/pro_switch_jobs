@@ -226,11 +226,39 @@ React v18 부터 지원되는 스팩입니다. 기존 SSR 방식은 아래 단�
 
 최종단계인 hydration이 완료되려면, 모든 컴포넌트 코드를 다운로드한 후에 UI와 상호작용 할 수 있죠. 이는 사용자에게 좋지 않는 경험을 줄 수 있습니다.
 
+
+서버에서 스트리밍 형식으로 HTML을 전달하기 위해서는 아래와 같이 renderToPipeableStream() 을 사용해야합니다.
+```jsx
+// server.js
+import { pipeToNodeStream } from 'react-dom/server'
+
+export function render(res) {
+  const data = createServerData()
+  const { startWriting, abort } = pipeToNodeWritable(
+    <DataProvider data={data}>
+      <App assets={assets} />
+    </DataProvider>,
+    res,
+    {
+      onReadyToStream() {
+        res.setHeader('Content-type', 'text/html')
+        res.write('<!DOCTYPE html>')
+        startWriting()
+      },
+    }
+  )
+}
+```
+
 ![[js_chunk.png]]
 
-스트리밍은 각 컴포넌트를 청크로 간주할 간주 할 수 있습니다. 
-- 우선순위가 높은 컴포넌트나
-- 데이터에 의존하지 않는 컴포넌트를 먼저 전송할 수 있으며
+스트리밍은 각 컴포넌트를 청크로 간주할 간주 할 수 있습니다.  덕분에 선택적인 hydration 이 가능해집니다.
+- 우선순위가 높은 컴포넌트 먼저 처리
+- 데이터에 의존하지 않는 컴포넌트 먼저 처리
+
+때문에, 성능적인 면에서
+- TTFB, FCP를 줄일 수 있다. 선택적으로 먼저 그려지는 컴포넌트들이 먼저 보일 것 입니다.
+- TTI 도 개선될 수 있다. 선택적으로 hydration이 되기 때문에, 사용자경험이 향상 됩니다.
 
 #### React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.
 ------
