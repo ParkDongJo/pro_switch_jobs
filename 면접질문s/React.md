@@ -194,6 +194,8 @@ v18에서부터는 서버단에서 pipeToNodeWritable를 이용해 html 코드�
 
 #### Suspense 란 무엇이고, 왜 사용하고, 어떻게 사용하나요.
 ------
+Suspense 는 React v18 부터 
+
 
 
 #### React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.
@@ -201,10 +203,10 @@ v18에서부터는 서버단에서 pipeToNodeWritable를 이용해 html 코드�
 
 
 
-#### TTFB, FCP,
+#### TTFB, FCP, FMP, TTI는 무엇인가요
 ------
 
-
+https://soojae.tistory.com/41#TTFB(Time%20to%20First%20Byte)-1
 
 #### setState 동작에 대해 설명해주세요.
 ------
