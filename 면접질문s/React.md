@@ -252,13 +252,56 @@ export function render(res) {
 
 ![[js_chunk.png]]
 
+이때, 클라측에서는 아래와 같이 Suspense 와 lazy로 선택적인 hydration 을 처리해야합니다. 무엇을 지연시키고 무엇을 빠르게 처리할 지 정의해두는 것이죠.
+
+```jsx
+// app.js
+import { Suspense, lazy } from 'react'
+import Loader from './Loader'
+
+const Comments = lazy(() => import('./Comments'))
+
+function App() {
+  return (
+    <main>
+      <Header />
+      <Suspense fallback={<Loader />}>
+        <Comments />
+      </Suspense>
+      <Footer />
+    </main>
+  )
+}
+```
+
+```jsx
+// index.js
+import { hydrateRoot } from 'react-dom'
+import App from './App'
+
+hydrateRoot(document, <App />)
+```
+
+
 스트리밍은 각 컴포넌트를 청크로 간주할 간주 할 수 있습니다.  덕분에 선택적인 hydration 이 가능해집니다.
-- 우선순위가 높은 컴포넌트 먼저 처리
-- 데이터에 의존하지 않는 컴포넌트 먼저 처리
+- 우선순위가 높은 컴포넌트 먼저 전송
+- 데이터에 의존하지 않는 컴포넌트 먼저 전송
 
 때문에, 성능적인 면에서
 - TTFB, FCP를 줄일 수 있다. 선택적으로 먼저 그려지는 컴포넌트들이 먼저 보일 것 입니다.
 - TTI 도 개선될 수 있다. 선택적으로 hydration이 되기 때문에, 사용자경험이 향상 됩니다.
+
+
+<details>
+<summary><b>참고자료</b></summary>
+	<a href="https://velog.io/@hamjw0122/Next.js-Hydration">
+		# 모든 문제 해결의 종점 Streaming HTML & Selective Hydration
+	</a>
+	<a href="https://patterns-dev-kr.github.io/rendering-patterns/selective-hydration/">
+		# 선택적 Hydration에 대하여
+	</a>
+</details>
+
 
 #### React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.
 ------
