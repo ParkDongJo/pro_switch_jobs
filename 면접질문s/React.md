@@ -237,9 +237,64 @@ function fetchUser(userId) {
 export default fetchUser;
 ```
 
+여기서 중요한 점
+- 데이터를 fetching 중일때는 promise 를 반환한다.
+- 데이터가 있으면 데이터를 반환한다.
+
 그리고 랜더링 시점에 fetch 한 후 Suspense 로 비동기 대응을 하는 컴포넌트 코드를 보자.
+```jsx
+import { Suspense } from "react";
+import User from "./User";
+import fetchUser from "./fetchUser";
+
+function Main() {
+  return (
+    <main>
+      <h2>Suspense 사용</h2>
+      <Suspense fallback={<p>사용자 정보 로딩중...</p>}>
+        <User resource={fetchUser("1")} />
+      </Suspense>
+    </main>
+  );
+}
+
+export default Main;
+```
+
+```jsx
+import React, { Suspense } from "react";
+
+function User({ resource }) {
+  const user = resource.read();
+
+  return (
+    <div>
+      <p>
+        {user.name}({user.email}) 님이 작성한 글
+      </p>
+    </div>
+  );
+}
+
+export default User;
+```
+
+여기서 중요한 점
+- 비동기 처리 실행하는 영역이 Suspense 로 감싸져 있어야 한다.
+- 감싸져 있는 영역에 비동기 처리 데이터가 promise 로 반환되면 fallback에 주입된 컴포넌트가 보여지게 된다.
 
 
+결국 여기서 알수 있는 점은 Suspense 
+
+<details>
+<summary><b>참고자료</b></summary>
+	<a href="https://www.daleseo.com/react-suspense/">
+		# Suspense 동작원리
+	</a>
+	<a href="https://happysisyphe.tistory.com/54">
+		# 여러 비동기 작업을 Suspense 로 대응할 시 주의할 점
+	</a>
+</details>
 
 
 #### HTML 스트리밍 이란 무엇이죠?
