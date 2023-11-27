@@ -206,7 +206,39 @@ Suspense 로 감싼 컴포넌트의 랜더링을 관련 비동기 작업이 끝�
 ```
 
 
-사실 Suspense
+사실 Suspense 의 장점은 Suspense 만 가지고는 다 설명할 수 없다. Suspense만 봐서는 비동기 처리를 대응하기 위핸 스팩이기 때문이다.
+
+오히려, 어떻게 Suspense 가 비동기 처리를 하는지를 살펴볼 필요가 있다. 
+
+먼저 데이터를 패칭해오는 아래의 코드를 보자
+```js
+function fetchUser(userId) {
+  let user = null;
+  const suspender = fetch(
+    `https://jsonplaceholder.typicode.com/users/${userId}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      setTimeout(() => {
+        user = data;
+      }, 3000);
+    });
+  return {
+    read() {
+      if (user === null) {
+        throw suspender;
+      } else {
+        return user;
+      }
+    }
+  };
+}
+
+export default fetchUser;
+```
+
+그리고 랜더링 시점에 fetch 한 후 Suspense 로 비동기 대응을 하는 컴포넌트 코드를 보자.
+
 
 
 
