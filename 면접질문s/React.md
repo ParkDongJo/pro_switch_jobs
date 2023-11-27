@@ -184,10 +184,11 @@ React는 16v 이후 부터 render() 를 SSR 에 사용하는 것을 더이상 �
 	- B에 A요소를 찾아서, 정해진 JS 이번트들만 부각시킨다.
 	- SSR 타이밍
 
-특히 React 18부터는 이 hydration 이 더 발전하여, 선택적 Hydration 이 도입되었습니다.
+특히 React 18부터는 이 hydration 이 더 발전하여, Streaming HTML 과 선택적 Hydration 이 도입되었습니다.
 
-v18에서부터는 서버단에서 pipeToNodeWritable를 이용해 html 코드를 스트리밍 형식을 통해 작은 청크 형태로 나누어 보내줄수 있습니다.
-또한 클라쪽에서는 Suspense 로 감싸는 것을 통해 부분적으로 hydrate 를 하도록 하여, 모든 페이지가 인터렉션하게 될 때 까지 기다리는 것이 아니라. 원하는 컴포넌트의 우선순위를 높게 하면 훨씬 더 빨리 제 역할을 할 수 있게 되었습니다.
+Streaming HTML은 서버단에서 pipeToNodeWritable를 이용해 html 코드를 스트리밍 형식을 통해 작은 청크 형태로 나누어 보내줄수 있습니다.
+
+선택적 Hydration 클라쪽에서는 Suspense 로 감싸는 것을 통해 부분적으로 hydrate 를 하도록 하여, 모든 페이지가 인터렉션하게 될 때 까지 기다리는 것이 아니라. 원하는 컴포넌트의 우선순위를 높게 하면 훨씬 더 빨리 제 역할을 할 수 있게 되었습니다.
 
 이 모든 변화를 통해 개발자가 전략적으로 hydrate 를 설계할 수 있게 되었습니다.
 
