@@ -421,11 +421,12 @@ React 18 부터 등장하는 hooks 들 입니다. 이 둘은 비슷한 면이 �
 
 차이점은
 useTransition() 은
-- 상태 업데이트 코드를 wrapping 해서 사용합니다.
+- state 업데이트 코드인 함수를 wrapping 해서 사용합니다.
 - 작업을 처리하고자 하는 컴포넌트 내부에 상태 업데이트 코드를 사용할 수 있는 경우
 
 useDeferredValue() 는
-- 
+- props 또는 value를 wrapping
+- state 업데이트를 직접 처리할 수 없는 경우.
 
 
 
