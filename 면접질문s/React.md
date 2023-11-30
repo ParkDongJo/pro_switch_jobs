@@ -419,6 +419,14 @@ React 18 부터 등장하는 hooks 들 입니다. 이 둘은 비슷한 면이 �
 
 공통점은 둘다 제어하고자 하는 state나 props의 변경을 우선순위를 낮추고자 하는데 사용합니다.
 
+차이점은
+useTransition() 은
+- 상태 업데이트 코드를 wrapping 해서 사용합니다.
+- 작업을 처리하고자 하는 컴포넌트 내부에 상태 업데이트 코드를 사용할 수 있는 경우
+
+useDeferredValue() 는
+- 
+
 
 
 #### TTFB, FCP, FMP, TTI는 무엇인가요
