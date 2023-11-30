@@ -415,7 +415,7 @@ Next.js SSR
 
 ## useTransition(), useDeferredValue() 
 ------
-React 18 부터
+React 18 부터 등장하는 hooks 들 입니다. 이 둘은 비슷한 면이 있으면서도 차이점이 있습니다.
 
 
 
