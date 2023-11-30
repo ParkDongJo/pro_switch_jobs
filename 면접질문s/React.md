@@ -477,7 +477,25 @@ function Product({ data }) {
 
 ## React.lazy() 에 대해
 -----
-React.lazy()
+React.lazy() 를 사용하면, 코드 분할하고, 원하는 시점에 동적 import 를 함으로써, 번들을 나눠 불러올 수 있습니다.
+React.lazy() 는 default export 로 분리된 모듈 객체가 실행되는 Promise를 반환합니다. 결과값이 비동기 값이라는 건데요. 그래서 아래와 같이 Suspense 로 덮어줘야 합니다.
+
+```jsx
+import React, { Suspense } from 'react';
+
+const OtherComponent = React.lazy(() => import('./OtherComponent'));
+const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
+
+function MyComponent() { 
+	return (<div>
+		<Suspense fallback={<div>Loading...</div>}> 
+			<OtherComponent />
+			<AnotherComponent />
+		</Suspense>
+		</div> 
+	); 
+}
+```
 
 
 
