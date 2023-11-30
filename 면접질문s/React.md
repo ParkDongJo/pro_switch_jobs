@@ -403,7 +403,7 @@ React 를 사용한다는 것 자체가 성능향상에 어느정도 도움이 �
 useMemo(), useCallback(), React.memo()
 - 메모제이션 기법으로 랜더링 성능을 향상시킬 수 있습니다.
 useTransition(), useDeferredValue()
-- input 에 입력 값을 받을 시 생길 수 있는 성능 이슈를 해결할 수 있습니다.
+- state 나 props 와 관련된 랜더링 우선순위에 대해 지정해줘서 성능을 개선할 수 있습니다.
 React.lazy()
 - 코드 분할하고, 원하는 시점에 동적 import 를 함으로써, 번들을 나눠 불러올 수 있습니다.
 Next.js SSR
@@ -415,7 +415,7 @@ Next.js SSR
 
 ## useTransition(), useDeferredValue() 
 ------
-React 18 부터 등장하는 hooks 들 입니다. 이 둘은 비슷한 면이 있으면서도 차이점이 있습니다.
+React 18 부터 등장하는 hooks 들 입니다. 이 둘은 비슷한 면이 있으면서도 차이점이 있습니다. 
 
 
 
