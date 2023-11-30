@@ -400,9 +400,10 @@ hydrateRoot(document, <App />)
 ------
 React 를 사용한다는 것 자체가 성능향상에 어느정도 도움이 되는데요. 그 이유는 리엑트는 가상돔을 사용하기 때문입니다. 가상돔에 대해서는 추가 질문 주시면, 말씀드리도록 하고 지금은 그 외에 리엑트의 성능향상 방법을 말씀드리겠습니다.
 
-useMemo, useCallback
+useMemo, useCallback, React.memo()
 - 메모제이션 기법으로 랜더링 성능을 향상시킬 수 있습니다.
-코드 스플리팅 lazy
+React.lazy()
+- 
 
 
 #### TTFB, FCP, FMP, TTI는 무엇인가요
