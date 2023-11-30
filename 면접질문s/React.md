@@ -477,7 +477,8 @@ function Product({ data }) {
 
 ## React.lazy() 에 대해
 -----
-React.lazy() 를 사용하면, 코드 분할하고, 원하는 시점에 동적 import 를 함으로써, 번들을 나눠 불러올 수 있습니다.
+React.lazy() 를 사용하면, 코드 분할하고, 원하는 시점에 동적 import 를 함으로써, 번들을 여러 청크들로 나눠 불러올 수 있습니다.
+
 React.lazy() 는 default export 로 분리된 모듈 객체가 실행되는 Promise를 반환합니다. 결과값이 비동기 값이라는 건데요. 그래서 아래와 같이 Suspense 로 덮어줘야 합니다.
 
 ```jsx
@@ -497,7 +498,20 @@ function MyComponent() {
 }
 ```
 
+위와 같이 코드스플리팅을 손쉽게 지원해준다는 장점이 있습니다.
 
+좀 더 심화하면,
+
+
+<details>
+<summary><b>참고자료</b></summary>
+	<a href="https://doqtqu.tistory.com/349">
+		# 코드분할이 필요한 이유
+	</a>
+	<a href="https://velog.io/@adguy/React.lazy-%EC%99%9C-%EC%93%B0%EB%8A%94%EA%B0%80">
+		# React.lazy 왜 쓰는가
+	</a>
+</details>
 
 #### TTFB, FCP, FMP, TTI는 무엇인가요
 ------
