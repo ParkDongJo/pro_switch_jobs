@@ -479,6 +479,10 @@ function Product({ data }) {
 -----
 React.lazy() 를 사용하면, 코드 분할하고, 원하는 시점에 동적 import 를 함으로써, 번들을 여러 청크들로 나눠 불러올 수 있습니다.
 
+덕분에
+- 원하는 (사용자 클릭) 시점에 lazy() 한 chunk를 불러온다거나
+- 데이터가 불러왔을 때 chunk를 불러온다거나
+
 React.lazy() 는 default export 로 분리된 모듈 객체가 실행되는 Promise를 반환합니다. 결과값이 비동기 값이라는 건데요. 그래서 아래와 같이 Suspense 로 덮어줘야 합니다.
 
 ```jsx
@@ -500,7 +504,7 @@ function MyComponent() {
 
 위와 같이 코드스플리팅을 손쉽게 지원해준다는 장점이 있습니다.
 
-좀 더 심화하면,
+좀 더 심화하면, 전략적인 코드 호출도 가능하
 
 
 <details>
