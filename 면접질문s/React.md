@@ -475,9 +475,9 @@ function Product({ data }) {
 덕분에 더 중요한 작업을 먼저 처리하겠죠!
 
 
-## useTransition()  Vs. useDebounce()
-------
-최신 hooks와 우리가 이전에 사용하던 useDebounce()와 useTrottle() 은 차이점이 있습니다.
+## React.lazy() 에 대해
+-----
+React.lazy()
 
 
 
