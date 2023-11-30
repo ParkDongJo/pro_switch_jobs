@@ -403,6 +403,7 @@ React 를 사용한다는 것 자체가 성능향상에 어느정도 도움이 �
 useMemo, useCallback, React.memo()
 - 메모제이션 기법으로 랜더링 성능을 향상시킬 수 있습니다.
 React.lazy()
+- 코드 분할하고, 원하는 시점에 동적 import 를 함으로써, 번들
 - 
 
 
