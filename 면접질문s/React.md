@@ -417,7 +417,8 @@ Next.js SSR
 ------
 React 18 부터 등장하는 hooks 들 입니다. 이 둘은 비슷한 면이 있으면서도 차이점이 있습니다.
 
-공통점은 둘다 제어하고자 하는 state나 props의 변경을 우선순위를 낮추고자 하는데 사용합니다.
+공통점은
+둘다 제어하고자 하는 state나 props의 변경을 우선순위를 낮추고자 하는데 사용합니다.
 
 차이점은
 useTransition() 은
@@ -440,22 +441,37 @@ useDeferredValue() 는
 - state 업데이트를 직접 업데이트 처리할 수 없는 경우 사용합니다.
 - 사용자의 입력이 완료되었다고 판단 시 새로운 값을 리턴합니다.
 ```javascript
-function ProductList({ datas }) {
-  const deferredDatas = useDeferredValue(datas);
+function Product({ data }) {
+  const deferredData = useDeferredValue(data);
 
   return (
-    <ul>
-      {deferredDatas.map((value) => (
-        <li>{value}</li>
-      ))}
-    </ul>
+    <div>
+      {deferredData}
+    </div>
   );
 }
 ```
 
 
-이때 다시 값을 뱉는 useDeferredValue 는 넘어온 datas 값의 동일여부만 관심
+이때 다시 값을 뱉는 useDeferredValue 는 넘어온 datas 값의 동일여부만 관심있습니다. 즉 이 값의 변화여부에 따라 Componet의 리랜더링 여부를 제어하기 위해서는 useMemo() 함께 사용할 것을 권장하고 있습니다.
 
+```javascript
+function Product({ data }) {
+  const deferredData = useDeferredValue(data);
+
+  const memoedData = useMemo(() => {
+	  <p>{deferredData}</p>
+  }, [deferredData])
+
+  return (
+    <div>
+      {memoedData}
+    </div>
+  );
+}
+```
+
+이 둘은 결국 시간이 오래 걸리는 작업을 넣어두면 리액트가 작업 우선 순위에서 좀 더 느긋하게 처리합니다.
 
 #### TTFB, FCP, FMP, TTI는 무엇인가요
 ------
