@@ -409,6 +409,14 @@ React.lazy()
 Next.js SSR
 - Next.js 를 활용하여, SSR 타이밍으로 첫 랜더링 성능 향상
 
+사실 React로만 성능향상은 쉽지 않습니다. 프론트에서 해볼 수 있는 성능향상에 대해 더 이야기 해보겠습니다.
+
+
+
+## useTransition(), useDeferredValue() 
+------
+React 18 부터
+
 
 
 #### TTFB, FCP, FMP, TTI는 무엇인가요
