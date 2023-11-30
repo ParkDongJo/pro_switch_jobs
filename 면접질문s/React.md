@@ -398,7 +398,7 @@ hydrateRoot(document, <App />)
 
 #### React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.
 ------
-
+아래
 
 
 #### TTFB, FCP, FMP, TTI는 무엇인가요
