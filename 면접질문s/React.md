@@ -3,6 +3,11 @@
 - [리액트 라이프사이클에 대해]("#리액트 라이프사이클에 대해")
 - [useMemo 는 어떤 hooks이고, 언제 사용하나요?](# useMemo 는 어떤 hooks이고, 언제 사용하나요?)
 - [useCallback 는 어떤 hooks이고, 언제 사용하나요?](#useCallback 는 어떤 hooks이고, 언제 사용하나요?)
+- [Hydration 에 대해 설명](#Hydration 에 대해 설명)
+- [HTML 스트리밍 이란 무엇이죠?](#HTML 스트리밍 이란 무엇이죠?)
+- [React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.](#React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.)
+- [React.lazy() 에 대해](#React.lazy() 에 대해)
+- [setState 동작에 대해 설명해주세요.](#setState 동작에 대해 설명해주세요.)
 
 ## 리액트 라이프사이클에 대해
 ------
@@ -118,7 +123,7 @@ useEffect 와 나란히 눈에 들어오는 hooks 이 있습니다. 바로 useLa
 	</a>
 </details>
 
-#### useCallback 는 어떤 hooks이고, 언제 사용하나요?
+## useCallback 는 어떤 hooks이고, 언제 사용하나요?
 ------
 useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, state가 
 - 변경될 때만 새로 들어온 callback을 새로 생성한 함수를 반환하고,
@@ -152,7 +157,7 @@ useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, st
 </details>
 
 
-#### Hydration 에 대해 설명
+## Hydration 에 대해 설명
 ------
 공식 문서는 hydrate 사용에 대해 아래와 같이 경고문구를 해놨습니다.
 
@@ -193,7 +198,7 @@ Streaming HTML은 서버단에서 pipeToNodeWritable를 이용해 html 코드를
 이 모든 변화를 통해 개발자가 전략적으로 hydrate 를 설계할 수 있게 되었습니다.
 
 
-#### Suspense 란 무엇이고, 왜 사용하고, 어떻게 사용하나요.
+## Suspense 란 무엇이고, 왜 사용하고, 어떻게 사용하나요.
 ------
 Suspens는 클라이언트 쪽에서 React 에게 컴포넌트가 읽어 드리고 있는 데이터가 아직 준비가 안되었음을 알려줄 수 있는 매커니즘 입니다. 즉 화면에 즉시 나타내주지 않아도 되는 컴포넌트나 관련 비동기 작업이 오래 걸린다고 하면, Suspense 를 고려해볼만 합니다.
 
@@ -303,7 +308,7 @@ export default User;
 </details>
 
 
-#### HTML 스트리밍 이란 무엇이죠?
+## HTML 스트리밍 이란 무엇이죠?
 ------
 HTML 스트리밍이란 HTML을 더 작은 청크로 분할하고 이러한 청크를 서버에서 점진적으로 클라이언트에게 전송하는 과정을 의미합니다.
 
@@ -396,7 +401,7 @@ hydrateRoot(document, <App />)
 </details>
 
 
-#### React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.
+## React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.
 ------
 React 를 사용한다는 것 자체가 성능향상에 어느정도 도움이 되는데요. 그 이유는 리엑트는 가상돔을 사용하기 때문입니다. 가상돔에 대해서는 추가 질문 주시면, 말씀드리도록 하고 지금은 그 외에 리엑트의 성능향상 방법을 말씀드리겠습니다.
 
@@ -517,13 +522,7 @@ function MyComponent() {
 	</a>
 </details>
 
-#### TTFB, FCP, FMP, TTI는 무엇인가요
-------
 
-https://soojae.tistory.com/41#TTFB(Time%20to%20First%20Byte)-1
-
-
-
-#### setState 동작에 대해 설명해주세요.
+## setState 동작에 대해 설명해주세요.
 ------
 
