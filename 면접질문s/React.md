@@ -1,14 +1,17 @@
 
 **목차**
-[리액트 라이프사이클에 대해](#리액트-라이프사이클에-대해)
-[useMemo 는 어떤 hooks이고, 언제 사용하나요?](#useMemo는-어떤-hooks이고,-언제-사용하나요?)
-[useCallback 는 어떤 hooks이고, 언제 사용하나요?](#usecallback는-어떤-hooks이고-언제 사용하나요?)
-[Hydration 에 대해 설명](#hydration에-대해-설명)
-[Suspense 란 무엇이고 왜 사용하고 어떻게 사용하나요.](#suspense란-무엇이고-왜-사용하고-어떻게-사용하나요.)
-[HTML 스트리밍 이란 무엇이죠?](#html-스트리밍-이란-무엇이죠?)
-[React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.](#react로-성능을-향상시킬-수-있는-방법들이 무엇이-있을까요)
-[React.lazy() 에 대해](#react.lazy-에 대해)
-[setState 동작에 대해 설명해주세요.](#setstate-동작에-대해-설명해주세요.)
+- [리액트 라이프사이클에 대해](#리액트-라이프사이클에-대해)
+- [useMemo 는 어떤 hooks이고, 언제 사용하나요?](#useMemo는-어떤-hooks이고,-언제-사용하나요?)
+- [useCallback 는 어떤 hooks이고, 언제 사용하나요?](#usecallback는-어떤-hooks이고-언제-사용하나요?)
+- [Hydration 에 대해 설명](#hydration에-대해-설명)
+- [Suspense 란 무엇이고 왜 사용하고 어떻게 사용하나요.](#suspense란-무엇이고-왜-사용하고-어떻게-사용하나요.)
+- [HTML 스트리밍 이란 무엇이죠?](#html-스트리밍-이란-무엇이죠?)
+- [React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.](#react로-성능을-향상시킬-수-있는-방법들이-무엇이-있을까요)
+- [React.lazy() 에 대해](#react.lazy-에-대해)
+- [setState 동작에 대해 설명해주세요.](#setstate-동작에-대해-설명해주세요.)
+
+<br/>
+<br/>
 
 ## 리액트 라이프사이클에 대해
 ------
@@ -81,7 +84,8 @@ useEffect 와 나란히 눈에 들어오는 hooks 이 있습니다. 바로 useLa
 - https://velog.io/@sunhwa508/useLayoutEffect%EB%8A%94-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C
 </details>
 
-
+<br/>
+<br/>
 ## useMemo는 어떤 hooks이고 언제 사용하나요?
 ------
 리액트는 다음과 같은 상황에서 리랜더링 됩니다.
@@ -124,6 +128,8 @@ useEffect 와 나란히 눈에 들어오는 hooks 이 있습니다. 바로 useLa
 	</a>
 </details>
 
+<br/>
+<br/>
 ## useCallback 는 어떤 hooks이고, 언제 사용하나요?
 ------
 useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, state가 
@@ -157,7 +163,8 @@ useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, st
 	</a>
 </details>
 
-
+<br/>
+<br/>
 ## Hydration 에 대해 설명
 ------
 공식 문서는 hydrate 사용에 대해 아래와 같이 경고문구를 해놨습니다.
@@ -198,7 +205,8 @@ Streaming HTML은 서버단에서 pipeToNodeWritable를 이용해 html 코드를
 
 이 모든 변화를 통해 개발자가 전략적으로 hydrate 를 설계할 수 있게 되었습니다.
 
-
+<br/>
+<br/>
 ## Suspense란 무엇이고 왜 사용하고 어떻게 사용하나요.
 ------
 Suspens는 클라이언트 쪽에서 React 에게 컴포넌트가 읽어 드리고 있는 데이터가 아직 준비가 안되었음을 알려줄 수 있는 매커니즘 입니다. 즉 화면에 즉시 나타내주지 않아도 되는 컴포넌트나 관련 비동기 작업이 오래 걸린다고 하면, Suspense 를 고려해볼만 합니다.
@@ -308,6 +316,8 @@ export default User;
 	</a>
 </details>
 
+<br/>
+<br/>
 
 ## HTML 스트리밍 이란 무엇이죠?
 ------
@@ -401,6 +411,8 @@ hydrateRoot(document, <App />)
 	</a>
 </details>
 
+<br/>
+<br/>
 
 ## React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.
 ------
@@ -417,7 +429,8 @@ Next.js SSR
 
 사실 React로만 성능향상은 쉽지 않습니다. 프론트에서 해볼 수 있는 성능향상에 대해 더 이야기 해보겠습니다.
 
-
+<br/>
+<br/>
 
 ## useTransition(), useDeferredValue() 
 ------
@@ -480,6 +493,8 @@ function Product({ data }) {
 이 둘은 결국 지정한 작업의 우선순위를 낮추고자 할때 사용하는 hooks 들 입니다. 시간이 오래 걸리는 작업에 적용하면 리액트가 작업 우선 순위에서 좀 더 느긋하게 처리합니다.
 덕분에 더 중요한 작업을 먼저 처리하겠죠!
 
+<br/>
+<br/>
 
 ## React.lazy() 에 대해
 -----
@@ -523,6 +538,8 @@ function MyComponent() {
 	</a>
 </details>
 
+<br/>
+<br/>
 
 ## setState 동작에 대해 설명해주세요.
 ------
