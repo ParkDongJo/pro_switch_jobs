@@ -1,7 +1,7 @@
 
 **목차**
 - [리액트 라이프사이클에 대해](#리액트-라이프사이클에-대해)
-- [useMemo 는 어떤 hooks이고, 언제 사용하나요?](#useMemo는-어떤-hooks이고,-언제-사용하나요?)
+- [useMemo는 어떤 hooks이고 언제 사용하나요?](#useMemo는-어떤-hooks이고-언제-사용하나요?)
 - [useCallback 는 어떤 hooks이고, 언제 사용하나요?](#usecallback는-어떤-hooks이고-언제-사용하나요?)
 - [Hydration 에 대해 설명](#hydration에-대해-설명)
 - [Suspense 란 무엇이고 왜 사용하고 어떻게 사용하나요.](#suspense란-무엇이고-왜-사용하고-어떻게-사용하나요.)
