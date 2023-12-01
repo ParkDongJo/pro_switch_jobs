@@ -1,5 +1,6 @@
 **목차**
-[this가 가르키는 곳](#this가-가르키는-곳)
+- [this가 가르키는 곳](#this가-가르키는-곳)
+- [apply, bind, call의 차이점](#apply,-bind,-call의-차이점)
 
 <br/>
 <br/>
@@ -22,7 +23,7 @@ this가 가르키는 곳은 몇가지 상황에 따라 다릅니다.
 <br/>
 <br/>
 
-## apply, bind, call 의 차이점
+## apply, bind, call의 차이점
 ------
 이 3가지 내장 메서드들은 this 와 관련이 있습니다.
 

@@ -2,13 +2,13 @@
 **목차**
 - [리액트 라이프사이클에 대해](#리액트-라이프사이클에-대해)
 - [useMemo는 어떤 hooks이고 언제 사용하나요?](#useMemo는-어떤-hooks이고-언제-사용하나요?)
-- [useCallback 는 어떤 hooks이고, 언제 사용하나요?](#usecallback는-어떤-hooks이고-언제-사용하나요?)
-- [Hydration 에 대해 설명](#hydration에-대해-설명)
-- [Suspense 란 무엇이고 왜 사용하고 어떻게 사용하나요.](#suspense란-무엇이고-왜-사용하고-어떻게-사용하나요.)
+- [useCallback는 어떤 hooks이고 언제 사용하나요?](#usecallback는-어떤-hooks이고-언제-사용하나요?)
+- [Hydration에 대해 설명](#hydration에-대해-설명)
+- [Suspense란 무엇이고 왜 사용하고 어떻게 사용하나요](#suspense란-무엇이고-왜-사용하고-어떻게-사용하나요)
 - [HTML 스트리밍 이란 무엇이죠?](#html-스트리밍-이란-무엇이죠?)
-- [React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.](#react로-성능을-향상시킬-수-있는-방법들이-무엇이-있을까요)
+- [React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요?](#react로-성능을-향상시킬-수-있는-방법들이-무엇이-있을까요?)
 - [React.lazy() 에 대해](#react.lazy-에-대해)
-- [setState 동작에 대해 설명해주세요.](#setstate-동작에-대해-설명해주세요.)
+- [setState 동작에 대해 설명해주세요](#setstate-동작에-대해-설명해주세요)
 
 <br/>
 <br/>
@@ -130,7 +130,7 @@ useEffect 와 나란히 눈에 들어오는 hooks 이 있습니다. 바로 useLa
 
 <br/>
 <br/>
-## useCallback 는 어떤 hooks이고, 언제 사용하나요?
+## useCallback는 어떤 hooks이고 언제 사용하나요?
 ------
 useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, state가 
 - 변경될 때만 새로 들어온 callback을 새로 생성한 함수를 반환하고,
@@ -165,7 +165,8 @@ useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, st
 
 <br/>
 <br/>
-## Hydration 에 대해 설명
+
+## Hydration에 대해 설명
 ------
 공식 문서는 hydrate 사용에 대해 아래와 같이 경고문구를 해놨습니다.
 
@@ -207,7 +208,7 @@ Streaming HTML은 서버단에서 pipeToNodeWritable를 이용해 html 코드를
 
 <br/>
 <br/>
-## Suspense란 무엇이고 왜 사용하고 어떻게 사용하나요.
+## Suspense란 무엇이고 왜 사용하고 어떻게 사용하나요
 ------
 Suspens는 클라이언트 쪽에서 React 에게 컴포넌트가 읽어 드리고 있는 데이터가 아직 준비가 안되었음을 알려줄 수 있는 매커니즘 입니다. 즉 화면에 즉시 나타내주지 않아도 되는 컴포넌트나 관련 비동기 작업이 오래 걸린다고 하면, Suspense 를 고려해볼만 합니다.
 
@@ -414,7 +415,7 @@ hydrateRoot(document, <App />)
 <br/>
 <br/>
 
-## React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요.
+## React로 성능을 향상시킬 수 있는 방법들이 무엇이 있을까요?
 ------
 React 를 사용한다는 것 자체가 성능향상에 어느정도 도움이 되는데요. 그 이유는 리엑트는 가상돔을 사용하기 때문입니다. 가상돔에 대해서는 추가 질문 주시면, 말씀드리도록 하고 지금은 그 외에 리엑트의 성능향상 방법을 말씀드리겠습니다.
 
@@ -496,7 +497,7 @@ function Product({ data }) {
 <br/>
 <br/>
 
-## React.lazy() 에 대해
+## React.lazy()에 대해
 -----
 React.lazy() 를 사용하면, 코드 분할하고, 원하는 시점에 동적 import 를 함으로써, 번들을 여러 청크들로 나눠 불러올 수 있습니다.
 
@@ -541,6 +542,6 @@ function MyComponent() {
 <br/>
 <br/>
 
-## setState 동작에 대해 설명해주세요.
+## setState 동작에 대해 설명해주세요
 ------
 
