@@ -208,6 +208,7 @@ Streaming HTML은 서버단에서 pipeToNodeWritable를 이용해 html 코드를
 
 <br/>
 <br/>
+
 ## Suspense란 무엇이고 왜 사용하고 어떻게 사용하나요
 ------
 Suspens는 클라이언트 쪽에서 React 에게 컴포넌트가 읽어 드리고 있는 데이터가 아직 준비가 안되었음을 알려줄 수 있는 매커니즘 입니다. 즉 화면에 즉시 나타내주지 않아도 되는 컴포넌트나 관련 비동기 작업이 오래 걸린다고 하면, Suspense 를 고려해볼만 합니다.
@@ -324,7 +325,7 @@ export default User;
 ------
 HTML 스트리밍이란 HTML을 더 작은 청크로 분할하고 이러한 청크를 서버에서 점진적으로 클라이언트에게 전송하는 과정을 의미합니다.
 
-![[html_streaming.png]]
+![[resource/html_streaming.png]]
 
 React v18 부터 지원되는 스팩입니다. 기존 SSR 방식은 아래 단계들을 순차적으로 진행합니다. 그리고 각 단계들은 블로킹적입니다.
 
@@ -360,7 +361,7 @@ export function render(res) {
 }
 ```
 
-![[js_chunk.png]]
+![[resource/js_chunk.png]]
 
 이때, 클라측에서는 아래와 같이 Suspense 와 lazy로 선택적인 hydration 을 처리해야합니다. 무엇을 지연시킨 후 비동기 처리에 대비하고 무엇을 빠르게 처리할 지 정의해두는 것이죠.
 
