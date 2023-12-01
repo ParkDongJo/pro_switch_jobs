@@ -156,5 +156,9 @@ TTI
 	    - 사용하지 않는 polyfill 최소화
 	        - module / nomodule 패턴을 활용하여 개별 번들 제공
 
-https://soojae.tistory.com/41#TTFB(Time%20to%20First%20Byte)-1
-
+<details>
+<summary><b>참고자료</b></summary>
+	<a href="https://velog.io/@yrnana/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%84%B1%EB%8A%A5-%EB%A9%94%ED%8A%B8%EB%A6%AD#tbt-total-blocking-time">
+		# 웹성능별 영역 그리고 각각의 최적화 방안
+	</a>
+</details>
