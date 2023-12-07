@@ -307,7 +307,6 @@ export default User;
 그렇다면, 이런 생각할수 있습니다. 컴포넌트를 랜더링 순서를 병렬적으로 처리할 수 있지 않을까.
 맞습니다!
 
-
 <details>
 <summary><b>참고자료</b></summary>
 	<a href="https://www.daleseo.com/react-suspense/">
