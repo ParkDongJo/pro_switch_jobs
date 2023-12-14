@@ -18,12 +18,20 @@ JWT는 토큰을 활용한 인증 방식이다. JSON WEB TOKEN 이라는 이름�
 
 JWT 의 구조는 아래와 같다.
 
-|제목|내용|설명|
+|header|payload|signature|
 |------|---|---|
-|테스트1|테스트2|테스트3|
+|xxxxx|yyyyyy|zzzzz|
 
 
-
+- header 는
+	- 사용한 알고리즘 : RS256, HS256
+	- 토큰 타입 : json
+- Payload
+	- sub : 토큰 제목
+	- aud : 토큰 대상자
+	- iat : 토큰이 발급된 시각
+	- exp : 토큰의 만료 시각
+- 
 ## OAuth
 -----
 
