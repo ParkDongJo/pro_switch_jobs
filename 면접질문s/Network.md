@@ -32,7 +32,8 @@ JWT 의 구조는 아래와 같다.
 	- iat : 토큰이 발급된 시각
 	- exp : 토큰의 만료 시각
 - Signature
-	- 
+	- header 와 payload를 합친 문자열을 header 에서 기재된 방법으로 암호화 한 값
+	- 서버에서 signature를  비밀키로 푼 후에  payload와 signature 와 동일한지 대조 해봄
 ## OAuth
 -----
 
