@@ -26,9 +26,10 @@
 
 
 
-
+emotion 을 포기
 https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6
 
+C
 https://mine-it-record.tistory.com/656
 https://yozm.wishket.com/magazine/detail/1319/
 https://yozm.wishket.com/magazine/detail/1326/
@@ -37,3 +38,5 @@ https://www.daleseo.com/css-variables/
 https://velog.io/@hyejee0504/Tailwind-CSS-Bootstrap-Sass-styled-components%EC%9D%98-%ED%8A%B9%EC%A7%95
 
 https://leekihyun.tistory.com/entry/TailwindCSS-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
+
+https://blog.logrocket.com/using-linaria-faster-css-in-js-react-apps/#what-linaria
