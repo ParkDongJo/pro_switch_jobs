@@ -14,4 +14,26 @@
 - css-in-css
 - css-in-js
 
-여기서 css-in-css 는 제대로 된 정의가 잘 없고, 어떤 엉뚱한 내용을 가지고 css-in-css 라고 이야기를 하기도 한디ㅏ.
+여기서 css-in-css 는 아래와 같이 정의해볼 수 있다.
+
+- css 의 불편점을 개선한 기술동향
+- css-in-js 이전 버전 (여전히 많이 쓰임)
+
+이렇게 정의를 하는 이유는 css-in-css 에대한 정확한 정의가 없다. 다만 아래와 같은 기술동향들이 있다. 
+- CSS 전처리기 (pre processors)
+- CSS Framework
+- CSS Modules
+
+
+
+
+
+
+https://mine-it-record.tistory.com/656
+https://yozm.wishket.com/magazine/detail/1319/
+https://yozm.wishket.com/magazine/detail/1326/
+
+https://www.daleseo.com/css-variables/
+https://velog.io/@hyejee0504/Tailwind-CSS-Bootstrap-Sass-styled-components%EC%9D%98-%ED%8A%B9%EC%A7%95
+
+https://leekihyun.tistory.com/entry/TailwindCSS-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
