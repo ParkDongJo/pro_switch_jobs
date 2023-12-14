@@ -19,7 +19,10 @@ JWT는 토큰을 활용한 인증 방식이다. JSON WEB TOKEN 이라는 이름�
 JWT의 사용은 아래 순서로 이뤄진다.
 - 클라가 로그인 요청
 - 서버는 비밀키를 이용해서 JWT 토큰 발급
-- JWT 헤더에 담에 클라에 보냄
+- 헤더에 JWT를 담아 클라에 보냄
+- 클라가 JWT를 저장해둠
+- API 호출을 할때마다 header에 JWT를 실어 보냄
+- 서버는 매번 헤더를 확인 하여, 체크 후 API 응답을 보냄
 
 
 JWT 의 구조는 아래와 같다.
@@ -40,6 +43,8 @@ JWT 의 구조는 아래와 같다.
 - Signature
 	- header 와 payload를 합친 문자열을 header 에서 기재된 방법으로 암호화 한 값
 	- 서버에서 signature를  비밀키로 푼 후에  payload와 signature 와 동일한지 대조 해봄
+
+
 ## OAuth
 -----
 
