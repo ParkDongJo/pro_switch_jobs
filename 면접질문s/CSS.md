@@ -14,4 +14,4 @@
 - css-in-css
 - css-in-js
 
-여기서 css-in-css 는 
+여기서 css-in-css 는 제대로 된 정의가 잘 없고, 어떤 엉뚱한 내용을 가지고 css-in-css 라고 이야기를 하기도 한디ㅏ.
