@@ -72,7 +72,22 @@ this가 가르키는 곳은 몇가지 상황에 따라 다릅니다.
 ----
 for in 은 객체의 속성을 반복하는데 사용된다. object 에서 key를 뽑아내는 형태로 구현할 수 있습니다.
 
+```javascript
+const obj = { a: 1, b: 2, c: 3 };
+
+for (const prop in obj) {
+  console.log(`obj.${prop} = ${obj[prop]}`);
+}
+```
 
 
+for of는 배열, 문자열, 맵, 세트와 같은 이터러블 객체를 반복하기 위해 설계되었습니다. 
 
-for of는 
+```javascript
+const array1 = ['a', 'b', 'c'];
+
+for (const element of array1) {
+  console.log(element);
+}
+```
+
