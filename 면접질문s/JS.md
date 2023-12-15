@@ -91,3 +91,9 @@ for (const element of array1) {
 }
 ```
 
+
+## 이터러블 과 이터레이터
+------
+이터러블 - 이터레이터를 리턴하는 [Symbol.iterator]() 를 가진 값
+
+이터레이터 - { value, done } 객체를 리턴하는 next() 를 가진 값
