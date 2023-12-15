@@ -94,6 +94,29 @@ for (const element of array1) {
 
 ## 이터러블 과 이터레이터
 ------
-이터러블 - 이터레이터를 리턴하는 [Symbol.iterator]() 를 가진 값
+이터러블 - 이터레이터를 리턴하는 [Symbol.iterator] () 메소드를 를 가진 값
 
 이터레이터 - { value, done } 객체를 리턴하는 next() 를 가진 값
+
+이터러블 프로토콜을 준수한 객체는
+
+- for - of 를 통해 객체 순회가 가능하다
+- ... spread 문법을 사용할 수 있다.
+
+코드로 나타내자면 아래와 같다
+
+```javascript
+const iterable = {
+	[Symbol.iterator]() {
+		let i = 3;
+		return {
+			next() {
+				return i == 0 ? {done: true} : {value: i--, done: false};
+			},
+			[Symbol.iterator]() {
+				return this;
+			}
+		}
+	}
+};
+```
