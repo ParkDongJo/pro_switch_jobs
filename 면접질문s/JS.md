@@ -70,4 +70,8 @@ this가 가르키는 곳은 몇가지 상황에 따라 다릅니다.
 
 ## for in 과 for of 의 차이점
 ----
-for in 은 객체의 속성을 반복
+for in 은 객체의 속성을 반복하는데 사용된다. object 에서
+
+
+
+for of는 
