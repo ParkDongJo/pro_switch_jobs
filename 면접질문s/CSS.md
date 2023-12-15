@@ -17,14 +17,16 @@
 여기서 css-in-css 는 아래와 같이 정의해볼 수 있다.
 
 - css 의 불편점을 개선한 기술동향
-- css-in-js 이전 버전 (여전히 많이 쓰임)
+- css-in-js 외에 css에 대한 개선방법들
 
 이렇게 정의를 하는 이유는 css-in-css 에대한 정확한 정의가 없다. 다만 아래와 같은 기술동향들이 있다. 
 - CSS 전처리기 (pre processors)
 - CSS Framework
 - CSS Modules
 
-먼저 C
+먼저 CSS 전처리기는 sass, less 등등이 있다. 기존 css 를 Nested 한 문법으로 작성해주면, 이를 변환시켜주는 변환기라고 보면 됩니다. css를 구조화했다는 것에 의의가 있습니다.
+
+둘째 CSS Framework 는 대표적으로 TailwindCSS 가 있습니다.
 
 
 emotion 을 포기
