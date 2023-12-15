@@ -54,8 +54,9 @@ CSS 의 문제 더 있는데 아래와 같다.
 - JS 코드와 상태값을 공유하기 힘듦
 - 캡슐화가 불가능
 
-등등이 있습니다. 그래서 JS를 통해 CSS를 만들고자 하는 움직임이 일어 났습니다. 가장 대표적인 css-in-js 가 바로 emotion, styled-components ㅇ
+등등이 있습니다. 그래서 JS를 통해 CSS를 만들고자 하는 움직임이 일어 났습니다. 가장 대표적인 css-in-js 가 바로 emotion, styled-components 입니다.
 
+덕분에 컴포넌트 단위로 css를 만들고 의미를 부여할 수 있게 되었습니다.
 
 
 
