@@ -103,7 +103,7 @@ for (const element of array1) {
 - for - of 를 통해 객체 순회가 가능하다
 - ... spread 문법을 사용할 수 있다.
 
-코드로 나타내자면 아래와 같다
+코드로 나타내자면 아래와 같다. next() 메소득
 
 ```javascript
 const iterable = {
