@@ -26,7 +26,9 @@
 
 먼저 CSS 전처리기는 sass, less 등등이 있다. 기존 css 를 Nested 한 문법으로 작성해주면, 이를 변환시켜주는 변환기라고 보면 됩니다. css를 구조화했다는 것에 의의가 있습니다.
 
-둘째 CSS Framework 는 대표적으로 TailwindCSS 가 있습니다.
+둘째 CSS Framework(2017) 는 대표적으로 TailwindCSS 가 있습니다. Utiliy-First 라는 방식으로 css의 class에 유틸리티한 이름을 붙이고 이들을 조합해서 개발하는 방식 입니다. class 이름도 기존과는 다른 파격적인 방식들을 제시하면서 인기를 끌었습니다.
+
+셋째 CSS Modules(2015) 입니다. CSS의 Global Scope 로 인해 컴포넌트와 함께 구조화 범위가 일치하지 않는 문제를
 
 
 emotion 을 포기
