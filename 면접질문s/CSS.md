@@ -36,8 +36,10 @@
 ##### Css-hybrid
 이 영영은 사실 개인적으로 정의한 영역입니다. CSS Modules(2015) 엄밀히 말해서, css-in-css 라고 보기에도 힘들고 css-in-js 라고 보기에도 힘듭니다.
 
+css 코드는 .css, .scss 같은 css 파일에 작성합니다. 하지만 이를 JS 파일로 가져와서 객체로 사용합니다. 이말은 JS 로직과 밀접하게 연결되어 ㅅ
 
-CSS Modules(2015) 입니다. CSS의 Global Scope 로 인해 컴포넌트와 함께 구조화 범위가 일치하지 않는 문제를
+CSS Modules(2015) 입니다. CSS의 Global Scope 로 인해 컴포넌트와 함께 구조화 범위가 일치하지 않는 문제를 해결했습니다.
+
 
 
 emotion 을 포기
