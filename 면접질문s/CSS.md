@@ -15,6 +15,7 @@
 - css-hybrid
 - css-in-js
 
+##### Css-in-Css
 여기서 css-in-css 는 아래와 같이 정의해볼 수 있다.
 
 - css 의 불편점을 개선한 기술동향
@@ -27,13 +28,16 @@
 
 먼저 CSS 전처리기는 sass(2006), less 등등이 있다. 기존 css 를 Nested 한 문법으로 작성해주면, 이를 변환시켜주는 변환기라고 보면 됩니다. css를 구조화했다는 것에 의의가 있다.
 
-둘째 방법론에 대한 모색입니다. 그 중 BEM이 가장 대세가 되었다고 한다. selector를 class 로만 작성하고, 이름 규칙을 Block__Element--Modifier 로 하게끔 권장한다. 하나의 이름을 통해 구조를 표현하고 관리할 수 있게 하자는 것이다.
+둘째 방법론에 대한 모색입니다. 그 중 BEM(2013)이 가장 대세가 되었다고 한다. selector를 class 로만 작성하고, 이름 규칙을 Block__Element--Modifier 로 하게끔 권장한다. 하나의 이름을 통해 구조를 표현하고 관리할 수 있게 하자는 것이다.
 
 셋째 CSS Framework 는 대표적으로 TailwindCSS(2017) 가 있습니다. Utiliy-First 라는 방식으로 css의 class에 유틸리티한 이름을 붙이고 이들을 조합해서 개발하는 방식 입니다. class 이름도 기존과는 다른 파격적인 방식들을 제시하면서 인기를 끌었습니다.
 
 
+##### Css-hybrid
+이 영영은 사실 개인적으로 정의한 영역입니다. CSS Modules(2015) 엄밀히 말해서, css-in-css 라고 보기에도 힘들고 css-in-js 라고 보기에도 힘듭니다.
 
-셋째 CSS Modules(2015) 입니다. CSS의 Global Scope 로 인해 컴포넌트와 함께 구조화 범위가 일치하지 않는 문제를
+
+CSS Modules(2015) 입니다. CSS의 Global Scope 로 인해 컴포넌트와 함께 구조화 범위가 일치하지 않는 문제를
 
 
 emotion 을 포기
