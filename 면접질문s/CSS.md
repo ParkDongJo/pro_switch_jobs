@@ -21,12 +21,14 @@
 
 이렇게 정의를 하는 이유는 css-in-css 에대한 정확한 정의가 없다. 다만 아래와 같은 기술동향들이 있다. 
 - CSS 전처리기 (pre processors)
+- CSS BEM
 - CSS Framework
-- CSS Modules
 
-먼저 CSS 전처리기는 sass, less 등등이 있다. 기존 css 를 Nested 한 문법으로 작성해주면, 이를 변환시켜주는 변환기라고 보면 됩니다. css를 구조화했다는 것에 의의가 있습니다.
+먼저 CSS 전처리기는 sass(2006), less 등등이 있다. 기존 css 를 Nested 한 문법으로 작성해주면, 이를 변환시켜주는 변환기라고 보면 됩니다. css를 구조화했다는 것에 의의가 있다.
 
-둘째 CSS Framework(2017) 는 대표적으로 TailwindCSS 가 있습니다. Utiliy-First 라는 방식으로 css의 class에 유틸리티한 이름을 붙이고 이들을 조합해서 개발하는 방식 입니다. class 이름도 기존과는 다른 파격적인 방식들을 제시하면서 인기를 끌었습니다.
+둘째 방법론에 대한 모색입니다. 그 중 BEM이 가장 대세가 되었다고 한다. selector를 class 로만 작성학
+
+셋째 CSS Framework 는 대표적으로 TailwindCSS(2017) 가 있습니다. Utiliy-First 라는 방식으로 css의 class에 유틸리티한 이름을 붙이고 이들을 조합해서 개발하는 방식 입니다. class 이름도 기존과는 다른 파격적인 방식들을 제시하면서 인기를 끌었습니다.
 
 셋째 CSS Modules(2015) 입니다. CSS의 Global Scope 로 인해 컴포넌트와 함께 구조화 범위가 일치하지 않는 문제를
 
