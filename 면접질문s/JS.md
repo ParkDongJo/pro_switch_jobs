@@ -130,6 +130,14 @@ const iterable = {
 웹에서 왜 번들러
 
 1. 모듈 시스템에 대한 필요성
+	- 서버사이드에서도 JavaScipt 를 활용하자
+	- v8 의 등장
+2. CommonJS와 AMD 등장
+	- CommonJS 동기적으로 호출 방식 채택
+	- AMD 비동기적 대응 방식 채택 (동기적으로도 가능)
+3. UMD 등장
+	- CommonJS와 AMD 방식을 모두 호환
+
 
 
 
