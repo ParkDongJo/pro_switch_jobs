@@ -170,7 +170,13 @@ const iterable = {
 - 중복된 이름으로 인한 JS 에러
 - 여러 파일 요청으로 인한 응답지연
 
-등등이 문제가 있었고, 이를 해결하기 위해 번들링이라는 작업이 필요했기 때문입니다. 지금까지도 webpack 이 많이 쓰이지만, 최근에는 좀 더 프로젝트의 성향에 맞게 선ㅌ
+등등이 문제가 있었고, 이를 해결하기 위해 번들링이라는 작업이 필요했기 때문입니다. 지금까지도 webpack 이 많이 쓰이지만, 최근에는 좀 더 프로젝트의 성향에 맞게 선택사항이 많아 졌습니다.
+
+- rollup
+- parcel
+- vite
+
+등등의 다양한 모듈러들이 나왔습니다.
 
 
 https://artjoker.net/blog/gulp-vs-grunt-vs-webpack-tools-and-task-runners-which-technology-is-better/
