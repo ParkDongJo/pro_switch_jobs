@@ -127,12 +127,16 @@ const iterable = {
 
 ## bundler를 사용해야하는 이유
 -----
-웹 서비스
+웹에서 왜 번들러
+
+1. 모듈 시스템에 대한 필요성
 
 
 
+https://artjoker.net/blog/gulp-vs-grunt-vs-webpack-tools-and-task-runners-which-technology-is-better/
+
+https://medium.com/naver-place-dev/javascript-%EB%B2%88%EB%93%A4%EB%9F%AC%EC%9D%98-%EC%9D%B4%ED%95%B4-4-webpack-%EB%B0%8F-%EB%8B%A4%EB%A5%B8-%EB%B2%88%EB%93%A4%EB%9F%AC%EB%93%A4-e5158e94ef60
 
 
-
-번들
+번들러의 역사
 https://yozm.wishket.com/magazine/detail/1261/
