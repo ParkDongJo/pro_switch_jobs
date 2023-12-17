@@ -161,6 +161,7 @@ const iterable = {
 	- 편리한 개발 서버
 	- 트리 쉐이킹
 
+간단히, 시대에 흐름에 따른 프론트 단의 번들러 등장에 대해 이야기 해봤는데요. 그 필요성을 간추려 보자면 웹 기술의 발전에 따라 웹 어플리케이션의 규모가 커졌고 과거의 HTML의 문서기반의 서비스가
 
 
 https://artjoker.net/blog/gulp-vs-grunt-vs-webpack-tools-and-task-runners-which-technology-is-better/
