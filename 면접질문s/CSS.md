@@ -165,7 +165,61 @@ https://d2.naver.com/helloworld/8540176
 
 
 ## Media Query
+-----
+다양한 디바이스 화면 크기를 대응하기 위해 사용한다
 
+모바일에 특화된 미디어 쿼리는 min-width로 320px 부터 정의하는게 일반적이지만, 디바이스 크기가 점점 커지고 있는 현재로써는 480px 대응 부터 하는 것도 괜찮다고 생각한다.
+
+- 768px 이하는 모바일
+- 768 ~ 992 는 패드
+- 1200px 이상은 PC
+
+로 간주한다. 아래는 모바일 위주의 미디어 쿼리 정이라고 한다면,
+
+```css
+/* All Device */
+
+/* Custom, iPhone Retina : 320px ~ */
+@media only screen and (min-width : 320px) { … }
+
+/* Extra Small Devices, Phones : 480px ~ */
+@media only screen and (min-width : 480px) { … }
+
+/* Small Devices, Tablets : 768px ~ */
+@media only screen and (min-width : 768px) { … }
+
+/* Medium Devices, Desktops : 992px ~ */
+@media only screen and (min-width : 992px) { … }
+
+/* Large Devices, Wide Screens : 1200px ~ */
+@media only screen and (min-width : 1200px) { … }
+```
+
+
+PC위주의 서비스 일때는 아래와 같이 max-width 로 순차적으로 정의해주는 것이 좋다.
+  
+```css
+/* All Device */
+
+/* Large Devices, Wide Screens : ~ 1200px */
+@media only screen and (max-width : 1200px) { … }
+
+/* Medium Devices, Desktops : ~ 992px */
+@media only screen and (max-width : 992px) { … }
+
+/* Small Devices, Tablets : ~ 768px */
+@media only screen and (max-width : 768px) { … }
+
+/* Extra Small Devices, Phones : ~ 480px */
+@media only screen and (max-width : 480px) { … }
+
+/* Custom, iPhone Retina : ~ 320px */
+@media only screen and (max-width : 320px) { … }
+```
+
+
+
+https://uxkm.io/publishing/css/03-cssMiddleclass/09-css_media_part2#gsc.tab=0
 
 
 
@@ -175,6 +229,3 @@ https://d2.naver.com/helloworld/8540176
 -----
 
 
-
-
-https://uxkm.io/publishing/css/03-cssMiddleclass/09-css_media_part2#gsc.tab=0
