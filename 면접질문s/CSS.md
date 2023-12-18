@@ -121,7 +121,46 @@ Box 모델이란 HTML 요소를 감싸는 네모난 상자 개념을 말한다. 
 - 블록 요소의 크기는 width, height + padding + border + margin 에 의해 계산된다.
 - width 값이 없으면, 이때 다른 레이어 층이 같으면 부모의 width - padding - border - margin 에 의해 계산된다.
 - height 값이 없으면, 자식의 height + padding + border + margin 에 의해 계산된다.
--
+
+
+##### Box 로 된 요소를 배치
+위와 같은 Box 모델로 구성된 요소를 어떻게 배치하고 보여줄지 결정하는 속성이다. display 속성에는 아래와 같이 여러가지가 있지만, 가장 대표적인 값들만 다뤄봅시다.
+
+- block
+- inline
+- inline-block
+- flex
+- grid
+- none
+
+하나씩 살펴봅시다.
+
+```css
+display: block;
+/*부모 영역에 한 줄로 꽉 차는 속성*/
+
+display: inline;
+/*안에 들어있는 컨텐츠의 크기 만큼만 차지, width, height 조절 불가능*/
+
+display: inline-block;
+/*inline의 속성을 가지고있으면서 박스의 속성도 가지고 있어서 width, height 조절이 가능*/
+
+display: flex;
+/*요소들을 한 방향으로 정렬할 때 편리*/
+
+display: grid;
+/*요소들을 격자(행열)로 정렬할 때 편리*/
+```
+
+https://velog.io/@asas33/css-box-model-flex-grid
+
+
+## flexbox
+------
+
+
+https://d2.naver.com/helloworld/8540176
+
 
 
 
@@ -133,4 +172,9 @@ Box 모델이란 HTML 요소를 감싸는 네모난 상자 개념을 말한다. 
 
 ## Reflow / Repaint 줄이기
 
+-----
 
+
+
+
+https://uxkm.io/publishing/css/03-cssMiddleclass/09-css_media_part2#gsc.tab=0
