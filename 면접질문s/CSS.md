@@ -109,8 +109,19 @@ https://blog.logrocket.com/using-linaria-faster-css-in-js-react-apps/#what-linar
 
 
 ## CSS의 BOX MODEL
+----
+Box 모델이란 HTML 요소를 감싸는 네모난 상자 개념을 말한다. 안에서부터 contents > padding > border > margin 으로 구성됩니다.
 
+이때 기본적으로 box-sizing 이라는 CSS 속성은 'content-box' 로 기본값을 가지고 있습니다. Box의 크기가 contents 기준으로 정해지는걸 의미한다. 이때의 width와 height는 contents 의 크기이다.
 
+하지만 만약 box-sizing 을 'border-box' 로 바꾸면, width와 height 는  border, padding contents 를 포함한 크기이다.
+
+![[Pasted image 20231218215737.png]]
+
+- 블록 요소의 크기는 width, height + padding + border + margin 에 의해 계산된다.
+- width 값이 없으면, 이때 다른 레이어 층이 같으면 부모의 width - padding - border - margin 에 의해 계산된다.
+- height 값이 없으면, 자식의 height + padding + border + margin 에 의해 계산된다.
+-
 
 
 
