@@ -544,11 +544,33 @@ function MyComponent() {
 
 ## setState 동작에 대해 설명해주세요
 ------
-setState 는 state 적용을 비동기적으로 시킵니다. 대략 16ms 단위로 batch update 를 진행시킨다. 덕분에 여러 상태 변화를 한번의 렌더링으로 최신 상태를 Real DOM에 적용 시킬 수 있다.
+우선 setState의 state 를 비동기식으로 적용시킵니다. 이 기본 동작 덕분에 우리는 2가지를 눈여겨 볼 필요가 있다.
+
+#### batch update
+대략 16ms 단위로 batch update 를 진행시킨다. 덕분에 여러 상태 변화를 한번의 렌더링으로 최신 상태를 Real DOM에 적용 시킬 수 있다.
 
 하지만 React 17 까진 이것도 완벽한 batch update 는 아니였다. promise 의 then, setTimeout 의 콜백에서는 batch update 가 적용되지 않았다.
 
-특히 React 18 이후로 부터 auto batching 이 promise then, setTimeout 
+특히 React 18 이후로 부터, 어디서든 auto batching 이적용된다.
+
+그런데 만약 auto batching 되길 원치 않는 부분이 있다면, flushSync 라는 메소드를 사용하면 된다. 사용법은 아래와 같다.
+
+```javascript
+import { flushSync } from 'react-dom';
+
+function handleClick() {
+	flushSync(() => {
+		setCount(c => c + 1);
+	})
+	flushSync(() => {
+		setFlag(f => !f);
+	})
+}
+
+```
+
+
+
 
 
 https://nukw0n-dev.tistory.com/33
