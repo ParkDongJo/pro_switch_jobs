@@ -583,6 +583,15 @@ setCount((prev) => (prev + 1))
 2. useEffect() 를 통한 변경
 	useEffect 의 deps 로 변경한 state 를 주입하면, 변경된 state 값을 활용할 수 있다. 하지만 이것도 엄밀히 말하면 state 값이 비동기식으로 이미 반영된 이후, useEffect의 의존성에 의해서 호출이 된 것 뿐이다.
 
+```javascript
+useEffect(() => {
+	console.log(state);
+}, [state])
+
+```
+
+	하지만 이 방법은 잘못 사용했을 시 무한 루프에 빠지거나 
+
 
 https://nukw0n-dev.tistory.com/33
 
