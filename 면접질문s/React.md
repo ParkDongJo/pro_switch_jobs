@@ -547,6 +547,9 @@ function MyComponent() {
 setState 는 state 적용을 비동기적으로 시킵니다. 특히 React 18 이후로 부터 auto batching 이 promise then, s
 
 
+https://nukw0n-dev.tistory.com/33
+
+
 
 ## VAC 패턴 / Presentational-Container
 -----
