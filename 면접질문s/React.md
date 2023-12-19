@@ -590,11 +590,50 @@ useEffect(() => {
 
 ```
 
-	하지만 이 방법은 잘못 사용했을 시 무한 루프에 빠지거나 
+	하지만 이 방법은 잘못 사용했을 시 무한 루프에 빠질 수 있으니 조심해야 한다.
+
+3. useSyncState 를 만들어서 사용한다.
+	어느 블로그에서 확인한 방법이다. 아래와 같이 눈속임으로 최신 state 를 return 해서 사용하는 방식이다.
+	하지만 어디까지나 권장하는 방법은 아니기 때문에, 잘 생각해서 써야한다.
+
+```tsx
+export const useSyncState = <T> (initialState: T): [() => T, (newState: T) => void] => {
+    const [state, updateState] = useState(initialState)
+    let current = state
+    const get = (): T => current
+    const set = (newState: T) => {
+        current = newState
+        updateState(newState)
+        return current
+    }
+    return [get, set]
+}
+```
+
+```tsx
+const SomeComponent = () => {
+  const [counter, setCounter] = useSyncState<number>(0);
+
+  const increment = () => {
+    console.log('counter =', counter()); // 0
+    const newValue = setCounter(counter() + 1);
+    console.log('newValue =', newValue); // 1
+    console.log('counter =', counter()); // 1
+  }
+
+  return (
+    <>
+      Counter: {counter()}
+      <br/>
+      <button onClick={increment}>Increment</button>
+    </>
+  );
+}
+```
 
 
 https://nukw0n-dev.tistory.com/33
-
+https://velog.io/@dongkyun/setState-%EB%8F%99%EA%B8%B0%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
 
 
 ## VAC 패턴 / Presentational-Container
