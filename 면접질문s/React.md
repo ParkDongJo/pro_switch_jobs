@@ -544,7 +544,11 @@ function MyComponent() {
 
 ## setState 동작에 대해 설명해주세요
 ------
-setState 는 state 적용을 비동기적으로 시킵니다. 특히 React 18 이후로 부터 auto batching 이 promise then, setTimeout 
+setState 는 state 적용을 비동기적으로 시킵니다. 대략 16ms 단위로 batch update 를 진행시킨다. 덕분에 여러 상태 변화를 한번의 렌더링으로 최신 상태를 Real DOM에 적용 시킬 수 있다.
+
+하지만 React 17 까진 이것도 완벽한 batch update 는 아니였다. promise 의 then, setTimeout 의 콜백에서는 batch update 가 적용되지 않았다.
+
+특히 React 18 이후로 부터 auto batching 이 promise then, setTimeout 
 
 
 https://nukw0n-dev.tistory.com/33
