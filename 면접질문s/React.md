@@ -548,12 +548,22 @@ function MyComponent() {
 
 
 
-## VAC 패턴, Prese
+## VAC 패턴 / Presentational-Container
 -----
 
 
-
+https://arc.net/l/quote/cxlrawmc
 
 https://arc.net/l/quote/ondzqyux
 
 https://velog.io/@yesbb/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99%EC%9D%84-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%95%98%EB%8B%A4feat.-%EC%A2%8B%EC%9D%80%EC%84%A4%EA%B3%84%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C
+
+
+
+
+## Flex 패턴 / Atomic 패턴으로 나눈 store
+
+
+
+
+https://velog.io/@buddle6091/%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%ED%8C%A8%ED%84%B4%EC%97%90-%EB%94%B0%EB%A5%B8-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%B6%84%EC%84%9D%ED%95%98%EA%B8%B0#atomic-%ED%8C%A8%ED%84%B4-recoil-jotai
