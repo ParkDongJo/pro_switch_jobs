@@ -545,3 +545,15 @@ function MyComponent() {
 ## setState 동작에 대해 설명해주세요
 ------
 
+
+
+
+## VAC 패턴, Prese
+-----
+
+
+
+
+https://arc.net/l/quote/ondzqyux
+
+https://velog.io/@yesbb/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99%EC%9D%84-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%95%98%EB%8B%A4feat.-%EC%A2%8B%EC%9D%80%EC%84%A4%EA%B3%84%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C
