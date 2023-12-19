@@ -570,7 +570,18 @@ function handleClick() {
 ```
 
 
+#### 동기식으로
+잘 생각해야겠지만, state 변경을 동기식으로 해야할 경우가 있다면, 방법은 있다.
 
+1. 함수를 통한 state 변경
+	변경 될 state 를 바로 넣어주는 것이 아닌 함수를 통해 state 를 변경해주는 방법이 있습니다. 아래 코드와 같이요
+```javascript
+setCount((prev) => (prev + 1))
+
+```
+
+2. useEffect() 를 통한 변경
+	u
 
 
 https://nukw0n-dev.tistory.com/33
