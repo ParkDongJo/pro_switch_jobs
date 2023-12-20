@@ -186,3 +186,8 @@ https://medium.com/naver-place-dev/javascript-%EB%B2%88%EB%93%A4%EB%9F%AC%EC%9D%
 
 번들러의 역사
 https://yozm.wishket.com/magazine/detail/1261/
+
+
+
+## debounce / throttle
+----
