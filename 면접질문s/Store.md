@@ -29,3 +29,8 @@ https://github.com/pmndrs/zustand/blob/0058a03b78bf628a27fb3cb4b6ebe3e6263dd0a0/
 
 react-query
 https://github.com/TanStack/query/pull/3064/files#diff-b281d910f1fda02068add8ccf8b966ab625052d7314962c3a22f9eea5da5cbf3R81
+
+
+
+
+## React Query
