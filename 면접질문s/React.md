@@ -166,6 +166,16 @@ useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, st
 <br/>
 <br/>
 
+
+## Forget 메모 자동화
+------
+
+
+https://velog.io/@lky5697/how-react-forget-will-make-react-usememo-and-usecallback-hooks-absolutely-redundant#%EB%AF%B8%EB%9E%98%EB%A5%BC-%EC%97%BF%EB%B3%B4%EB%8B%A4-%EB%A6%AC%EC%95%A1%ED%8A%B8-forget%EC%9D%98-%EB%93%B1%EC%9E%A5
+
+
+
+
 ## Hydration에 대해 설명
 ------
 공식 문서는 hydrate 사용에 대해 아래와 같이 경고문구를 해놨습니다.
