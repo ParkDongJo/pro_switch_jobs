@@ -25,3 +25,11 @@ https://medium.com/zigbang/typescript%EB%A1%9C-%EB%B3%B4%EB%8A%94-solid-e9384b20
 
 
 https://seokzin.tistory.com/entry/React-SOLID-%EC%9B%90%EC%B9%99%EC%9D%84-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0
+
+
+
+## Zod 라이브러리
+------
+
+
+https://xionwcfm.tistory.com/346
