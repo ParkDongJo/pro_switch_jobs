@@ -195,4 +195,32 @@ https://yozm.wishket.com/magazine/detail/1261/
 
 ## 실행 컨텍스트
 ----
-실행 컨텍스트는 현재 실행되는 함수의 세부 데이터 구조를 보여준다. 
+실행 컨텍스트는 현재 실행되는 함수의 세부 데이터 구조를 보여준다.  실행 컨텍스트는 3가지로 구성되어 있다.
+
+- Variable Environment
+	- environment Record
+	- outer Environment Reference
+- Lexical Environment
+	- environment Record
+	- outer Environment Reference
+- This Binding
+
+##### Variable Environment
+컨택스트 생성 단계의 정보들이다. 코드 실행 직전에 생성되며
+
+Record 는 컨택스트 내의
+- 함수의 인자
+- 변수
+- 유사배열
+- 선언된 함수명
+
+어떤 식별자가 있는지만 관심있고, 어떤 값이 할당 되었는지는 관심 없다. 그래서 변수 선언만 끌어올리고 할당 과정은 원래 자리에 남겨두는 호이스팅이 일어난다.
+
+
+Reference 는 컨텍스트의 외부 환경
+
+바로 직전의 컨텍스트의 Lexical Enviroment 를 참조한다.
+
+
+##### Lexical Environment
+이미 만들어진 Variable Environment를 복사해서 만들어진다. 코드가 실행되면서 변수에 값이 할당되거나 변경되면 Lexical Environment 에만 업데이트 된다.
