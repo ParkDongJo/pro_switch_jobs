@@ -189,5 +189,10 @@ https://yozm.wishket.com/magazine/detail/1261/
 
 
 
-## debounce / throttle
+
+
+
+
+## 실행 컨텍스트
 ----
+실행 컨텍스트는 현재 실행되는 함수의 세부 데이터 구조를 보여준다.
