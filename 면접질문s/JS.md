@@ -211,11 +211,11 @@ JS 엔진은 <script /> 요소를 처음으로 만난 시점에서 Global 실행
 
 ##### environment Record 는 컨택스트 내의
 - 함수의 인자
-- 변수
+- var로 선언된 변수가 메모리에 매핑되고 초기값으로 undefined
 - 유사배열
 - 선언된 함수명
 
-어떤 식별자가 있는지만 관심있고, 어떤 값이 할당 되었는지는 관심 없다. 그래서 변수 선언만 끌어올리고 할당 과정은 원래 자리에 남겨두는 호이스팅이 일어난다.
+어떤 식별자가 있는지만 관심있고, 어떤 값이 할당 되었는지는 관심 없다. 그래서 변수 선언만 끌어올리고 할당 과정은 원래 자리에 남겨두는 **호이스팅**이 일어난다.
 
 
 ##### outer Environment Reference 
@@ -227,6 +227,9 @@ JS 엔진은 <script /> 요소를 처음으로 만난 시점에서 Global 실행
 #### Lexical Environment------
 이미 만들어진 Variable Environment를 복사해서 만들어진다. 코드가 실행되면서 변수에 값이 할당되거나 변경되면 Lexical Environment 에만 업데이트 된다.
 
+이때 
+- let, const 로 선언된 변수가 메모리에 맵핑되고 초기값은 uninitialized 상태이며 할당되지 않는다.
+- 함수 선언이 메모리에 맵핑 된다.
 
 
 #### This binding------
@@ -236,13 +239,39 @@ this 의 값이 여기서 결정된다. 기본적으로 this는 전역을 가르
 
 ## 호이스팅
 ------
-브라우저의 JS 인터프리터가 코드 실행 전 모든 변수들의 선언을 먼저 하는 과정을 말한다.
+브라우저의 JS 인터프리터가 코드 실행 전 모든 선언된 변수와 함수를 메모리에 미리 선언 해놓는 작업을 의미한다.
 
 - 변수는
 	- var  호이스팅 O
+		- undefined 로 초기화
 	- let  호이스팅 O
+		- uninitialized 상태
+		- 초기화 X
+		- TDZ(Temporal Dead Zone)
 	- const  호이스팅 O
+		- uninitialized 상태
+		- 초기화 X
+		- TDZ(Temporal Dead Zone)
 - 함수는
-	- 선언식은 호이스팅 O
-	- 표현식은 호이스팅 X
+	- 선언식은 호이스팅 O = 함수 전체로 초기화
+		- function fn() { ... }
+	- 표현식은 호이스팅 △
+		- 선언부는 변수로 호이스팅 O
+		- 함수로 호출 불가
+		- let fn = function() { ... }
+	
 
+실행 컨텍스트 생성 단계에서 Variable Environment 이 생성 되고, environmentRecord에 var 와 함수 선언식 그리고 그와 관련된 유사배열, 인자 까지 선언되고 초기화 된다.
+
+하지만 let과 const 함수 호이스팅이 되었지만 TDZ에 있는 상태이다. 이때 코드가 실행되면서 Lexical Environment 이 되어서 값할당 코드를 만나면, let, const로 선언한 변수에 값이 할당된다.
+
+이때, 함수 표현식은 다른 변수로 인식되어, 변수에 대한 선언만 등록되어, undefined가 할당 되지만, 함수로는 호출 할 수 없습니다. 
+
+
+가장 괜찮은 자료
+https://arc.net/l/quote/ronhlvyf
+
+
+https://hangeoreum.tistory.com/entry/JS-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8Execution-Context
+https://kwangsunny.tistory.com/37
+https://arc.net/l/quote/fcwtfyhc
