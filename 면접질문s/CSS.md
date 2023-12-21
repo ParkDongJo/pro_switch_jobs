@@ -116,7 +116,7 @@ Box 모델이란 HTML 요소를 감싸는 네모난 상자 개념을 말한다. 
 
 하지만 만약 box-sizing 을 'border-box' 로 바꾸면, width와 height 는  border, padding contents 를 포함한 크기이다.
 
-![[Pasted image 20231218215737.png]]
+![[css_box.png]]
 
 - 블록 요소의 크기는 width, height + padding + border + margin 에 의해 계산된다.
 - width 값이 없으면, 이때 다른 레이어 층이 같으면 부모의 width - padding - border - margin 에 의해 계산된다.

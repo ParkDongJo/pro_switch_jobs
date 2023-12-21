@@ -52,15 +52,6 @@ this가 가르키는 곳은 몇가지 상황에 따라 다릅니다.
 ------
 
 
-<br/>
-<br/>
-
-## 호이스팅
-------
-
-
-<br/>
-<br/>
 
 ## 클로저
 ------
@@ -191,9 +182,19 @@ https://yozm.wishket.com/magazine/detail/1261/
 
 
 
+## 실행 컨텍스트 실행
+------
+JS 엔진은 <script /> 요소를 처음으로 만난 시점에서 Global 실행 컨텍스트를 생성하고 Call Stack 에 push 한다.
+
+그 이후
+함수 호출을 찾을 때 마다 해당 함수에 대한 실행 컨텍스트를 생성하고 Stack 맨 위에 push 한다.
+
+![[call_stack.png]]
 
 
-## 실행 컨텍스트
+
+
+## 실행 컨텍스트 구성 요소
 ----
 실행 컨텍스트는 현재 실행되는 함수의 세부 데이터 구조를 보여준다.  실행 컨텍스트는 3가지로 구성되어 있다.
 
@@ -205,10 +206,10 @@ https://yozm.wishket.com/magazine/detail/1261/
 	- outer Environment Reference
 - This Binding
 
-##### Variable Environment
+#### Variable Environment------
 컨택스트 생성 단계의 정보들이다. 코드 실행 직전에 생성되며
 
-Record 는 컨택스트 내의
+##### environment Record 는 컨택스트 내의
 - 함수의 인자
 - 변수
 - 유사배열
@@ -217,10 +218,31 @@ Record 는 컨택스트 내의
 어떤 식별자가 있는지만 관심있고, 어떤 값이 할당 되었는지는 관심 없다. 그래서 변수 선언만 끌어올리고 할당 과정은 원래 자리에 남겨두는 호이스팅이 일어난다.
 
 
-Reference 는 컨텍스트의 외부 환경
+##### outer Environment Reference 
+컨텍스트의 외부 환경에 대한 정보를 저장한다.
 
-바로 직전의 컨텍스트의 Lexical Enviroment 를 참조한다.
+바로 직전의 컨텍스트의 Lexical Enviroment 를 참조한다. scope chain 에 저장 되며, 현재의 Lexical Environment 에서 변수를 찾지 못했을때, 이 scope chain 을 타고타고 올라가서 찾아볼 수 있습니다.
 
 
-##### Lexical Environment
+#### Lexical Environment------
 이미 만들어진 Variable Environment를 복사해서 만들어진다. 코드가 실행되면서 변수에 값이 할당되거나 변경되면 Lexical Environment 에만 업데이트 된다.
+
+
+
+#### This binding------
+this 의 값이 여기서 결정된다. 기본적으로 this는 전역을 가르키지만 몇가지 예외사항이 있는데, 그건 this 를 다루는 내용에서 살펴보자
+
+
+
+## 호이스팅
+------
+브라우저의 JS 인터프리터가 코드 실행 전 모든 변수들의 선언을 먼저 하는 과정을 말한다.
+
+- 변수는
+	- var  호이스팅 O
+	- let  호이스팅 O
+	- const  호이스팅 O
+- 함수는
+	- 선언식은 호이스팅 O
+	- 표현식은 호이스팅 X
+
