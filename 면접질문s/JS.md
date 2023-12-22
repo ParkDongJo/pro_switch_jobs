@@ -342,4 +342,8 @@ Javascript 에서 함수는 객체이다. Person 이라고 하는 함수를 정�
 ![[Pasted image 20231222124632.png]]
 https://opentutorials.org/module/4047/24629
 
+좀 더 보태자면
+- prototype 이라는 속성은 원형 객체만 가진다. Function, String, Number 등등이 될 수 있다.
+- __proto__ 는 모든
 
+![[prototype.png]]
