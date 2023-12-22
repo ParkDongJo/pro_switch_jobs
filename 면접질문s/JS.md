@@ -333,6 +333,13 @@ const ella = outer();
 
 ## prototype vs. _proto_
 ----
-Javascript 에서 함수는 객체이다. 함수를 생성하면 함수의 객체가 생성되고 동시에 함수의 prototype 객체가 생성된다. 이때,
+Javascript 에서 함수는 객체이다. Person 이라고 하는 함수를 정의하면 Person 함수의 객체가 생성되고 동시에 함수의 prototype 객체가 생성된다. 이때,
 
-- 함수의 prototype 은 함수의 
+- Person 함수 객체의 prototype 은 함수의 Person의 prototype 객체를 가르킨다.
+- Person 의 prototype 객체의 constructor 는 Person 함수 객체를 가르킨다.
+- Person 함수로 생성된 인스턴스의 __proto__ 는 Person 의 prototype 객체를 가르킨다.
+
+![[Pasted image 20231222124632.png]]
+https://opentutorials.org/module/4047/24629
+
+
