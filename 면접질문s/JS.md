@@ -333,17 +333,31 @@ const ella = outer();
 
 ## prototype vs. _proto_
 ----
-Javascript 에서 함수는 객체이다. Person 이라고 하는 함수를 정의하면 Person 함수의 객체가 생성되고 동시에 함수의 prototype 객체가 생성된다. 이때,
+Javascript 에서 함수는 객체이다. Person 이라고 하는 함수를 정의하면 Person 생성자 객체가 생성되고 동시에 함수의 prototype 객체가 생성된다. 이때,
 
-- Person 함수 객체의 prototype 은 함수의 Person의 prototype 객체를 가르킨다.
-- Person 의 prototype 객체의 constructor 는 Person 함수 객체를 가르킨다.
+- Person 생성자 객체의 prototype 은 생성자 함수의 Person의 prototype 객체를 가르킨다.
+- Person 의 prototype 객체의 constructor 는 Person 생성자 객체를 가르킨다.
 - Person 함수로 생성된 인스턴스의 __proto__ 는 Person 의 prototype 객체를 가르킨다.
 
 ![[Pasted image 20231222124632.png]]
 https://opentutorials.org/module/4047/24629
 
 좀 더 보태자면
-- prototype 이라는 속성은 원형 객체만 가진다. Function, String, Number 등등이 될 수 있다.
-- __proto__ 는 모든
+- prototype 이라는 속성은 생성자 객체만 가진다. Function, String, Number 등등이 될 수 있다.
+- __proto__ 는 모든 객체들이 가지고 있다. 그리고 이 속성은 그 객체의 프로토타입을 가리킨다.
+	- 모든 __proto__ 의 끝은 Object.prototype 이다
+	- __proto__ 를 통해 prototype chaining을 형성하고 자신이 상속받는 prototype에 접근할 수 있다.
+	- 이는 scope chaing 과는 별개이다.
+		- scope chaining 은 어휘적(variable, lexical) 환경과 관련되어 있다.
+		- proto chaining 은 객체 인스턴스의 상속 관계와 관련되어 있다.
 
 ![[prototype.png]]
+
+
+여기서 눈여겨 볼 점은
+- `Function` 생성자 함수의 `__proto__`는 `Function.prototype`을 가리킨다.
+- `Object` 생성자 함수의 `__proto__`는 `Function.prototype`을 가리킨다.
+
+결론지어 보면
+- prototype 객체의 종착지는 Object.prototype 이다
+- 모든 생성자 객체의 종착지는 Function.prototype 이다
