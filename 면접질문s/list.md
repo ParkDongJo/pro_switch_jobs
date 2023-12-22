@@ -12,4 +12,6 @@ var, let, const 차이점 arguments 란? Object.toString()의 기능 함수 para
 
 updateN을 작성해주세요.
 
-그리고
+Cut를 구현해주세요. 그리고 어떻
+
+반응형 Vs. 어니언 아키텍처 차이점을 말해주세요.
