@@ -53,10 +53,6 @@ this가 가르키는 곳은 몇가지 상황에 따라 다릅니다.
 
 
 
-## 클로저
-------
-
-
 
 
 ## for in 과 for of 의 차이점
@@ -239,7 +235,7 @@ this 의 값이 여기서 결정된다. 기본적으로 this는 전역을 가르
 
 ## 호이스팅
 ------
-브라우저의 JS 인터프리터가 코드 실행 전 모든 선언된 변수와 함수를 메모리에 미리 선언 해놓는 작업을 의미한다.
+브라우저의 JS 인터프리터가 코드 실행 전 모든 선언된 변수와 함수를 메모리에 미리 등록 해놓는 작업을 의미한다.
 
 - 변수는
 	- var  호이스팅 O
@@ -263,10 +259,14 @@ this 의 값이 여기서 결정된다. 기본적으로 this는 전역을 가르
 
 실행 컨텍스트 생성 단계에서 Variable Environment 이 생성 되고, environmentRecord에 var 와 함수 선언식 그리고 그와 관련된 유사배열, 인자 까지 선언되고 초기화 된다.
 
-하지만 let과 const 함수 호이스팅이 되었지만 TDZ에 있는 상태이다. 이때 코드가 실행되면서 Lexical Environment 이 되어서 값할당 코드를 만나면, let, const로 선언한 변수에 값이 할당된다.
+하지만 let과 const 함수 호이스팅이 되지만 TDZ 상태이다. 이때 코드가 실행되면서 Lexical Environment 이 되어서 값할당 코드를 만나면 그제서야let, const로 선언한 변수에 값이 할당된다.
 
-이때, 함수 표현식은 다른 변수로 인식되어, 변수에 대한 선언만 등록되어, undefined가 할당 되지만, 함수로는 호출 할 수 없습니다. 
+이때, 함수 표현식은 변수로 인식되어, 변수에 대한 선언만 등록되어, var는 undefined가 할당 되지만(let, const는 마찬가지로 TDZ상태) 함수로는 호출 할 수 없다. 
 
+이런 흐름 때문에 호이스팅이 일어나는 것이다.
+
+가장 정확하게 설명한 자료
+https://youtu.be/EWfujNzSUmw?si=-bOqcKAegXC7-4m_
 
 가장 괜찮은 자료
 https://arc.net/l/quote/ronhlvyf
@@ -275,3 +275,8 @@ https://arc.net/l/quote/ronhlvyf
 https://hangeoreum.tistory.com/entry/JS-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8Execution-Context
 https://kwangsunny.tistory.com/37
 https://arc.net/l/quote/fcwtfyhc
+
+
+
+## 클로저
+------
