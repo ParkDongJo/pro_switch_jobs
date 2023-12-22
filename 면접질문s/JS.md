@@ -329,7 +329,12 @@ const ella = outer();
 -----
 자바스크립트는 프로토 타입 언어이다.  자바스크립트의 객체에는 Prototype 이라는 내부 프로퍼티가 존재한다. 
 
+자바스크립트의 모든 객체는 자신의 부모 역할을 담당하는 객체와 연결되어 있다. 그리고 이것은 마치 객체 지향의 상속 개념과 같이 부모 객체의 프로퍼티 또는 메소드를 상속받아 사용할 수 있게 한다. 이러한 부모 객체를 **Prototype(프로토타입) 객체** 또는 줄여서 Prototype(프로토타입)이라 한다.
 
+Prototype 객체는 생성자 객체(함수)에 의해 생성된 각각의 인스턴스에 공유 프로퍼티를 제공하기 위해 사용한다.
+
+
+https://poiemaweb.com/js-prototype
 
 ## prototype vs. _proto_
 ----
@@ -361,3 +366,6 @@ https://opentutorials.org/module/4047/24629
 결론지어 보면
 - prototype 객체의 종착지는 Object.prototype 이다
 - 모든 생성자 객체의 종착지는 Function.prototype 이다
+
+
+https://velog.io/@jangws/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C-proto-VS.-prototype-%EB%B9%84%EA%B5%90
