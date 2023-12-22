@@ -8,3 +8,8 @@ var, let, const 차이점 arguments 란? Object.toString()의 기능 함수 para
 
 
 
+카피온 라이트와 방어적 복사의 차이점을 말해주세요.
+
+updateN을 작성해주세요.
+
+그리고
