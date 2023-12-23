@@ -144,8 +144,11 @@ https://ui.toast.com/posts/ko_20210812
 
 ## useSyncExternalStore
 ----
+**_useSyncExternalStore_** 는 **external store(외부 저장소)** 를 구독할 수 있게 해주는 **React Hook**이다.
+여기서
 
-
+external store 는 redux, zustand, jotai 등등을 말하고
+internal store sms
 
 
 https://ingg.dev/zustand-work/#use-sync-external-store-work
