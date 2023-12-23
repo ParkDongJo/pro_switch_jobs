@@ -80,17 +80,62 @@ Atomic 패턴으로 Recoil 말도도 Jotai 가 있다. 나도 가볍게 Jotai �
 그리고 규모면에서 큰 프로젝트가 아니라면, 나는 Atomic 패턴 라이브러리를 선택할 것 같다.
 이유는 사용이 유연하다는 장점 덕분이다. 우리가 사실 클라와 서버로 상태를 나누게 되면, 클라쪽 상태는 예전만큼 많지 않다.
 
+특히 나는 전역 스토어의 사용을 미루고 미루다가 사용하는 편이다. 편리하지만 무분별하게 사용했을 시 코드의 추적이다 데이터의 흐름을 읽기가 쉽지 않기 때문이다.
+
+그래서 중간 규모로 유연한 사용이 가능한 Atomic 패턴 라이브러리를 선정했다. 이들은 특히 React의 새버전의 화두인 동시성도 고려해서 만들어 졌다는 것도 흥미를 끈다 (물론 내부 코드를 살펴본 적은 없다...)
+
+그 중에서도 사용해본 recoil 보다는 jotai를 선택했다.
+
+이유는 jotai 가 좀더 간단하고 유연하다고 느꼈기 때문이다. 또한 Recoil의 업데이트는 세월아 내월아 이며, 여전히 베타버전으로 남아있다.
+특히 Recoil 은 막상 써보면, 비동기 처리를 위한 Selector 사용이 그리 깔끔하지 않다고 느껴진다.
+
+Jotai 는 순수 atom 과 파생된 atom 까지도 상태관리가 가능하며, Provider 마저도 범위를 다르게 지정해서 각자의 고유의 값을 지닐 수 있도록 설계할 수 있다. 난 이 지점이 특히 마음에 들었는데, 이 덕분에 큰 관심사 묶음을 Provider 단위로 나눌 수 있겠구나 라는 생각이 든다. 마치 향상된 Context API로 느껴졌다.
+
+
+그리고 마지막으로
+작은 규모면에서는 발티오를 뽑았다. 물론 사용해본적은 없지만 기본 사용법을 봤을때 정말 소규모 프로젝트에서는 발빠르게 구현할 수 있겠다 라는 생각을 했다.
+만약 내가 사용한다면, 이벤트 페이지에서 전역 상태가 필요하다 한다면 발티오를 한번 사용해볼 법도 하다. 하지만 React 18 이상에서 Suspense 를 활용해야한다면 소규모라도 Jotai 를 선택하거나 아예 도입하지 않을 수도 있을 것 같다.
+
+이 부분은 아직 깊게 생각해보진 않아서 더 살펴봐야할 것 같다.
+
+
+https://yozm.wishket.com/magazine/detail/2233/
+https://careerly.co.kr/comments/73197
+
+
+
+## Zustand
+-----
+
+
+
+https://arc.net/l/quote/idcaeqgp
+https://ui.toast.com/posts/ko_20210812
+
 
 ## Context API
 ----
-내가 전역 Store 에서 Context API를 따로 뺀 이유가 있다.
+내가 전역 Store 에서 Context API를 따로 뺀 이유가 있다. Context API는 개인적으로 활용도가 다르다. 소수의 컴포넌트 단위에서만 state 를 공유하고자 할때, 전역 스토어가 필요하다면 이때 Context API를 고려해본다. 
+
+이렇게 하면 state 의 관심사 분리도 자연스럽게 되면서,
+전역 state의 사용 범위를 지정할 수 있기 때문이다.
+
+하나의 프로젝트에서 서로 다른 파트가 일을 하게 될 때 유용하다고 생각이 든다. 또는 여러 컴포넌트가 함께 특정 state에 종속 되어 있을때도 유용할 것으로 본다.
 
 
+다만 Context API의 큰 단점이 있는데, 바로 Provider 가 서로를 감싸는 코드 영역이 늘어나면 날수록 불필요한 리랜더링이 일어날 수 있다는 점이다.
+아래와 같이 말이다.
 
 
+```jsx
+<ProviderA>
+	<ProviderB>
+	</ProviderB>
+</ProviderA>
 
+```
 
-https://velog.io/@buddle6091/%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%ED%8C%A8%ED%84%B4%EC%97%90-%EB%94%B0%EB%A5%B8-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%B6%84%EC%84%9D%ED%95%98%EA%B8%B0#atomic-%ED%8C%A8%ED%84%B4-recoil-jotai
+하지만 사실 Jotai 로 되어 있는 프로젝트라고 한다면 이 조차도 고려대상이 아니긴 하다.
 
 
 
@@ -98,6 +143,8 @@ https://velog.io/@buddle6091/%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%ED%8C%A8%ED%8
 
 
 ## useSyncExternalStore
+----
+
 
 
 
