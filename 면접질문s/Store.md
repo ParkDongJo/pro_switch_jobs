@@ -147,8 +147,18 @@ https://ui.toast.com/posts/ko_20210812
 **_useSyncExternalStore_** 는 **external store(외부 저장소)** 를 구독할 수 있게 해주는 **React Hook**이다.
 여기서
 
-external store 는 redux, zustand, jotai 등등을 말하고
-internal store sms
+external store 는 redux, zustand, jotai
+internal store 는 props, state, useState, useReduce
+
+로 분류된다.
+React 18 부터는 동시성 렌더링이 등장하면서, useTransition 와 useDeferredValue 같은 새로운 hooks 들이 나왔다. 이들 덕분에 작업의 우선순위를 개발자가 지정할 수 있게 되었다.
+
+이때 React 는 렌더링 중에 우선순위가 떨어지는 작업을 잠깐 멈추고 급한 일 부터 처리를 한다. 문제는 여기서부터 시작된다.
+
+##### tearing
+우리는
+
+
 
 
 https://ingg.dev/zustand-work/#use-sync-external-store-work
