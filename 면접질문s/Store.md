@@ -1,6 +1,6 @@
 ## Flex 패턴 / Atomic 패턴으로 나눈 store
 
-
+대표적인 Store 들을 구조를 기준으로 분류를 해보겠다.
 
 
 https://velog.io/@buddle6091/%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%ED%8C%A8%ED%84%B4%EC%97%90-%EB%94%B0%EB%A5%B8-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%B6%84%EC%84%9D%ED%95%98%EA%B8%B0#atomic-%ED%8C%A8%ED%84%B4-recoil-jotai
