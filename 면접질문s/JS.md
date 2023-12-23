@@ -286,7 +286,7 @@ https://arc.net/l/quote/fcwtfyhc
 정확히는 scopeChain 이라는 참조 값을 가지는데, 이는 자신을 포함한 외부 환경을 가르킨다. 덕분에 이 상태에서 inner(그림 기반) 함수의 평가를 outer(그림 기반) 함수를 실행한 이후 지연된 평가를 했을 때에도, 여전히 outer의 환경을 저장하고 있으며, 데이터를 불러 올 수 있다.
 
 
-![[Pasted image 20231222104546.png]]![[스크린샷 2023-12-22 오전 10.46.01.png]]
+![[excute_context_2.png]]![[excute_context.png]]
 
 그림을 보면, ella 라는 변수에 담긴 함수는 inner 함수의 참조값이고 inner 함수는 outer의 외부 환경 참조값을 가지고 있다.
 코드는 아래와 같이 표현될 수 있겠다.
