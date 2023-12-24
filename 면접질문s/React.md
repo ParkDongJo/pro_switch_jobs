@@ -667,3 +667,62 @@ https://velog.io/@yesbb/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9D%98%
 ## debounce / throttle
 ----
 과도한 이벤트 핸들링 연산을 수행하는 경우, 제약을 걸어 제어 가능한 수준의 이벤트만 발생시키도록 하는 기술들이다. 다만 
+
+
+##### debounce
+일정 시간 동안 요청이 추가로 들어오지 않는 경우 가장 마지막 또는 가장 처음 호출된 이벤트를 선택하는 기법이다. (앞이냐, 뒤냐 는 그때에 따라 선택)
+
+![[Pasted image 20231224110242.png]]
+
+코드로 구현하면 아래와 같습니다.
+
+```javascript
+
+function debounce(callback, timer) {
+	let timerId = null;
+
+	return (...args) => {
+		if (timerId) {
+			clearTimeout(timerId);
+		}
+
+		timerId = setTimeout(() => {
+			callback.apply(this, args);
+		}, timerTick);
+	}
+}
+
+```
+
+- toggle 버튼 이벤트
+- 브라우저 창이나, 특정 요소의 리사이징
+- 
+
+
+##### throttle
+이벤트가 꾸준히 발생하는 상황에서 일정 간격으로 이벤트를 하나식 처리하는 기법이다.
+
+![[Pasted image 20231224111156.png]]
+
+코드로 구현하면 아래와 같다.
+```javascript
+
+function throttle(callback, timerTick) {
+	let waiting = false;
+
+	return (...args) => {
+		if (!waiting) {
+			callback.apply(this, args);
+			waiting = true;
+
+			setTimeout(() => {
+				waiting = false
+			}, timerTick)
+		}
+	}
+}
+
+```
+
+활용 한다면
+- 무한 스크롤 기능
