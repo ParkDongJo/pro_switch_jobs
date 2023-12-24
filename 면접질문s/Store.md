@@ -161,30 +161,49 @@ React 18 부터는 동시성 렌더링이 등장하면서, useTransition 와 use
 ![[external_store_1.png]]
 
 
+![[Pasted image 20231223162808.png]]
+이는 React 18 이전에는 별 문제가 되지 않았다. 모든 렌더링이 끝나고 나서, Store 가 끝나니까 말이다.
 
 
+![[Pasted image 20231223162758.png]]
+하지만, 이젠 렌더링 도중에 사용자가 값을 변경했고 이것이 Store 의 값이라면, 렌더링 도중에 Store 값이 바뀌고 다시 렌더링이 일어났을 시 남은 UI 업데이트에 대해서는 변경된 Store 값을 가져와서 보여줄 수 있다.
 
-https://ingg.dev/zustand-work/#use-sync-external-store-work
+아래 그림처럼 UI 가 아래와 같이 UI가 따로따로 놀게 된다. 이것은 의도하는 바가 아니다.
+![[Pasted image 20231223162825.png]]
+
+이는 사실 동시성과 여러 컴포넌트에 영향을 미치는 전역 Store 가 결합되면서 생기는 문제이다. React 는 이러한 문제를 해결하기 위해 바로 useSyncExternalStore 라는 hooks 를 지원한 것이다.
+
+내부 코드를 들여다보지는 않았지만, Sync 라는 용어를 보면 내부적으로 동기식으로 변경을 시키는듯 하다.
+
+###### 적용
+대부분의 Store 라이브러리들은 해당 hooks 를 활용하여 각자만의 방법으로 대응해둔것 같습니다. 다 찾아보진 않았지만, 몇몇 단서들을 토대로 판단했습니다.
+
+recoil
+https://github.com/facebookexperimental/Recoil/pull/2001
+zustand
+https://github.com/pmndrs/zustand/blob/0058a03b78bf628a27fb3cb4b6ebe3e6263dd0a0/src/react.ts#L62
+react-query
+https://github.com/TanStack/query/pull/3064/files#diff-b281d910f1fda02068add8ccf8b966ab625052d7314962c3a22f9eea5da5cbf3R81
+
+하지만 이것은 여전히 논란이 있어보입니다. 제가 그렇게 느끼는 것은 jotai 의 입장이 다르기 때문입니다.
+
+
+##### Jotai 는 useSyncExternalStore 를 지원하지 않는다.
+https://github.com/pmndrs/jotai/discussions/2137 깃헙 discussions 에 보면 useSyncExternalStore에 대한 논의가 있습니다. 요구사항은 분명 있었던것 같습니다.
+
+하지만 Jotai 를 만든 카토 다이쉬는 자신의 입장을 분명히 밝혔습니다. 조타이의 주장은 그것보다 더 중요한 Suspense 와 동시 렌더링과 완벽한 호환을 지향해야한다 입니다.
+
+useSyncExternalStore 는 그 자체로 동기식인데, 이는 타임 슬라이싱(즉 비동기식) 과 전혀 호환되지 않는 방식이라고 합니다.
+
+그리고 tearing 을 아주 일시적인 현상으로 여기는것 같습니다. 그래서 그런 tearing 보다 더 중요하다고 여기는 비동기식 지원을 더 완벽히 하기 위한 조치인것으로 보입니다.
 
 
 jotai
 https://dev.to/dai_shi/why-usesyncexternalstore-is-not-used-in-jotai-23h9
 https://github.com/pmndrs/jotai/discussions/2137
 
-
-recoil
-https://recoiljs.org/blog/
-https://github.com/facebookexperimental/Recoil/pull/2001
-
-
 zustand
 https://medium.com/dong-gle/%EC%9D%B4-%EA%B8%80%EC%9D%80-usesyncexternalstore%EB%A5%BC-%EC%9D%B4%EB%AF%B8-%EC%95%8C%EA%B3%A0-%EC%9E%88%EB%8B%A4%EB%8A%94-%EA%B0%80%EC%A0%95-%ED%95%98%EC%97%90-%EC%9E%91%EC%84%B1%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4-460637179d0d
-
-https://github.com/pmndrs/zustand/blob/0058a03b78bf628a27fb3cb4b6ebe3e6263dd0a0/src/react.ts#L62
-
-
-react-query
-https://github.com/TanStack/query/pull/3064/files#diff-b281d910f1fda02068add8ccf8b966ab625052d7314962c3a22f9eea5da5cbf3R81
 
 
 
