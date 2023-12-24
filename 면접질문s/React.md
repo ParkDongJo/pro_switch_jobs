@@ -660,15 +660,64 @@ React 컴포넌트를 설계하는데, 가장 많이하는 고민중에 하나�
 
 나는 이것들을 container > hooks > lib, util 등등의 순으로 옮길 것을 고민한다.
 
-VAC 패턴이라고 있다. 
+이런 고민들과 연관해서 React 에서도 여러 패턴들이 있다.
+정확한 용어가 정해지지 않은 패턴들은 자체적으로 이름을 붙이겠다.
 
-https://arc.net/l/quote/cxlrawmc
+##### VAC 패턴 -------
+랜더링과 스타일을 관리하는 컴포넌트를 따로 떼어놓는 패턴이다. VAC 는 아래와 같다.
 
-https://arc.net/l/quote/ondzqyux
+- 반복이나 조건부 노출, 스타일 제어와 같은 렌더링과 관련된 처리만을 수행한다.
+- 오직 props를 통해서만 제어되며 스스로의 상태를 관리하거나 변경하지 않는 stateless 컴포넌트이다.
 
-https://velog.io/@yesbb/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99%EC%9D%84-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%95%98%EB%8B%A4feat.-%EC%A2%8B%EC%9D%80%EC%84%A4%EA%B3%84%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C
+이것만 보면 Presentation - Container 패턴과 크게 다를거 없지만,
+
+Props 를 Object 로 추상화 하고, 그걸 VAC 로 넘겨주는 형태가 이다. 코드로 보자면 아래와 같다.
+```javascript
+// VAC
+const SpinBoxView = ({ value, onIncrease, onDecrease }) => (
+  <div>
+    <button onClick={onDecrease}>-</button>
+    <span>{value}</span>
+    <button onClick={onIncrease}>+</button>
+  </div>
+);
+```
+```javascript
+// View Component
+const SpinBox = () => {
+  const [value, setValue] = useState(0);
+
+  const props = {
+    value,
+    onDecrease: () => setValue(value - 1),
+    onIncrease: () => setValue(value + 1),
+  };
+
+  // JSX를 VAC로 교체
+  return <SpinBoxView {...props} />;
+};
+```
+
+##### Presentation - Container 패턴 -------
+각각의 역할을 컴포넌트별로 나눕니다.
+
+Presentation : 랜더링과 스타일을 관리, 오직 props 로만 데이터 전달
+Container : 비즈니스 로직, 상태관리, 동작 관리
+
+이름만 다르지 VAC 와 굉장이 비슷합니다. 다만 props 를 내려주는 
+
+##### with custom hooks 패턴 -------
+
+##### Data management with Provider 패턴 -------
+
+##### Hoc, Hof -------
+
+##### Compound Components (복합적인 컴포넌트) -------
+
+##### forwardRef 패턴 -------
 
 
+https://refine.dev/blog/react-design-patterns/#manage-custom-components-with-forwardrefs
 
 
 
