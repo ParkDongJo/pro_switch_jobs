@@ -694,9 +694,10 @@ function debounce(callback, timer) {
 
 ```
 
+활용한다면
 - toggle 버튼 이벤트
 - 브라우저 창이나, 특정 요소의 리사이징
-- 
+- 검색 (Ajax) + input 경우
 
 
 ##### throttle
@@ -726,3 +727,4 @@ function throttle(callback, timerTick) {
 
 활용 한다면
 - 무한 스크롤 기능
+- 요소 리사이징을 통한 애니메이션
