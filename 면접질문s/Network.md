@@ -51,3 +51,10 @@ JWT 의 구조는 아래와 같다.
 
 
 
+## TCP 송수신 때 일어나는 일
+----
+
+
+
+
+https://youtu.be/K9L9YZhEjC0?si=m18rqvCUuSWBz5Ye
