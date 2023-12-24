@@ -666,3 +666,4 @@ https://velog.io/@yesbb/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EC%9D%98%
 
 ## debounce / throttle
 ----
+과도한 이벤트 핸들링 연산을 수행하는 경우, 제약을 걸어 제어 가능한 수준의 이벤트만 발생시키도록 하는 기술들이다. 다만 
