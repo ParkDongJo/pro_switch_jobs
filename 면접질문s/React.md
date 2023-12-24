@@ -648,7 +648,19 @@ https://velog.io/@dongkyun/setState-%EB%8F%99%EA%B8%B0%EC%A0%81%EC%9C%BC%EB%A1%9
 
 ## VAC 패턴 / Presentational-Container
 -----
+React 컴포넌트를 설계하는데, 가장 많이하는 고민중에 하나는 비즈니스 로직을 어디다가 위치하는게 좋을까 이다.
 
+여기서 비즈니스 로직에 정의를 정확히 내려야 할것 같다. 내가 정의하는 비즈니스 로직은
+- 해당 도메인과 관련있거나 (바구니, 쿠폰, 결제)
+- 사업영역과 관련된 (부동산, 쇼핑몰)
+
+에 해당하는 코드들이다.
+
+이런 로직들은 lib, util, hooks 에 따로 빼기가 애매할 때가 많다. 결국 특정 컴포넌트에 몰아넣거나, 무분별하게 퍼져있을 때가 많다.
+
+나는 이것들을 container > hooks > lib, util 등등의 순으로 옮길 것을 고민한다.
+
+VAC 패턴이라고 있다. 
 
 https://arc.net/l/quote/cxlrawmc
 
