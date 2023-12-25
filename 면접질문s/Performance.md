@@ -167,6 +167,19 @@ TTI
 
 ## 브라우저
 
+- User Interface
+- Browser Engine
+- Redering Engine
+	- Webkit (크롬(iOS), 사파리)
+		- 기반 - Blink (크롬, 오페라)
+	- Gecko (파이어폭스)
+	- Trident (IE)
+- Networking
+
+
+https://another-light.tistory.com/41
+
+
 
 
 ## Reflow / Repaint 줄이기
