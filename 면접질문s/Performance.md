@@ -194,6 +194,9 @@ https://another-light.tistory.com/41
 > Parsing -> Render tree -> Layout -> Painting
 
 사실 대표적인 엔진인 Webkit 과 Gecko 의 렌더링 흐름은 더 많은 세부과정이 있고, 각 엔진마다 약간의 차이가 있지만 큰틀에서는 위 4단계를 거친다고 해도 틀린 말이 아니다.
+![[Pasted image 20231225211405.png]]
+![[Pasted image 20231225211418.png]]
+
 
 먼저
 ##### Parsing
@@ -204,10 +207,53 @@ https://another-light.tistory.com/41
 	- CSS, JavaScript 등의 코드가 분석되어 토큰으로 변환된다.
 - 구문(Syntax) 분석 - 문법 규칙을 적용하는 과정
 
+이 파싱이라는 단계는 2가지 작업이 이뤄진다.
+- HTML 파싱
+- CSS 파싱
+
+###### HTML 파싱---------
+HTML파서는 HTML 마크업을 파싱 트리로 변환한다. 이는 일반적인 파싱 기법을 사용할 수 없다. 다 알 필요는 없을 ![[Pasted image 20231225211126.png]]
+
+- 토큰화
+	- HTML 마크업 코드를 특정 알고리즘에 의해 토큰화
+- 트리 생성
+	- Document, 요소 node 객체 생성
+	- 각 요소들의 관계를 Tree로 구축
+
+두 단계로 나뉜다.
+
+이때, HTML 문서는 원활한 파싱 작업을 위해 잘못된 HTML 에 대해서도 오류를 특정 범위를 허용한다.
+
+
+##### CSS 파싱---------
+HTML과 달리 CSS는 일반적인 파싱 기법으로 파싱이 가능하다. 더 정확히는 '문맥 자유 언어' 와 같은 개념이 있지만, 더 파고들진 않는다.
+
+CSS 파일을 StyleSheet 객체로 취급되어 파싱된다. 각 StyleSheet 객체들은 CSS 규칙에 의해 나뉩니다.
+![[Pasted image 20231225211030.png]]
+
+
+##### Render tree
+앞서 살펴본 Parsing 단계에서 생성된 DOM 트리와 StyleSheet 객체의 (CSSOM) 트리를 합치고 렌더(Render) 트리를 구축하는 작업을 진행합니다.
+
+이 과정의 대표적인 작업들은
+
+- 스타일 속성 계산
+- 렌더 트리 구축
+
+이 있다.
+
+
+
+
 https://web.dev/articles/howbrowserswork?hl=ko#Layout
 
 
+
+
 ## Reflow / Repaint 줄이기
+
+
+
 
 -----
 
