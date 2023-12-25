@@ -174,7 +174,9 @@ TTI
 		- 기반 - Blink (크롬, 오페라)
 	- Gecko (파이어폭스)
 	- Trident (IE)
+- JavaScript Interperter
 - Networking
+
 
 
 https://another-light.tistory.com/41
