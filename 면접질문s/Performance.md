@@ -199,6 +199,10 @@ https://another-light.tistory.com/41
 ##### Parsing
 '문서를 파싱한다'는 것은 코드를 사용할 수 있는 구조로 변환하는 것을 의미한다.
 
+파싱
+- 어휘(Lexixal) 분석 - 입력을 유효한 토큰으로 분할하는 과정
+- 구문(Syntax) 분석 - 문법 규칙을 적용하는 과정
+
 https://web.dev/articles/howbrowserswork?hl=ko#Layout
 
 
