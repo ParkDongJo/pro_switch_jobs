@@ -171,8 +171,7 @@ TTI
 
 - User Interface
 ==========
-- Browser Engine
-- Data Persistence
+- Browser Engine  <-->  Data Persistence
 ==========
 - Redering Engine
 	- Webkit (크롬(iOS), 사파리)
@@ -185,11 +184,22 @@ TTI
 	- UI Beckend
 
 
-
-
 https://another-light.tistory.com/41
 
 
+## 브라우저 Rendering Engine
+------
+렌더링 엔진이 하는 일은 '화면에 요청된 콘텐츠를 표시하는 것' 이다. 이때 화면을 그리기 위해 아래와 같은 과정을 거친다.
+
+> Parsing -> Render tree -> Layout -> Painting
+
+사실 대표적인 엔진인 Webkit 과 Gecko 의 렌더링 흐름은 더 많은 세부과정이 있고, 각 엔진마다 약간의 차이가 있지만 큰틀에서는 위 4단계를 거친다고 해도 틀린 말이 아니다.
+
+먼저
+##### Parsing
+'문서를 파싱한다'는 것은 코드를 사용할 수 있는 구조로 변환하는 것을 의미한다.
+
+https://web.dev/articles/howbrowserswork?hl=ko#Layout
 
 
 ## Reflow / Repaint 줄이기
