@@ -201,6 +201,7 @@ https://another-light.tistory.com/41
 
 파싱
 - 어휘(Lexixal) 분석 - 입력을 유효한 토큰으로 분할하는 과정
+	- CSS, JavaScript 등의 코드가 분석되어 토큰으로 변환된다.
 - 구문(Syntax) 분석 - 문법 규칙을 적용하는 과정
 
 https://web.dev/articles/howbrowserswork?hl=ko#Layout
