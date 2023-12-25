@@ -165,4 +165,14 @@ TTI
 
 
 
-## 웹 접근성
+## 브라우저
+
+
+
+## Reflow / Repaint 줄이기
+
+-----
+
+
+https://yozm.wishket.com/magazine/detail/1338/
+https://boxfoxs.tistory.com/408

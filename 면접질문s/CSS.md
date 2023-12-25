@@ -222,12 +222,3 @@ PC위주의 서비스 일때는 아래와 같이 max-width 로 순차적으로 �
 https://uxkm.io/publishing/css/03-cssMiddleclass/09-css_media_part2#gsc.tab=0
 
 
-
-
-## Reflow / Repaint 줄이기
-
------
-
-
-https://yozm.wishket.com/magazine/detail/1338/
-https://boxfoxs.tistory.com/408
