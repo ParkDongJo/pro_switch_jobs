@@ -166,16 +166,24 @@ TTI
 
 
 ## 브라우저
+우선 브라우저 구조는 아래와 같다.
+![[browser_structure.png]]
 
 - User Interface
+==========
 - Browser Engine
+- Data Persistence
+==========
 - Redering Engine
 	- Webkit (크롬(iOS), 사파리)
 		- 기반 - Blink (크롬, 오페라)
 	- Gecko (파이어폭스)
 	- Trident (IE)
-- JavaScript Interperter
-- Networking
+==========
+	- JavaScript Interperter
+	- Networking
+	- UI Beckend
+
 
 
 
