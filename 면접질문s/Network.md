@@ -44,6 +44,57 @@
 	- 개인키는 서버가 복호화 할때
 
 
+2000년
+- RESTful API에 대해 박사 논문 발표
+- 이후 AWS 같은 대기업이 채택
+- 2016년 부터 MS가 REST API 에 대한 표준 가이드라인 제공
+- XML, JSON 포멧 등장 + AJSX 기술 등장 -> RESTful API 설계가 각광받기 시작
+
+
+2015년
+
+
+
+
+https://learn.microsoft.com/ko-kr/azure/architecture/best-practices/api-design
+
+
+## REST API 란
+-----
+서버와 서버간 통신의 경우 데이터만 주고받을 수 있는 API가 필요했는데, 이에 대한 표준이 없었다. 당시 HTTP가 웹 프로토콜의 표준이였고, 이를 효과적으로 사용하는 방향으로 의견이 모아졌다.
+
+최초 제안은 한 대학원생의 박사논문으로 제안되었으며, 이를 계속 발전 시켜나갔다.
+
+REST 를 만족시키는 3가지 구성요소는
+- 자원을 표현하는 방법 - HTTP URI
+	 - rooms/1/users/2
+- 자원에 대한 행위 - HTTP Method
+	- GET, POST, DELETE, PUT, PATCH (이를 CRUD 로 표현)
+- 자원에 대한 내용 - HTTP Message Payload
+```JSON
+{
+	"status" : "OK"
+	"from": "localhost",
+	"to": "https://hanamon.kr/users/1",
+	"method": "GET",
+	"data":{ "username" : "하나몬" }
+}
+```
+
+로 정리할 수 있다. 이렇게 HTTP 의 특성을 적극 활용하여 서버의 자원을 표현하고 행위를 정의해서 데이터를 주고받는 설계를 RESTful API 설계라고 부른다.
+
+##### RESTful API 특징
+1. Server-Client(서버-클라이언트 구조)
+2. Stateless(무상태)
+3. Cacheable(캐시 처리 가능)
+4. Layered System(계층화)
+5. Uniform Interface(인터페이스 일관성)
+
+
+
+https://arc.net/l/quote/siogunhf
+https://jiwondev.tistory.com/266
+
 
 ## HTTP 와 HTTP2 의 차이점
 ------
