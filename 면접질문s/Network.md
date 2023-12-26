@@ -52,10 +52,33 @@
 
 
 2015년
+- HTTP/2 버전
+- 웹이 복잡해지면서 HTTP/1.1 의 한계점이 부각
+	- 매 요청-응답마다 중복되는 헤더 전송
+	- Head-of-Line Blocking 문제
+		- 요청이 매번 순차적으로 처리
+		- 중간에 요청/응답이 문제 발생 시, 후속 요청들은 대기해야함
+- HTTP/2가 해결
+	- SPDY 프로토콜 기반(구글에서 개발
+	 ![[Pasted image 20231226211006.png]]
+		- 이진(binary) 프로토콜
+		![[Pasted image 20231226211020.png]]
+			- HTTP/1.1 은 텍스트 기반으로 메시지 전송
+			- HTTP/2 바이너리 프레이밍을 통해, 이진 데이터로 전송
+		- 응답 다중화 지원
+		![[Pasted image 20231226211035.png]]
+		![[Pasted image 20231226211102.png]]
+			- 하나의 TCP 연결을 더 작은 단위로 잘게 세분화 (스트림, 메시지, 프레임)
+			- 하나의 연결에 여러 스트림이 순서와 상관없이 전송
+				- 클라에서는 이걸 다시 조립해서 사용
+		- 헤더 필드 압축
+		![[Pasted image 20231226211119.png]]
+			- HTTP/1.1 에서는 비대해진 헤더를 압축해서 사용
+			- 달라진 부분만 다시 전송하는 허프만 코딩 사용
 
 
 
-
+https://yozm.wishket.com/magazine/detail/1686/
 https://learn.microsoft.com/ko-kr/azure/architecture/best-practices/api-design
 
 
@@ -94,6 +117,10 @@ REST 를 만족시키는 3가지 구성요소는
 
 https://arc.net/l/quote/siogunhf
 https://jiwondev.tistory.com/266
+
+
+## RESTful vs. GraphQL
+-----
 
 
 ## HTTP 와 HTTP2 의 차이점
