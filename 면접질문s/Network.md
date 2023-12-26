@@ -159,7 +159,7 @@ HTTP/2는 웹이 복잡해지면서 HTTP/1.1 가 겪는 한계점을 해결하�
 
 ## HTTP2 와  HTTP3 의 차이점
 -------
-
+HTTP/2 는 기반 자체가 TCP 라 TCP의 한계점을 벗어나지 못했다. 앞서 이야기 되었던 Head-of-Line Blocking 문제는 완벽하게 해결하지 못했다. 
 
 
 ## JWT
