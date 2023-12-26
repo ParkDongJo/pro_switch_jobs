@@ -548,9 +548,38 @@ function MyComp() {
 - 컴포넌트별로 분할
 
 
-### 사전로딩
-
-
-
 ### 지연로딩
+##### 컴포넌트 지연로딩
 코드를 분할하고 분할된 코드를 필요한 시점에 로드 되도록 하는 기법이다.
+
+- React 의 lazy(), Suspense 를 활용하여 분할해둔다.
+- state 를 통해서, 특정 이벤트로 인해 state 조건이 만족됐을 시 보여지도록 한다. (p.91)
+
+
+### 사전로딩
+##### 컴포넌트 사전로딩
+컴포넌트의  지연로딩의 단점을 커버할 수 있는 기법이다. 특정 이벤트를 발생하기 이전에 미리 컴포넌트를 로드해 두는 기법이다.
+
+로드 타이밍
+- 사용자 특정 영여겡 마우스를 올려놨을 시
+```jsx
+const handleMouseEnter = () => {
+	const component = import('./components/ImageModal')
+}
+
+```
+- 최초 페이지가 로드되고 마운트가 끝났을 시
+```jsx
+useEffect(() => {
+	const component = import('./components/ImageModal')
+}, [])
+
+```
+
+##### 이미지 사전로딩
+기존에는 화면에 그려지는 시점에 로드 되게끔 했다면, JS 로 직접 로드하는 방법을 활용한다.
+
+```javascript
+const image = new Image()
+image.src = '{이미지_주소}'
+```
