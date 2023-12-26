@@ -463,6 +463,7 @@ Gecko 브라우저 에서는 Reflow, Repaint 라고 표현한다.
 - 최적화
 	- 이미지 최적화
 	- 폰트 최적화
+		- 텍스트 압축
 	- 캐시 최적화
 	- 애니메이션 최적화
 - 코드 분할
@@ -472,8 +473,8 @@ Gecko 브라우저 에서는 Reflow, Repaint 라고 표현한다.
 - 지연로딩
 	- 컴포넌트 지연로딩
 	- 이미지 지연로딩
-- 텍스트 압축
-- 병목 코드 최소화
+- 병목 코드 찾아서 최소화
+	- 크롬에서 제공해주는 Performance 패널 활용
 - 불필요한 CSS
 
 
@@ -555,6 +556,40 @@ function MyComp() {
 - React 의 lazy(), Suspense 를 활용하여 분할해둔다.
 - state 를 통해서, 특정 이벤트로 인해 state 조건이 만족됐을 시 보여지도록 한다. (p.91)
 
+##### 이미지 지연로딩
+이미지가 화면에 보이는 그 순간 또는 그 직전에 이미지를 로드하는 기법이다. 덕분에 초기 로드 시간이 길어지는 것을 해결할 수 있다.
+
+- 브라우저에서 제공하는 API인 Intersection Observer 를 활용한다.
+- 요소가 화면(뷰포트)에 들어왔을때만, callback 함수 호출
+```javascript
+const observer = new IntersectionObserver((entries, observer) => {
+	// callback
+}, {
+	root: null,
+	rootMargin: '0px',
+	threshold: 1.0,
+} // options)
+
+observer.observe(document.querySelector('#target-el-1'));
+observer.observe(document.querySelector('#target-el-2'));
+
+```
+
+이 때 이미지가 이미 출력된 이후로는 observer 를 해제하는 함수도 넣어주는 것이 좋다.
+
+```jsx
+
+useEffect(() => {
+	const options = {};
+	const callback = (entries, observer) => {};
+const observer = new IntersectionObserver(callback, options);
+	observer.observe(imgRef.current);
+
+	return () => observer.disconnect()
+}, [])
+
+```
+
 
 ### 사전로딩
 ##### 컴포넌트 사전로딩
@@ -583,3 +618,10 @@ useEffect(() => {
 const image = new Image()
 image.src = '{이미지_주소}'
 ```
+```jsx
+useEffect(() => {
+	const component = import('./components/ImageModal'); 
+	const img = new Image(); img.src = 'https://stillmed.olympic.org/...'; 
+	}, []);
+```
+하지만 위 예제는 뭔가 하다 만 느낌이다. (p.101) 좀더 알아볼 필요가 있다.
