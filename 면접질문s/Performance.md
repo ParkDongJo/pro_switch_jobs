@@ -400,7 +400,12 @@ Reflow 의 원인을 없애거나, 그렇지 못하다면 더 빠르게 연산�
 - display 를 invisible 로 하기 보다는 none 으로 한다.
 - 스타일 변경 시, 변경하고자 하는 스타일의 class 를 주입하는 것이 더 낫다.
 
+https://beomy.github.io/tech/browser/reflow-repaint/
+https://boxfoxs.tistory.com/408
 
+
+
+## 
 
 #### Opacity 도 무조건 최적화가 되는건 아니다.
 opacity: 1 로 설정해두고 0.x 소수점으로 변경하면, reflow 가 일어난다. 이때
@@ -414,5 +419,3 @@ https://arc.net/l/quote/rjacwyns
 Gecko 브라우저 에서는 Reflow, Repaint 라고 표현한다.
 
 
-https://beomy.github.io/tech/browser/reflow-repaint/
-https://boxfoxs.tistory.com/408
