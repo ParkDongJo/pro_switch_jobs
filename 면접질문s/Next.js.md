@@ -27,3 +27,16 @@ Hydration을 이용한 방법이 있습니다.
 
 Server Component 를 지원하는 라이브러리들
 https://github.com/reactwg/server-components/discussions/6
+
+
+
+
+## SSR 직접 구현
+-----
+
+
+Bun 과 리액트로 SSR 구현
+https://velog.io/@eunbinn/server-side-rendering-ssr-with-bun-and-react
+
+바닐라 스크립트로 SSR 직접 구현
+https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Rendering/#reference
