@@ -191,7 +191,7 @@ https://another-light.tistory.com/41
 ------
 렌더링 엔진이 하는 일은 '화면에 요청된 콘텐츠를 표시하는 것' 이다. 이때 화면을 그리기 위해 아래와 같은 과정을 거친다.
 
-> Parsing -> Render tree -> Layout -> Painting
+> Parsing -> Render tree -> Layout -> Painting -> Composite
 
 사실 대표적인 엔진인 Webkit 과 Gecko 의 렌더링 흐름은 더 많은 세부과정이 있고, 각 엔진마다 약간의 차이가 있지만 큰틀에서는 위 4단계를 거친다고 해도 틀린 말이 아니다.
 ![[Pasted image 20231225211405.png]]
@@ -326,6 +326,11 @@ Layout 단계를 통해 %, vh, vw와 같이 상대적인 위치, 크기 속성�
 5. outline
 
 
+#### Composite
+페인트 시 효율을 위해 여러 레이어로 나눠서 페인트 작업을 한다. 그리고 이렇게 작업한 여러 레이어를 합치는 단계가 있는데, 그게 바로 컴포지트 단계 이다.
+
+
+
 솔직히... 자료 내용이 정리가 제대로 안되어있고, 글 내용만 더럽게 많다. 다 이해하고 알려고 하기보다 시간 내서 다시한번 내게 필요한 내용으로 간추리는게! 내게 도움이 될 것 같다.
 https://another-light.tistory.com/46?category=844048
 https://web.dev/articles/howbrowserswork?hl=ko#Layout
@@ -349,8 +354,12 @@ GPT의 훌륭한 대답
 -----
 브라우저 마다 용어가 약간의 차이가 있지만, 우선은 용어는 웹킷 브라우저 기준으로 한다. 위의 브라우저 동작을 통해 페이지가 최종적으로 그려졌다고 해서, 모든 과정이 끝난 것이 아니다.
 
-- Reflow - 일부 요소들이 Layout 과정을 다시 거치는 현상
-- RePaint - 일부 요소들이 Paint 과정을 다시 거치는 현상
+- Reflow
+	- 일부 요소들이 Layout 까지의 과정을 다시 거치는 현상
+	- 모든 과정을 모드 거친다.
+- RePaint
+	- 일부 요소들이 Paint 까지의 과정을 다시 거치는 현상
+	- 레이아웃 단계는 건너뛴다.
 
 가 일어나는 경우가 있다. 이때 다시 과정을 수행하는 만큼 추가적인 연산이 들게 된다.
 
@@ -369,9 +378,21 @@ GPT의 훌륭한 대답
 	- background-color, visibility 등등의 레이아웃에 영향을 주지 않는 속성이 변경 되었을 시
 
 
+#### Reflow / Repaint 를 발생시키는 속성
+- Reflow
+	- position(+ top, left, right, bottom), display, float, width, height, padding, margin, min-✲, max-✲,  font-family, font-size, font-weight, line-height 등등
+- Repint
+	- background, background-image, background-position
+
+
+
 #### Reflow 최적화
 Reflow 의 원인을 없애거나, 그렇지 못하다면 더 빠르게 연산되는 reflow 를 
 
+- 하드웨어 가속을 활용한다.
+	- 요소를 별도의 레이어로 분리하여 GPU에게 작업을 위임해야한다.
+	- transform 속성과 opacity 속성을 사용한다.
+	- 이러면 레이아웃, 페인트 단계를 건너뛸수 있다.
 - 가능 하다면 가장 하위 노드의 스타일을 변경한다.
 - 인라인 스타일은 추가 reflow를 발생 시킨다.
 - 애니메이션이 있는 노드는 position: fixed 또는 abolute 로 지정하여, 부모 노드에서 분리시킨다.
