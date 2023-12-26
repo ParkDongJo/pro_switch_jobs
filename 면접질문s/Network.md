@@ -224,5 +224,13 @@ JWT 의 구조는 아래와 같다.
 
 
 
-
 https://youtu.be/K9L9YZhEjC0?si=m18rqvCUuSWBz5Ye
+
+
+
+## CORS
+----
+
+
+
+https://www.youtube.com/watch?v=bW31xiNB8Nc
