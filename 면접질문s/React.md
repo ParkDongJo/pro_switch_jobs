@@ -655,7 +655,7 @@ https://velog.io/@dongkyun/setState-%EB%8F%99%EA%B8%B0%EC%A0%81%EC%9C%BC%EB%A1%9
 ##### debounce
 일정 시간 동안 요청이 추가로 들어오지 않는 경우 가장 마지막 또는 가장 처음 호출된 이벤트를 선택하는 기법이다. (앞이냐, 뒤냐 는 그때에 따라 선택)
 
-![[Pasted image 20231224110242.png]]
+![[debounce.png]]
 
 코드로 구현하면 아래와 같습니다.
 
@@ -686,7 +686,7 @@ function debounce(callback, timer) {
 ##### throttle
 이벤트가 꾸준히 발생하는 상황에서 일정 간격으로 이벤트를 하나식 처리하는 기법이다.
 
-![[Pasted image 20231224111156.png]]
+![[throttle.png]]
 
 코드로 구현하면 아래와 같다.
 ```javascript

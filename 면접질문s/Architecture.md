@@ -81,7 +81,7 @@ Presentation :
 
 이름만 다르지 VAC 와 굉장이 비슷하다. 다만 Presentation 컴포넌트는 VAC 컴포넌트보다 좀 더 역할의 범위가 크다. VAC 는 오직 스타일과 구조에 대해서만 담당한다.
 
-![[Pasted image 20231224123246.png]]
+![[vac_pattern.png]]
 
 ##### with custom hooks 패턴 -------
 커스텀 hooks 를 활용해서 공통된 비즈니스 로직과 state 를 빼는데 사용하는 패턴이다.

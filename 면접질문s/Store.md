@@ -161,15 +161,15 @@ React 18 부터는 동시성 렌더링이 등장하면서, useTransition 와 use
 ![[external_store_1.png]]
 
 
-![[Pasted image 20231223162808.png]]
+![[react18_tearing_2.png]]
 이는 React 18 이전에는 별 문제가 되지 않았다. 모든 렌더링이 끝나고 나서, Store 가 끝나니까 말이다.
 
 
-![[Pasted image 20231223162758.png]]
+![[react18_tearing_1.png]]
 하지만, 이젠 렌더링 도중에 사용자가 값을 변경했고 이것이 Store 의 값이라면, 렌더링 도중에 Store 값이 바뀌고 다시 렌더링이 일어났을 시 남은 UI 업데이트에 대해서는 변경된 Store 값을 가져와서 보여줄 수 있다.
 
 아래 그림처럼 UI 가 아래와 같이 UI가 따로따로 놀게 된다. 이것은 의도하는 바가 아니다.
-![[Pasted image 20231223162825.png]]
+![[react18_tearing_3.png]]
 
 이는 사실 동시성과 여러 컴포넌트에 영향을 미치는 전역 Store 가 결합되면서 생기는 문제이다. React 는 이러한 문제를 해결하기 위해 바로 useSyncExternalStore 라는 hooks 를 지원한 것이다.
 

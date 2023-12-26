@@ -344,7 +344,7 @@ Javascript 에서 함수는 객체이다. Person 이라고 하는 함수를 정�
 - Person 의 prototype 객체의 constructor 는 Person 생성자 객체를 가르킨다.
 - Person 함수로 생성된 인스턴스의 __proto__ 는 Person 의 prototype 객체를 가르킨다.
 
-![[Pasted image 20231222124632.png]]
+![[prototype_vs_proto.png]]
 https://opentutorials.org/module/4047/24629
 
 좀 더 보태자면
