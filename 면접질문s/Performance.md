@@ -457,7 +457,7 @@ Gecko 브라우저 에서는 Reflow, Repaint 라고 표현한다.
 
 ## 웹 성능 최적화
 ----
-
+프론트단에서 해볼 수 있는 최적화의 종류 목록을 나열해보자면 아래와 같다.
 
 
 - 최적화
@@ -480,7 +480,7 @@ Gecko 브라우저 에서는 Reflow, Repaint 라고 표현한다.
 ### 최적화
 ##### 이미지 최적화
 - 이미지 사이즈는 보여지는 최대 크기의 2배가 적당하다.
-- 이미지 CDN 을 활용하여, 이미지 크기를 조절하고 다운로드 시간을 단축시킨다.
+- 이미지 CDN 을 활용하여, 이미지 크기를 조절하고 다운로드 시간을 단축시킨다. (in 서버)
 - 이미지 포멧 WebP 사용
 	- 장단점
 		- 사이즈 : PNG > JPG > WebP
@@ -491,3 +491,66 @@ Gecko 브라우저 에서는 Reflow, Repaint 라고 표현한다.
 		- 호환성에 따른 적용
 
 ##### 폰트 최적화
+- 폰트 적용시점 제어
+	- css의 font-display 속성을 활용
+	- X초 이후 불러오지 못하더라도 넘아가고, 일단 캐시 (속성값에 따라 조금씩 다름)
+	- fontfaceobserver 라이브러리 활용해서, 더 자연스러운 적용
+- 폰트 사이즈 줄이기
+	- 폰트 포멧 TTF 폰트를 압축하여 웹에서 더욱 빠르게 로드할 수 있도록 한 WOFF 사용
+	- 호환성 대응
+		- @font-face 의 src 에 대응 순서대로 포멧 나열
+- 폰트 로드 시간 줄이기
+	- Data URI 적용
+- 콘텐츠에 텍스트 압축 방식 지정 및 적용 (in 서버)
+	- 압축 방식 gzip 또는 Deflate
+
+##### 캐시 최적화
+응답 헤더 Cache-Control 적용
+- HTML 파일에는 no-cache 설정 (항상 최신버전 제공을 위함)
+- JS, CSS 는 public값 적요용, max-age 약 1년 설정
+
+##### 애니메이션 최적화
+- 브라우저 렌더링 엔진 동작 원리 이해
+- 리플로우, 리페인팅 현상을 최소화
+	- transform, opacity 속성 활용
+	- 암묵적 컴포지팅 유념
+
+
+### 코드분할
+코드 번들을 확인하고, 특정 시점에 불필요하게 다운받고 있는 지점을 파악함
+
+- 동적 import 사용
+```javascript
+import('xxx').the((module) => {
+	const { xxx } = module;
+	xxx.run();
+})
+```
+- React의 lazy() 함수와 Suspense 활용
+```jsx
+import { lazy, Suspense } from 'react'
+
+const Comp = lazy(() => import('./Comp'));
+
+function MyComp() {
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<Comp />
+		</Suspense>
+	)
+}
+
+```
+
+이때, 분할 단위에 따라 전략이 2개로 나뉨
+- 페이지별로 분할
+	- 페이지별로 번들 chunk가 분할되어서 다운로드 됨
+- 컴포넌트별로 분할
+
+
+### 사전로딩
+
+
+
+### 지연로딩
+코드를 분할하고 분할된 코드를 필요한 시점에 로드 되도록 하는 기법이다.
