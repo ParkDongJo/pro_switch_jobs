@@ -2,8 +2,22 @@
 ## HTTP 의 변화
 ----
 1990년대 초반
+- HTTP/0.9 버전
 - 초창기 웹은 서버 - 클라이언트 구조의 단순한 구조
+- TCP/IP 위에서 구현되도록 설계 되었음
+- GET 요청
 
+1996년
+- HTTP/1.0 버전
+- HEAD, POST 요청 추가
+- 상태 코드 추가
+	- 200 / 300 / 400 / 500
+- 헤더에 content-type 도입
+	- MIME type - text/plain, text/html, application/json, application/xml, image/jpeg, image/png, image/gif
+
+1997년
+- HTTP/1.1 버전
+- 
 
 ## HTTP 와 HTTP2 의 차이점
 ------
