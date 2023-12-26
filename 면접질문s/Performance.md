@@ -369,10 +369,21 @@ GPT의 훌륭한 대답
 	- background-color, visibility 등등의 레이아웃에 영향을 주지 않는 속성이 변경 되었을 시
 
 
+#### Reflow 최적화
+Reflow 의 원인을 없애거나, 그렇지 못하다면 더 빠르게 연산되는 reflow 를 
+
+- 가능 하다면 가장 하위 노드의 스타일을 변경한다.
+- 인라인 스타일은 추가 reflow를 발생 시킨다.
+- 애니메이션이 있는 노드는 position: fixed 또는 abolute 로 지정하여, 부모 노드에서 분리시킨다.
+- table 태그 사용을 피한다.
+- display 를 invisible 로 하기 보다는 none 으로 한다.
+- 스타일 변경 시, 변경하고자 하는 스타일의 class 를 주입하는 것이 더 낫다.
+
+
 
 
 Gecko 브라우저 에서는 Reflow, Repaint 라고 표현한다.
 
 
-
+https://beomy.github.io/tech/browser/reflow-repaint/
 https://boxfoxs.tistory.com/408
