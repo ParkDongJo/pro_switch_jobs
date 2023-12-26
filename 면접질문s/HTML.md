@@ -43,9 +43,16 @@ https://medium.com/@yujso66/%EB%B2%88%EC%97%AD-%EC%9B%B9-%EC%A0%91%EA%B7%BC%EC%8
 
 ## aria-*  속성
 -----
+ARIA는 HTML요소에 **접근 가능한 설명용 텍스트**를 넣을 수 있다.
 
+- aria-role
+태그의 역할을 알려주는 속성
 
+- aria-label
+영역을 표현하는 경우가 아닌 이미지를 통해 영역을 표현하는 경우 해당 영역이 어떤 영역인지 설명할 수 있는 요소
 
+- aria-labelledby
+화면에 현재 요소를 **설명할 텍스트가 있을 경우**에 해당 텍스트 영역과 현재 요소를 **연결**할 때 사용
 
 https://www.youtube.com/watch?v=MQHNTzdqet0
 https://www.youtube.com/watch?v=SfnEO-mv7Yg&t=534s
