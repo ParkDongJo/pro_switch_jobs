@@ -402,6 +402,14 @@ Reflow 의 원인을 없애거나, 그렇지 못하다면 더 빠르게 연산�
 
 
 
+#### Opacity 도 무조건 최적화가 되는건 아니다.
+opacity: 1 로 설정해두고 0.x 소수점으로 변경하면, reflow 가 일어난다. 이때
+opacity: 0.99 로 설정해두고 0.x 소수점으로 변경하면, reflow 가 발생하지 않는다.
+
+이 글에서 자세히 설명되어 있다.
+https://arc.net/l/quote/rjacwyns
+
+
 
 Gecko 브라우저 에서는 Reflow, Repaint 라고 표현한다.
 
