@@ -1,7 +1,9 @@
 
 
 ## 동기 vs. 비동기
+-----
 
+https://youtu.be/zRJOte7TaPw?si=P-9GMW4GLdoXKchS
 
 
 
@@ -41,4 +43,7 @@ async/await 를 활용해 비동기식 코드를 동기식으로 처리할 수 �
 - async 함수는 Promise 객체를 리턴한다.
 	- 그래서 동기식으로 처리하고 싶은 영역은 모두 async / await 가 이어진다
 
-#### 
+
+https://arc.net/l/quote/bqzdswdw
+https://velog.io/@ahsy92/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91-%EB%B9%84%EB%8F%99%EA%B8%B0-%ED%98%B8%EC%B6%9C-callback-promise-asyncawait%EC%9D%98-%ED%8A%B9%EC%A7%95%EA%B3%BC-%EC%B0%A8%EC%9D%B4%EC%A0%90
+https://bum-developer.tistory.com/entry/JavaScript-then-vs-AsyncAwait
