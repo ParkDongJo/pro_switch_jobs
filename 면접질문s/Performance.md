@@ -293,6 +293,15 @@ class RenderObject { 
 #### Layout
 레이아웃 단계에서는 각 요소의 정확한 크기와 위치를 계산한다. 이러한 값을 계산하는 것을 레이아웃 또는 리플로우라고 한다.
 
+레이아웃 계산은 2가지로 나뉠수 있다.
+- 전역적 레이아웃
+	- 화면 전체의 레이아웃 계산
+	- 폰트, 뷰포트 사이즈
+- 증분적 레이아웃
+	- dirty-bit 를 활용
+	- 레이아웃 변경이 발생해야하는 요소들을 비동기로 일괄작업(batch)
+
+
 배치 과정은 아래와 같다.
 - 상위 레이아웃에서 자신의 너비 계산
 - 하위 요소의 x, y 좌표를 구해서 위치 계산. 하위 요소가 dirty-bit(레이아웃 작업이 필요하다는 상태값) 이라면, 하위 요소의 layout() 메서드가 호출된다.
@@ -320,6 +329,9 @@ class RenderObject { 
 https://another-light.tistory.com/46?category=844048
 https://web.dev/articles/howbrowserswork?hl=ko#Layout
 
+이 자료가 쉽게 정리가 잘 되어 있는데, 이걸 보고 다시 정리를 하면 좋을것 같다.
+https://yozm.wishket.com/magazine/detail/1338/
+
 
 ## 렌더 트리와 레이아웃 단계가 나뉜 이유
 --------
@@ -332,13 +344,10 @@ GPT의 훌륭한 대답
 
 
 
-## Reflow / Repaint 줄이기
+## Layout / paint 줄이기
 -----
+Gecko 브라우저 에서는 Reflow, Repaint 라고 표현한다.
 
 
 
-
-
-
-https://yozm.wishket.com/magazine/detail/1338/
 https://boxfoxs.tistory.com/408
