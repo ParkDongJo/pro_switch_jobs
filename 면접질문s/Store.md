@@ -106,9 +106,40 @@ https://careerly.co.kr/comments/73197
 
 ## Zustand
 -----
+개인적으로 zustand 의 사용이 제일 마음에 드는데, 그 중 하나는 사용법 때문이다. recoil 를 사용해본 경험이 있는데, atom 방식이 매우 간단하지만, 프로젝트 단위가 커질 수록 관리가 힘들었다.
+
+관리가 힘들어진 원인을 개인적으로는 2가지로 삼는데
+- 관심사의 가장 작은 단위가 atom이다 보니, 이 atom 이 늘어날 수록 관리가 어려워진다.
+- state와 액션이 분리되어 있다. 
+
+```
+function useCounter() { const [count, setCount] = useRecoilState(counterState); const increment = () => setCount(count + 1); const decrement = () => setCount(count - 1); return { count, increment, decrement, }; }
+```
+그렇다 보니 리코일은 위와 같이, 커스텀 훅스로 따로 뺄때도 있지만, store 만을 위해 hooks를 따로 뺀다는게 영 깔끔하지 못했다.
+
+```
+import create from 'zustand'; // 선언 const useCounter = create((set) => ({ count: 0, increment: () => set(state => ({ count: state.count + 1 })), decrement: () => set(state => ({ count: state.count - 1 })) })); // 사용 const { count, increment, decrement } = useCounter();
+```
+
+하지만 zustand 는 액션기반 상태관리 라서, store 선언 시 관련 액션들을 함께 정의해주는 식으로 해도 된다.
+
+만약 기존 state 기반으로 간단한 파생데이터를 가져오고자 한다면, get 으로 가져오게 정의하면 된다.
+```
+const useStore = create((set) => ({ first: 'Daishi', last: 'Kato', get fullName() { return `${this.first} ${this.last}`; }, }));
+```
+
+또한 내가 외부로 공개하고 싶은 함수기반으로 커스텀을 할 수도 있어서, 밖으로는 닫고 안으로는 캡슐화를 달성할 수도 있다.
+
+이러한 사용법 덕분에, 큰 프로젝트일 수록 zustand 와 잘 어울린다고 생각한다.
+
+그 외에
+- Redux-devtool 을 함께 사용할 수 있다는 점
+- 미들웨어로 불변성(immer), persist(storage 사용) 등등을 함께 적용할 수 있다는점
+- 원한다면 일시적 업데이트로 store 의 업데이트로 인한 리랜더링을 제어 할 수 있다는 점
 
 
-
+https://arc.net/l/quote/pkuaoqmn
+https://yozm.wishket.com/magazine/detail/2233/
 https://arc.net/l/quote/idcaeqgp
 https://ui.toast.com/posts/ko_20210812
 
@@ -136,6 +167,7 @@ https://ui.toast.com/posts/ko_20210812
 ```
 
 하지만 사실 Jotai 로 되어 있는 프로젝트라고 한다면 이 조차도 고려대상이 아니긴 하다.
+jotai 는 Provider 로 여러곳에 store 범위를 지정해둘 수 있기 때문이다.
 
 
 
