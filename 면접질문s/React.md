@@ -40,7 +40,7 @@
 |------|---|---|
 |Mounting|constructor()|() => { ...컴포넌트 내부... }|
 |Mounting|render()|return()|
-|Mounting|componentDidUpdate()|useEffect(() => {}, [x, y])|
+|Mounting|componentDidMount() |useEffect(() => {}, [x, y])|
 |Updating|shouldComponentUpdate()|React.memo(컴포넌트)|
 |Updating|render()|return()|
 |Updating|componentDidUpdate()|useEffect(() => {}, [x, y])|
