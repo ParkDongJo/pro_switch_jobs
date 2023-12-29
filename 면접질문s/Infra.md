@@ -11,3 +11,15 @@
 
 
 https://velog.io/@seungyeon/%EC%B9%B4%ED%94%84%EC%B9%B4-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-%EC%99%9C-%ED%95%84%EC%9A%94%ED%95%A0%EA%B9%8C
+
+
+
+## AWS lambda
+----
+
+lambda 의 장점
+
+
+lambda 의 단점
+
+https://umanking.github.io/2023/03/06/aws-lambda-pros-and-cons/
