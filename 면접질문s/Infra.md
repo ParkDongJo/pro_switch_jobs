@@ -23,3 +23,64 @@ lambda 의 장점
 lambda 의 단점
 
 https://umanking.github.io/2023/03/06/aws-lambda-pros-and-cons/
+
+
+
+## AWS
+-----
+
+### 컴퓨팅 서비스
+
+#### EC2
+AWS 서버에서 OS, CPU, 메모리 등등을 선택하여 인스턴스(가상 서버)를 생성할 수 있는 서비스
+
+온프레미스
+
+#### 서버리스
+Lambda
+
+#### 컨테이너
+ECS
+
+
+### 스토리지
+
+#### S3
+
+#### EBS
+
+
+## 네트워크 & 콘텐츠
+
+#### VPC
+
+#### ELB
+
+#### Route53
+
+#### CloudFront
+
+
+## 데이터 베이스
+#### RDS
+
+#### Aurora
+
+#### DynamoDB
+
+#### DocumentDB
+
+
+## 보안
+#### IAM
+
+#### CloudTrail
+
+#### Config
+
+#### GuardDuty
+
+#### WAF
+
+
+
