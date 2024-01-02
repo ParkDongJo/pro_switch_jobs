@@ -156,4 +156,14 @@ const config = {
 };
 ```
 
-dl
+##### 바벨 설정
+React 와 함께 설정을 하려면, jsx 포멧도 설정을 해둬야 한다. 설치해야할 플러그인은 
+
+
+```shell
+@babel/core @babel/preset-env @babel/preset-react babel-loader
+```
+
+
+##### CSS 설정
+
