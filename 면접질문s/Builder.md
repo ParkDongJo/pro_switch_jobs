@@ -257,11 +257,19 @@ plugins: [
 https://joshua1988.github.io/webpack-guide/concepts/plugin.html#plugin
 https://www.eastflag.co.kr/webpack/webpack-plugin-and-loader/
 https://365kim.tistory.com/35
+웹팩 설정에 대한 경험기
+https://velog.io/@designc/Webpack5-%EC%84%A4%EC%A0%95-%EB%AC%B4%EC%9E%91%EC%A0%95-%ED%95%B4%EB%B3%B4%EA%B8%B0
 
 
 ## webpack vs. rollup vs.  ESBuild vs. vite
+---
+웹팩은 번들러의 춘추전국 시대에서 가장 오래되고 안전성을 가진 번들러이다
 
+롤업은 현재 차세대 번들러들의 많은 귀감이 되고 있는 번들러이다. 그동안 웹팩의 그늘아래 가려졌었으나, 라이브러리를 만들때 특화된 번들러로 각광을 받고 있다.
 
+ESBuild 는 JavaScript 기반의 기존 번들러에 대항해 Golang으로 만들어진, 빠른 성능을 자랑하는 번들러이다. 다만 아직까지는 안전성과 라이브러리들과의 호환성이 떨어진다.
+
+ESBuild를 랩핑하고 Rollup의 간단한 설정을 이어받은 차세대 번들러이다. 덕분에 설정은 간단하고 속도는 빠르다.
 
 
 ## vite
@@ -269,3 +277,4 @@ https://365kim.tistory.com/35
 
 차세대 번들러 비교분석 https://bepyan.github.io/blog/2023/bundlers
 https://www.youtube.com/watch?v=iX3Nu1FcZKA
+웹펙에서 -> vite 로 갈아탄 경험 https://engineering.ab180.co/stories/webpack-to-vite
