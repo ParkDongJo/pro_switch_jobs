@@ -198,6 +198,8 @@ style-loader
 	- 지연 로딩이 가능해진다.
 	- 파일명을 *.lazy.css 로 갖게 한다.
 
+이 모든 과정은 js 파일 내부에서 코드로 변환되며, bundle.js 파일에서 검색해보면 관련 코드를 찾을 수 있다.
+
 
 ### Plugin
 검색을 해보면, 2가지 플러그인은 꼭 추천이 되는걸로 보인다. 그 외에 다른 플러그인들은 그때마다 필요한걸 찾아서 설정하면 될 것 같다
@@ -234,3 +236,6 @@ plugins: [
 ],
 ```
 
+
+https://www.eastflag.co.kr/webpack/webpack-plugin-and-loader/
+https://365kim.tistory.com/35
