@@ -200,3 +200,7 @@ style-loader
 
 
 ### Plugin
+검색을 해보면, 2가지 플러그인은 꼭 추천이 되는걸로 보인다. 그 외에 다른 플러그인들은 그때마다 필요한걸 찾아서 설정하면 될 것 같다
+
+- html-webpack-plugin
+- mini-css-extract-plugin
