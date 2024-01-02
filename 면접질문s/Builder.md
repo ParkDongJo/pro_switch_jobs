@@ -203,4 +203,34 @@ style-loader
 검색을 해보면, 2가지 플러그인은 꼭 추천이 되는걸로 보인다. 그 외에 다른 플러그인들은 그때마다 필요한걸 찾아서 설정하면 될 것 같다
 
 - html-webpack-plugin
+	-  dist의 index.js를 스크립트 파일로 포함하는 HTML 문서를 dist 디렉토리 내에 자동으로 생성해준다
+	- 원본 index.html 을 template 속성에 넣어준다.
 - mini-css-extract-plugin
+	- 사용하면 스타일시트를 분리해서 dist 디렉토리 내에 CSS 파일을 따로 만들어준다.
+	- 만약 style-loader 를 사용하면 index.js 내에서 createElement() 를 통해 JS에 주입시킨다.
+
+```javascript
+module: {
+	rules: [
+		{
+			test: /\.css$/,
+			use: [
+				MiniCssExtractPlugin.loader,  // style-loader 대타로 대입
+				{
+					loader: 'css-loader',
+					options: { import: true },
+				},
+			],
+		},
+	],
+},
+plugins: [
+	new HtmlWebPackPlugin({
+		template: './src/index.html'
+	}),
+	new MiniCssExtractPlugin({
+		filename: "index.css"
+	})
+],
+```
+
