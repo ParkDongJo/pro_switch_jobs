@@ -259,5 +259,12 @@ https://www.eastflag.co.kr/webpack/webpack-plugin-and-loader/
 https://365kim.tistory.com/35
 
 
-## webpack vs. rollup vs. parcel vs. vite
+## webpack vs. rollup vs. snowpack vs. vite
 
+
+
+
+## vite
+
+
+https://www.youtube.com/watch?v=iX3Nu1FcZKA
