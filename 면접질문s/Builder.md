@@ -67,3 +67,17 @@ https://yozm.wishket.com/magazine/detail/1261/
 
 ## Webpack
 ----
+웹팩 [공식 Github](https://github.com/webpack/webpack) 에서는 웹팩을 **'****모듈(module)'**을 위한 **'번들러(bundler)'** 라고 소개한다.
+
+
+모듈이란 재사용 가능한 코드 조각이다. 모듈은 자신만의 파일 스코프를 갖고 import, export 를 할 수 있다.
+
+JavaScript 를 통해 만드는 프로젝트들 크기가 점점 커지면서, AMD, CommonJS, UMD 등등 모듈 시스템이 나왔다.
+
+이때, 브라우저 환경에서는 서버와 통신 시 각 모듈별 통신을 하기 보다, 하나의 번들링된 파일로 통신하는 것이 비용을 낮출 수 있다. 이때문에 전문 번들러에 대한 니즈가 커진다.
+
+### 왜 Webpack 인가
+결국 번들러는 프론트단에서 찾게되는 라이브러리이다. 
+
+- JavaScript, CSS, SVG, 
+
