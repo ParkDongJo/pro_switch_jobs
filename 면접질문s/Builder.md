@@ -173,4 +173,7 @@ use 안에 options 로 넣는 방법도 있지만, .babelrc 파일로 따로 pre
 그리고 webpack module 의 rules 에 설정하면 된다.
 
 ##### CSS 설정
+js 파일에서 css 파일을 불러오기 위해 사용하는 로더가 css-loader 이다.
 
+- css 파일을 모듈로 불러 올수 있다.
+- 
