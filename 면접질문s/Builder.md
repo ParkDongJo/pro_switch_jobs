@@ -79,5 +79,18 @@ JavaScript 를 통해 만드는 프로젝트들 크기가 점점 커지면서, A
 ### 왜 Webpack 인가
 결국 번들러는 프론트단에서 찾게되는 라이브러리이다. 
 
-- JavaScript, CSS, SVG, 
+웹팩은 아래와 같은 기능들이 가능하다.
+- JavaScript, CSS, SVG 다양한 포맷 번들 가능
+- 핫리로딩 지원
+- 코드 스플리팅
+- 동적 로딩
+- 지연 로딩
+
+
+### Entry 설정
+webpack 은 번들링 
+
+
+### Output 설정
+
 
