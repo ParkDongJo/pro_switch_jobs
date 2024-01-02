@@ -180,13 +180,15 @@ css-loader
 ```
 
 - css 파일을 모듈로 불러 올수 있다.
+- css 파일을 string 으로서 읽어들인다.
+- class 이름을 난수화 시키기 때문에, locally-scoped 가 가능하다
 - 몇가지 옵션들이 있는데, 그때그때 찾는게 좋을 것 같다.
 	- import
 	- sourceMap
 	- localsConvention
 
 
-
+css-loader 를 통해서 읽어드린 스타일을 가져와 페이지의 `<head>`요소에 해당 스타일을 포함하는 `<style>` 태그를 생성한다.
 
 ```shell
 style-loader
