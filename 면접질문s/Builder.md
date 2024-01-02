@@ -272,9 +272,26 @@ ESBuild 는 JavaScript 기반의 기존 번들러에 대항해 Golang으로 만�
 ESBuild를 랩핑하고 Rollup의 간단한 설정을 이어받은 차세대 번들러이다. 덕분에 설정은 간단하고 속도는 빠르다.
 
 
-## vite
 
+## vite
+----
 
 차세대 번들러 비교분석 https://bepyan.github.io/blog/2023/bundlers
 https://www.youtube.com/watch?v=iX3Nu1FcZKA
 웹펙에서 -> vite 로 갈아탄 경험 https://engineering.ab180.co/stories/webpack-to-vite
+
+
+
+
+## next.js vs. vite.js
+----
+
+
+
+
+둘을 비교
+https://arc.net/l/quote/hmwlmzuc
+
+vite 로 SSR 타이밍 만들어 보기
+https://github.com/bluwy/create-vite-extra/blob/master/template-ssr-react/server.js
+https://ko.vitejs.dev/guide/ssr.html
