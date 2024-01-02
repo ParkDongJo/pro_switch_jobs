@@ -159,11 +159,18 @@ const config = {
 ##### 바벨 설정
 React 와 함께 설정을 하려면, jsx 포멧도 설정을 해둬야 한다. 설치해야할 플러그인은 
 
-
 ```shell
 @babel/core @babel/preset-env @babel/preset-react babel-loader
 ```
 
+use 안에 options 로 넣는 방법도 있지만, .babelrc 파일로 따로 preset 을 설정해야한다.
+```json
+{
+	"presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+```
+
+그리고 webpack module 의 rules 에 설정하면 된다.
 
 ##### CSS 설정
 
