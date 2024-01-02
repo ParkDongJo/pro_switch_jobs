@@ -114,6 +114,46 @@ module.exports = {
 - path
 - clean
 	- `사용하지 않는 파일을 알아서 정리해준다.`
+- publicPath
+	- `브라우저에서 접근할 수 있는 파일의 위치를 지정한다.
+- library
+	- `library를 만들 경우 이름, 타입, 코멘트 등등을 지정한다.`
 
 등등의 설정을 지정해줄 수 있다. 그 외 많은 옵션들이 있다.
 
+
+### Module 설정
+Webpack 은 기본적으로 JS, JSON 포멧만 이해할 수 있다. 그 외에 CSS, HTML, Image 포멧, SVG 등등의 다른 포멧들을 번들링 하려면, 그에 맞는 loader 들을 설정해줘야 한다.
+
+두가지 필수 속성이 있다.
+- test
+	- `언떤 파일을 변환할 지 지정하는 속성, 정규표현식으로 작성한다`
+- use
+	- `변환에 필요한 로더를 명시한다`
+
+이렇게 설정해주면, 어떠한 포멧이든 모듈로 import 가 가능해진다.
+
+설정 예시는 아래와 같다.
+// webpack.config.js
+```javascript
+const config = {
+	module: { 
+		rules: [ 
+			{ 
+				test: /\.css$/, 
+				use: [ 
+					{ 
+						loader: MiniCssExtractPlugin.loader 
+					}, 
+					{ 
+						loader: 'css-loader', 
+						options: { import: true },
+					}, 
+				], 
+			}, 
+		], 
+	}, 
+};
+```
+
+dl
