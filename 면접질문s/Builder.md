@@ -201,6 +201,15 @@ style-loader
 이 모든 과정은 js 파일 내부에서 코드로 변환되며, bundle.js 파일에서 검색해보면 관련 코드를 찾을 수 있다.
 
 
+##### 그 외 로더
+- [Babel Loader](https://webpack.js.org/loaders/babel-loader/#root)
+- [Sass Loader](https://webpack.js.org/loaders/sass-loader/#root)
+- [File Loader](https://webpack.js.org/loaders/file-loader/#root)
+- [Vue Loader](https://github.com/vuejs/vue-loader)
+- [TS Loader](https://webpack.js.org/guides/typescript/#loader)
+
+
+
 ### Plugin
 검색을 해보면, 2가지 플러그인은 꼭 추천이 되는걸로 보인다. 그 외에 다른 플러그인들은 그때마다 필요한걸 찾아서 설정하면 될 것 같다
 
@@ -236,6 +245,19 @@ plugins: [
 ],
 ```
 
+##### 그 외 자주 사용하는 plugin
+- [split-chunks-plugin](https://webpack.js.org/plugins/split-chunks-plugin/)
+- [clean-webpack-plugin](https://www.npmjs.com/package/clean-webpack-plugin)
+- [image-webpack-loader](https://github.com/tcoopman/image-webpack-loader)
+- [webpack-bundle-analyzer-plugin](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+- webpack.ProvidePlugin
 
+
+
+https://joshua1988.github.io/webpack-guide/concepts/plugin.html#plugin
 https://www.eastflag.co.kr/webpack/webpack-plugin-and-loader/
 https://365kim.tistory.com/35
+
+
+## webpack vs. rollup vs. parcel vs. vite
+
