@@ -88,9 +88,32 @@ JavaScript 를 통해 만드는 프로젝트들 크기가 점점 커지면서, A
 
 
 ### Entry 설정
-webpack 은 번들링 
+webpack 은 번들링 과정에서 Dependency graph 를 그린다. 출발점에서 애플리케이션의 모든 모듈 그래프를 재귀적으로 완성해 간다.
+그래프를 완성하고 나면 이 모든 모듈을 하나의(소수) 번들로 묶어서 브라우저에 로드 할 준비를 마친다.
+
+이때 우리는 config 파일에서 출발점을 알려줘야한다.
+
+```javascript
+const config = { 
+	entry: './src/js/index.js',
+};
+```
+
+출발점은 여러개로 지정도 가능하다.
+```javascript
+module.exports = {
+  entry: ['./src/file_1.js', './src/file_2.js'],
+};
+```
 
 
 ### Output 설정
+하나의 번들로 묶고 나서 그 결과물을 어디로 내보낼지 지정해줘야한다. 기본값으로 **./dist** 에 전달된다.
 
+- filename
+- path
+- clean
+	- `사용하지 않는 파일을 알아서 정리해준다.`
+
+등등의 설정을 지정해줄 수 있다. 그 외 많은 옵션들이 있다.
 
