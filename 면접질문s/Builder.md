@@ -147,7 +147,7 @@ const config = {
 					}, 
 					{ 
 						loader: 'css-loader', 
-						options: { import: true },
+						options: { import: true }, // 기본값 true
 					}, 
 				], 
 			}, 
@@ -175,5 +175,19 @@ use 안에 options 로 넣는 방법도 있지만, .babelrc 파일로 따로 pre
 ##### CSS 설정
 js 파일에서 css 파일을 불러오기 위해 사용하는 로더가 css-loader 이다.
 
+```shell
+css-loader
+```
+
 - css 파일을 모듈로 불러 올수 있다.
-- 
+- 몇가지 옵션들이 있는데, 그때그때 찾는게 좋을 것 같다.
+	- import
+	- sourceMap
+	- localsConvention
+
+
+
+
+```shell
+style-loader
+```
