@@ -259,7 +259,7 @@ https://www.eastflag.co.kr/webpack/webpack-plugin-and-loader/
 https://365kim.tistory.com/35
 
 
-## webpack vs. rollup vs. snowpack vs. vite
+## webpack vs. rollup vs.  ESBuild vs. vite
 
 
 
@@ -267,4 +267,5 @@ https://365kim.tistory.com/35
 ## vite
 
 
+차세대 번들러 비교분석 https://bepyan.github.io/blog/2023/bundlers
 https://www.youtube.com/watch?v=iX3Nu1FcZKA
