@@ -178,6 +178,24 @@ TCP는 결국 신뢰성을 지향하기 때문에 데이터 손실이 발생하�
 등등이 해결 되었다. 하지만 HTTP/3의 채택은 아직 초기 단계이기 때문에 우선은 지속적인 관심으로 상황을 바라보는게 좋겠다.
 
 
+## 인증과 인가
+----
+
+
+
+## 쿠키와 세션
+----
+
+
+
+
+https://www.daleseo.com/http-cookies/
+https://www.daleseo.com/http-session/
+
+
+
+
+
 ## JWT
 ------
 쿠키, 세션 그리고 JWT
@@ -211,6 +229,14 @@ JWT 의 구조는 아래와 같다.
 - Signature
 	- header 와 payload를 합친 문자열을 header 에서 기재된 방법으로 암호화 한 값
 	- 서버에서 signature를  비밀키로 푼 후에  payload와 signature 와 동일한지 대조 해봄
+
+
+
+## 쿠키 - 세션 vs. JWT
+----
+
+
+
 
 
 ## OAuth
