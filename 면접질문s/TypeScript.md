@@ -1,6 +1,5 @@
 
 
-
 ## Interface Vs. Type
 -----
 
