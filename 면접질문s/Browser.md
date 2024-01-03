@@ -55,4 +55,11 @@ https://www.xenonstack.com/insights/local-vs-session-storage-vs-cookie
 https://adjh54.tistory.com/57
 
 
-## 쿠키와 
+## 쿠키와 세션
+----
+
+
+
+
+https://www.daleseo.com/http-cookies/
+https://www.daleseo.com/http-session/
