@@ -63,3 +63,8 @@ https://adjh54.tistory.com/57
 
 https://www.daleseo.com/http-cookies/
 https://www.daleseo.com/http-session/
+
+
+
+## 쿠키 - 세션 vs. JWT
+----
