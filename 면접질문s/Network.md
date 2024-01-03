@@ -232,11 +232,19 @@ JWT 의 구조는 아래와 같다.
 
 
 
-## 쿠키 - 세션 vs. JWT
+## 쿠키-세션 vs. JWT
 ----
+#### 쿠키-세션 인증/인가 방식
+
+
+#### JWT 인증/인가 방식
+
+
+##### 
 
 
 
+https://arc.net/l/quote/tavbkesy
 
 
 ## OAuth
