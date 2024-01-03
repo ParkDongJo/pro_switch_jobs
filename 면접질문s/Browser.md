@@ -9,11 +9,18 @@
 
 ###### 로컬
 - key : value
+- 리셋 조건 :
+	- 탭 종료
+	- 브라우저 종료
+	- OS 종료
 
 
 #### 쿠키
 - cookie-name : cookie-value
 
+
+### 공통점
+- 데이터는 문자열 형태만 가진다.
 
 
 https://www.xenonstack.com/insights/local-vs-session-storage-vs-cookie
