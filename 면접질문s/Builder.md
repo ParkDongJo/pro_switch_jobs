@@ -301,3 +301,10 @@ https://ko.vitejs.dev/guide/ssr.html
 
 ## Babel
 ----
+
+
+
+
+https://toss.tech/article/smart-polyfills
+https://javascript.plainenglish.io/why-cant-vite-use-new-syntax-46b50886a1db
+https://nukw0n-dev.tistory.com/25
