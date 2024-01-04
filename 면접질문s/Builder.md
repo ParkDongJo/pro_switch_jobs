@@ -299,11 +299,15 @@ https://ko.vitejs.dev/guide/ssr.html
 
 
 
-## Babel
+## Babel 과 Polyfill
 ----
+### Babel
 JavaScript 단에서의 발전으로 ES6 까지 나오게 되면서, 이전 브라우저에 대한 호환성이 대두가 되었고 이를 Babel 이 ES6 최신 문법을 ES5 문법으로 변환해주는 트랜스파일링(변환) 작업을 해결해주었다.
 
-이후, 
+이후, React의 JSX, Typescript 정적타입 언어 등등의 다양한 변환을 제공하면서 프론트에 있어서는 필수적인 기술로 자리 잡았다.
+
+### Polyfill
+
 
 
 https://toss.tech/article/smart-polyfills
