@@ -326,15 +326,22 @@ Polyfill 은 런타임에 등록되지 않은 메서드나 기능을 주입해�
 개별적으로 바벨을 사용하기 위해 명령어를 통해서 실행하는 방법도 있겠지만, 번들러와 함께 preset으로 셋팅해두는게 생산성 측면에서 현명하다
 
 대표적인 presets으로
-- `preset-env` : ECMAScript2015+ 를 변환할 때 사용
-- `preset-flow` : flow를 변환
-- `preset-react` : react를 변환
-- `preset-typescript` : ts를 변환
+- `@babel/preset-env` : ECMAScript2015+ 를 변환할 때 사용
+- `@babel/preset-flow` : flow를 변환
+- `@babel/preset-react` : react를 변환
+- `@babel/preset-typescript` : ts를 변환
 
 등등이 있다.
 
 ### 폴리필 적용
-폴리필을
+폴리필을 적용하는 방법은 3가지가 있다.
+
+- @babel/polyfill 을 import
+- core-js 에서 필요한 폴리필만 import 사용
+	- https://github.com/zloirock/core-js 참고해서 필요한 것들만 직접 셋팅하는 방법이다.
+- 바벨과 마찬가지로 preset 을 활용한다.
+	- `@babel/preset-env` 를 셋팅한다.
+	- useBuiltIns 를 'usage' 로 설정한다.
 
 https://toss.tech/article/smart-polyfills
 https://javascript.plainenglish.io/why-cant-vite-use-new-syntax-46b50886a1db
