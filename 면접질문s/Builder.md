@@ -301,8 +301,9 @@ https://ko.vitejs.dev/guide/ssr.html
 
 ## Babel
 ----
+JavaScript 단에서의 발전으로 ES6 까지 나오게 되면서, 이전 브라우저에 대한 호환성이 대두가 되었고 이를 Babel 이 ES6 최신 문법을 ES5 문법으로 변환해주는 트랜스파일링(변환) 작업을 해결해주었다.
 
-
+이후, 
 
 
 https://toss.tech/article/smart-polyfills
