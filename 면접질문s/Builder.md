@@ -283,6 +283,15 @@ https://www.youtube.com/watch?v=iX3Nu1FcZKA
 
 
 
+## vite 에서는 polyfill 을 지원하지 않는다.
+-----
+
+
+https://javascript.plainenglish.io/why-cant-vite-use-new-syntax-46b50886a1db
+
+
+
+
 ## next.js vs. vite.js
 ----
 
@@ -314,7 +323,6 @@ Babel은 빌드 타임에 실행된다.
 Polyfill 은 런타임에 등록되지 않은 메서드나 기능을 주입해준다.
 
 
-
 ### 바벨 변환 과정
 1. 파싱 -> 소스코드를 AST(Abstract Syntax Tree)로 변환한다.
 2. 변환 -> 생성된 AST 를 순회하면서
@@ -344,11 +352,39 @@ Polyfill 은 런타임에 등록되지 않은 메서드나 기능을 주입해�
 - @babel/polyfill 을 import
 - core-js 에서 필요한 폴리필만 import 사용
 	- https://github.com/zloirock/core-js 참고해서 필요한 것들만 직접 셋팅하는 방법이다.
-- ⭐️ 바벨의 preset 을 활용한다
+- ⭐️ 바벨 설정에서 preset 을 활용한다
 	- `@babel/preset-env` 를 셋팅한다.
 	- useBuiltIns 를 'usage' 로 설정한다. (필요한 폴리필만 포함하게 된다.)
 		- https://babeljs.io/docs/usage
 
-https://toss.tech/article/smart-polyfills
 https://javascript.plainenglish.io/why-cant-vite-use-new-syntax-46b50886a1db
 https://nukw0n-dev.tistory.com/25
+
+
+
+## polyfill 최적화
+----
+polyfill 을 사용했을 시 당면하는 최적화 문제들이 있다.
+
+1. 필요한 폴리필만 받자
+2. 최신 브라우저에서도 폴리필을 불필요하게 받는다.
+
+1번째 문제부터 풀어보자. 이 때 2가지가 있다.
+- core-js 에서 필요한 폴리필만 import 해서 사용하는 방법
+- ⭐️ 바벨 설정에서 preset 을 활용한다.
+	-  `@babel/preset-env` 를 셋팅한다.
+	- 타겟 브라우저를 설정한다.
+	- useBuiltIns 를 설정한다.
+
+2번째 문제는 Financial Times에서 관리하고 있는 polyfill.io 서비스를 적용하면 된다. 해당 사이트에서 생성한 polyfill bundle url 을 import 해주면, User-agent 에 따라 동적으로 필요한 폴리필 스크립트를 제공한다.
+
+즉
+- 최신 버전의 Chorme 에서는 아무 polyfill 이 내려오지 않는다.
+- IE 11 에서 실행하면 많은 양의 polyfill 이 내려온다.
+
+토스에서는 이 polyfill 서비스도 간혹 ES 표준대로 동작하지 않는 이슈가 있다고 하여, 자체적으로 Polyfill Node.js 서버를 구축했다고 한다. 시간 날 때 직접 따라 구현해보는 것도 재미난 도전과제가 되겠다.
+
+다만 esbuild 번들러 기준으로 작성된 설정 코드라 나름의 커스텀은 필요하겠다.
+
+
+https://toss.tech/article/smart-polyfills
