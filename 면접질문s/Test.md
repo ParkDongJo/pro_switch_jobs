@@ -1,5 +1,5 @@
 
 
 
-## Jest 강점
+## Test Runner
 ----
