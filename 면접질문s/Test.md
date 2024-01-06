@@ -23,6 +23,11 @@
     - Jest는 주로 React와 함께 사용되며, Jasmine은 Angular와 함께 사용됩니다. 하지만 세 프레임워크 모두 모든 프론트엔드 라이브러리에서 사용할 수 있습니다​
 
 
+API 비동기 호출 시 사용할 수 있는 라이브러리
+Jest, Jasmine 은 -> Supertest https://arc.net/l/quote/nhhftalo
+Mocha 는 -> chai-http
+
+
 
 https://www.lambdatest.com/blog/jest-vs-mocha-vs-jasmine/
 https://dev.to/heroku/comparing-the-top-3-javascript-testing-frameworks-2cco
