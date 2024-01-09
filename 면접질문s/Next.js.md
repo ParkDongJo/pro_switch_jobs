@@ -46,3 +46,4 @@ https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Render
 
 ## SSR vs. CSR vs. ISR vs. SSG
 ----
+웹 페이지가 서버에서 렌
