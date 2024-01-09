@@ -46,4 +46,10 @@ https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Render
 
 ## SSR vs. CSR vs. ISR vs. SSG
 ----
-웹 페이지가 서버에서 렌
+웹 페이지를 렌더링 하는 카테고리는 크게 4가지로 나뉜다. 
+
+### SSR 타이밍
+웹서버에서 완전히 렌더링된 HTML 형태로 브라우저에 전송되는 방식이다. 덕분에 초기 랜더링 속도가 빠르다.
+
+### CSR 타이밍
+서버에게서 리소스들을 받으면, 브라우저는 HTML, CSS, JavaScript 를 
