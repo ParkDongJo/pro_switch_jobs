@@ -44,4 +44,5 @@ https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Render
 
 
 
-## SSR vs. CSR vs. GSR
+## SSR vs. CSR vs. ISR vs. SSG
+----
