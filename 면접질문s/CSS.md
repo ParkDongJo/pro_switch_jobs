@@ -108,6 +108,22 @@ https://blog.logrocket.com/using-linaria-faster-css-in-js-react-apps/#what-linar
 
 
 
+## Emotion vs. Styled-component
+----
+일단 요약만 먼저하면
+
+- 번들 크기 차이
+	- styled 말고 core 만 사용한다면 번들크기가 상대적으로 작다
+- 미묘한 성능차이가 있다.
+	- emotion 이 미세하게 앞선다고 하는데, 런타임에서는 결국 도찐개찐 이라고 생각한다
+- SRR 에서 별도의 설정없이 돌아간다
+	- styled-components 는 SeverStyleSheet 를 설정해야한다고 한다.
+
+
+
+https://velog.io/@bepyan/styled-components-%EA%B3%BC-emotion-%EB%8F%84%EB%8C%80%EC%B2%B4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%AD%94%EA%B0%80
+
+
 ## CSS의 BOX MODEL
 ----
 Box 모델이란 HTML 요소를 감싸는 네모난 상자 개념을 말한다. 안에서부터 contents > padding > border > margin 으로 구성됩니다.
