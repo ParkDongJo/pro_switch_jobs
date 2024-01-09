@@ -84,10 +84,6 @@ css-in-js 라이브러리 들은 2가지 큰 타입으로 나눌 수 있습니�
 
 
 
-
-emotion 을 포기
-https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6
-
 CSS 분류
 https://mine-it-record.tistory.com/656
 
@@ -120,8 +116,17 @@ https://blog.logrocket.com/using-linaria-faster-css-in-js-react-apps/#what-linar
 	- styled-components 는 SeverStyleSheet 를 설정해야한다고 한다.
 
 
-
 https://velog.io/@bepyan/styled-components-%EA%B3%BC-emotion-%EB%8F%84%EB%8C%80%EC%B2%B4-%EC%B0%A8%EC%9D%B4%EA%B0%80-%EB%AD%94%EA%B0%80
+
+
+
+## Css-in-Js 의 한계점
+----
+
+
+
+emotion 을 포기
+https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6
 
 
 ## CSS의 BOX MODEL
