@@ -61,3 +61,5 @@ https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Render
 런타임 중에 정적페이지를 생성 또는 수정 할 수 있도록 해주는 SSG 와 SSR를 결합한 방식이다.
 
 
+## Universal Rendering 방식
+
