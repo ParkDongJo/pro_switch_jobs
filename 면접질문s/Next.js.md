@@ -40,3 +40,8 @@ https://velog.io/@eunbinn/server-side-rendering-ssr-with-bun-and-react
 
 바닐라 스크립트로 SSR 직접 구현
 https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Rendering/#reference
+
+
+
+
+## SSR vs. CSR vs. GSR
