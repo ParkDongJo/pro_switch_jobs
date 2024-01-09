@@ -102,3 +102,7 @@ https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Render
 단점
 - 서버와 클라이언트 양쪽 모두를 신경쓰는 코드를 관리해야한다.
 - 초기 렌더링 시 서버 부하가 있으면 느려질 수 있다.
+
+
+https://ajdkfl6445.gitbook.io/study/web/csr-vs-ssr-vs-ssg#universal-rendering
+https://www.educative.io/answers/ssr-vs-csr-vs-isr-vs-ssg
