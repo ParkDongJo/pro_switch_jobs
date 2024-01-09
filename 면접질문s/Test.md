@@ -3,7 +3,8 @@
 
 ## Test Runner
 ----
-
+https://arc.net/l/quote/cffqumit
+위 글의 저자의 의견 정리
 ### 일반적인 비교
 - Mocha, Jest, Jasmine은 모두 인기 있는 프레임워크로, 활발한 커뮤니티와 오랜 개발 기간을 가지고 있습니다.
 - Mocha와 Jasmine은 Node 애플리케이션용으로 처음 구축되었기 때문에 백엔드 테스팅에 더 강점을 보입니다. 이들은 Jest보다 더 많은 백엔드 도구와 문서를 제공합니다.
@@ -12,21 +13,34 @@
 ### 비교 포인트
 1. **함수 Mocking**:
     - 함수 호출은 애플리케이션에서 가장 일반적으로 테스트되는 부분입니다.
-    - 테스트는 함수 호출의 기대 결과에 초점을 맞추고, 애플리케이션 상태에 변경을 가하지 않으며, 의도하지 않은 부작용이 테스트에 영향을 미치지 않도록 Mock 함수를 사용해야 합니다​[](https://dev.to/heroku/comparing-the-top-3-javascript-testing-frameworks-2cco)​.
-2. **데이터 Mocking**:
-    - 백엔드에서 테스팅은 프론트엔드와 마찬가지로 까다롭습니다. 특히 데이터를 다룰 때 실제 데이터베이스에 데이터를 삽입하는 위험을 피하기 위해 테스트 데이터베이스에 Mock 데이터를 설정하는 것이 좋습니다​[](https://dev.to/heroku/comparing-the-top-3-javascript-testing-frameworks-2cco)​.
-3. **비동기 호출 Mocking**:
-    - 비동기 코드는 문제를 일으킬 수 있으므로 테스트가 중요합니다.
-    - 모든 테스트 프레임워크는 비동기 코드를 작성하는 데 여러 옵션을 제공합니다. 예를 들어, 콜백을 사용하거나, 더 읽기 쉽고 테스트가 중단되는 지점을 빨리 찾을 수 있는 async/await 패턴을 사용할 수 있습니다​[](https://dev.to/heroku/comparing-the-top-3-javascript-testing-frameworks-2cco)​.
-4. **렌더링된 컴포넌트 Mocking**:
-    - 렌더링된 컴포넌트가 예상대로 사용 가능한지 확인하는 것도 중요한 테스트입니다.
+    - 함수 모킹의 경우 세 가지 라이브러리 모두 코드 라인과 복잡성이 매우 유사합니다. 자신의 스택에 가장 잘 맞는 라이브러리를 사용하는 것이 좋습니다: 
+	    - React의 경우 Jest, 
+	    - Angular의 경우 Jasmine, 
+	    - 백엔드에서 Mocha를 사용하면서 일관성을 유지하려는 경우 Mocha를 사용하는 것이 좋습니다.
+1. **데이터 Mocking**:
+    - 백엔드 테스트는 Mocha와 Jasmine이 가장 강점을 보이는 분야입니다. 이 두 도구는 Node 애플리케이션을 테스트하기 위해 만들어졌으며, 도구에서 이를 확인할 수 있습니다. 프레임워크에 포함된 옵션과 기능을 통해 보다 세밀하게 제어할 수 있습니다. 사용 가능한 라이브러리 중 일부를 추가하는 데 시간을 할애할 의향이 있다면 Jest도 여전히 훌륭한 옵션이 될 수 있습니다.
+2. **비동기 호출 Mocking**:
+    - 백엔드 테스트의 경우, 비동기 메서드를 쉽고 즉시 처리할 수 있는 Jasmine을 가장 먼저 선택했습니다. Mocha와 Jest도 유용하지만, 필요한 것을 찾기 위해 문서를 더 많이 검색해야 합니다.
+3. **렌더링된 컴포넌트 Mocking**:
+	- 컴포넌트 렌더링의 모범 사례는 프런트엔드 라이브러리에 권장되는 테스트 프레임워크를 사용하는 것입니다. 기본으로 설치되어 있는 도구를 사용하면 구성 오류를 처리할 필요가 없습니다. 가능하면 얕은 렌더링과 스냅샷을 사용하여 테스트 시간을 절약하고 렌더링된 컴포넌트의 핵심 기능에 집중하세요.
     - Jest는 주로 React와 함께 사용되며, Jasmine은 Angular와 함께 사용됩니다. 하지만 세 프레임워크 모두 모든 프론트엔드 라이브러리에서 사용할 수 있습니다​
+    - React 에서 Mocha, Enzyme, Chai 를 사용 하는 것도 가능하다.
 
 
 API 비동기 호출 시 사용할 수 있는 라이브러리
-Jest, Jasmine 은 -> Supertest https://arc.net/l/quote/nhhftalo
-Mocha 는 -> chai-http
+- Jest, Jasmine 은 -> Supertest https://arc.net/l/quote/nhhftalo
+- Mocha 는 -> chai-http
 
+
+이 글을 보고 각 테스트 러너를 어떤식으로 비교하고 있는지 참고해볼수 있고 몇가지 비교 키워드를 알게 됐다.
+지금 부터는 직접 비교해가며, 나의 의견을 정리하는 것이 필요할 것 같다
+
+이를 토대로 정리해볼 주제들을 나열해보자
+- 어떤면에서 Mocha 와 Jasmine 이 벡엔드 테스팅에 유리할까
+- Jest 사용과 Mocha + Enzyme + Chai 사용 비교해보면 어떨까
+- Jest의 스냅샷 기능은 어떤 강점이 있을까
+- Jest 를 벡엔드에서 사용하는건 어떤 불편점이 있을까
+- Node 에서 Mocha 를 사용하는 건 어떤 장점이 있을까
 
 
 https://www.lambdatest.com/blog/jest-vs-mocha-vs-jasmine/
