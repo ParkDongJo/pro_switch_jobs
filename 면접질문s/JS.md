@@ -308,3 +308,15 @@ https://opentutorials.org/module/4047/24629
 
 
 https://velog.io/@jangws/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%97%90%EC%84%9C-proto-VS.-prototype-%EB%B9%84%EA%B5%90
+
+
+
+## strict mode 란
+----
+ES5 부터 지원되는 기능
+`use strict`
+라는 선언을 상위에 적용
+
+... 추후에 좀 더 정리
+
+https://poiemaweb.com/js-strict-mode
