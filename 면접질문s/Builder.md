@@ -361,7 +361,7 @@ https://javascript.plainenglish.io/why-cant-vite-use-new-syntax-46b50886a1db
 https://nukw0n-dev.tistory.com/25
 
 
-📑
+
 ## polyfill 최적화
 ----
 polyfill 을 사용했을 시 당면하는 최적화 문제들이 있다.
