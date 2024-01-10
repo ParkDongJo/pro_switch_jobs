@@ -329,4 +329,12 @@ https://medium.com/dong-gle/%EC%9D%B4-%EA%B8%80%EC%9D%80-usesyncexternalstore%EB
 ## setState 관련 질문
 -----
 
+
 https://www.inflearn.com/questions/473826/%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94-setstate-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8%EC%9E%85%EB%8B%88%EB%8B%A4
+
+
+
+## 상태 분류
+---
+- 지역 state vs. 전역 state vs. 컴포넌트 간 state
+- 클라이언트 state vs 서버 state

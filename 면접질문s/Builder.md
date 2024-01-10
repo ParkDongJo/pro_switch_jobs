@@ -388,3 +388,9 @@ polyfill 을 사용했을 시 당면하는 최적화 문제들이 있다.
 
 
 https://toss.tech/article/smart-polyfills
+
+
+
+## CommonJS vs. AMD
+---
+
