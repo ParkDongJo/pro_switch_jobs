@@ -106,6 +106,9 @@ https://careerly.co.kr/comments/73197
 
 ## Flux 패턴 vs. Atomic 패턴
 ----
+flux 패턴은 기존의 mvc 패턴의 양방향 데이터 흐름의 단점을 보완하고자 단방향 데이터 흐름을 위한 설계이다.
+
+
 
 
 
@@ -149,6 +152,10 @@ https://arc.net/l/quote/pkuaoqmn
 https://yozm.wishket.com/magazine/detail/2233/
 https://arc.net/l/quote/idcaeqgp
 https://ui.toast.com/posts/ko_20210812
+
+제일 읽기 좋은 자료
+https://ui.toast.com/weekly-pick/ko_20210812
+
 
 
 ## Context API
