@@ -1,4 +1,4 @@
-## Flex 패턴 / Atomic 패턴으로 나눈 store
+## Flex 패턴 / Atomic 패턴 / Proxy 패턴 으로 나눈 store
 
 전역 상태를 관리하는 라이브러리도 다양해지면서, 
 - 클라 State를 관리하는 Store
