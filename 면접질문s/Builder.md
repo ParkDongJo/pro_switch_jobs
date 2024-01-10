@@ -465,3 +465,20 @@ ES6 에서 부터 Module 화가 지원되면서, 훨씬 간단한 방법으로 �
 
 https://arc.net/l/quote/dujqtslw
 https://d2.naver.com/helloworld/12864
+
+
+
+
+## Babel vs. Polyfill 의 차이
+----
+
+babel 은 
+- ES6 이상을 -> ES5 으로 변환
+- 빌드 타임
+polyfill 은
+- ES5 의 환경에 존재하지 않는 객체, 기존객체의 새로운 메서드, 새로운 메서드 등등
+- 런타임
+
+... 좀더 정리가 필요
+
+https://arc.net/l/quote/rjktwmij
