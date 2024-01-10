@@ -141,20 +141,41 @@ https://hyunee-p.tistory.com/133
 - 관심사의 가장 작은 단위가 atom이다 보니, 이 atom 이 늘어날 수록 관리가 어려워진다.
 - state와 액션이 분리되어 있다. 
 
-```
-function useCounter() { const [count, setCount] = useRecoilState(counterState); const increment = () => setCount(count + 1); const decrement = () => setCount(count - 1); return { count, increment, decrement, }; }
+```javascript
+function useCounter() {
+	const [count, setCount] = useRecoilState(counterState);
+
+	const increment = () => setCount(count + 1);
+	const decrement = () => setCount(count - 1);
+
+	return { count, increment, decrement, }; 
+}
 ```
 그렇다 보니 리코일은 위와 같이, 커스텀 훅스로 따로 뺄때도 있지만, store 만을 위해 hooks를 따로 뺀다는게 영 깔끔하지 못했다.
 
-```
-import create from 'zustand'; // 선언 const useCounter = create((set) => ({ count: 0, increment: () => set(state => ({ count: state.count + 1 })), decrement: () => set(state => ({ count: state.count - 1 })) })); // 사용 const { count, increment, decrement } = useCounter();
+```javascript
+import create from 'zustand'; // 선언
+
+const useCounter = create((set) => ({ 
+	count: 0, 
+	increment: () => set(state => ({ count: state.count + 1 })), 
+	decrement: () => set(state => ({ count: state.count - 1 })) 
+})); // 사용 
+
+const { count, increment, decrement } = useCounter();
 ```
 
 하지만 zustand 는 액션기반 상태관리 라서, store 선언 시 관련 액션들을 함께 정의해주는 식으로 해도 된다.
 
 만약 기존 state 기반으로 간단한 파생데이터를 가져오고자 한다면, get 으로 가져오게 정의하면 된다.
-```
-const useStore = create((set) => ({ first: 'Daishi', last: 'Kato', get fullName() { return `${this.first} ${this.last}`; }, }));
+```javascript
+const useStore = create((set) => ({ 
+	first: 'Daishi', 
+	last: 'Kato', 
+	get fullName() { 
+		return `${this.first} ${this.last}`; 
+	}, 
+}));
 ```
 
 또한 내가 외부로 공개하고 싶은 함수기반으로 커스텀을 할 수도 있어서, 밖으로는 닫고 안으로는 캡슐화를 달성할 수도 있다.
