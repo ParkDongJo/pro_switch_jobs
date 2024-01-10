@@ -413,12 +413,54 @@ CommonJS 는 서버사이드 영역에 중점을 두고 있었고, 비동기 지
 	- 서버 사이드에서는 파일단위의 scope 가 보장되기 때문에, 변수들 끼리 덮어 씌워지는 JS의 고질적인 문제를 걱정할 필요가 없었다.
 AMD 는 이런 모듈 시스템을 브라우저영역에서도 사용하려면, 비동기 지원이 필수라고 생각했다.
 
+commonJS
+```javascript
+// 선언부
+const $ = require('jquery'); 
+const Z = require('zerocho'); 
+
+module.exports = { a: $, b: Z, };
+```
+```javascript
+// 사용부
+const my = require('myModule'); 
+const T = require('TweenMax'); 
+
+console.log(my.a, my.b); 
+console.log(T);
+```
+
+AMD
+```javascript
+// 선언부
+define(['jquery', 'zerocho'], function($, Z) { 
+	return { 
+		a: $, 
+		b: Z, 
+	}
+});
+```
+```javascript
+// 사용부
+require(['myModule', 'TweenMax'], function (my, T) { 
+	console.log(my.a); // jquery 
+	console.log(my.b); // zerocho 
+	console.log(T); // TweenMax 
+	console.log(jquery); // undefined 또는 에러 
+});
+```
+
+
 
 그래서 이 둘은 각자의 노선을 향해 나아갔고, 지금에 와서는 사실 두 진영 다 브라우저, 서버사이드 영역들을 모두 지원을 하고 있다.
 다만, 각자 주요 영역에서 사용할때 더 많은 장점이 있다고 하는데, 일단 거기까지 파진 않겠다.
 
 
+### UMD, ES Modules
+umd 는 두 그룹을 서로 호환되게 하는 방식이다. 어떤 모듈을 쓰던 동작하게 합니다. UMD 는 어떤 시스템이라기 보다는 코드 패턴에 가깝다.
+ES6 에서 부터 Module 화가 지원되면서, 훨씬 간단한 방법으로 모듈화가 가능해졌다. 하지만 이는 문제가 있는데 최신 스팩이다 보니 지원을 하지 않는 브라우저들이 많았다.
 
+그렇다보니 구형브라우저에서도 최신 JS를 대응해주기위한 트랜스파일러들이 등장하기 시작했는데, Babel 이 바로 그 역할을 한다.
 
 
 https://arc.net/l/quote/dujqtslw
