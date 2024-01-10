@@ -186,12 +186,38 @@ const useStore = create((set) => ({
 - Redux-devtool 을 함께 사용할 수 있다는 점
 - 미들웨어로 불변성(immer), persist(storage 사용) 등등을 함께 적용할 수 있다는점
 - 원한다면 일시적 업데이트로 store 의 업데이트로 인한 리랜더링을 제어 할 수 있다는 점
+	- subscribe 를 사용하여 가능함
+```javascript
+// Zustand store를 생성합니다.
+// 이 store에는 count 상태와 이 상태를 변경하는 set 함수가 포함됩니다.
+const [useStore, api] = create((set) => ({
+	count: 0,
+	set: (fn) => set(produce(fn))
+}));
+
+const inputRef = useRef(null);
+
+useEffect(() => {
+	// 상태의 변경을 구독하고, count가 바뀔 때마다 input 값 업데이트
+	const unsubscribe = api.subscribe(
+		(count) => {
+			if (inputRef.current) {
+				inputRef.current.value = count;
+			}
+		},
+		(state) => state.count
+	);
+	// 컴포넌트가 언마운트될 때 구독을 해제합니다.
+	return unsubscribe;
+}, []);
+```
 
 
 https://arc.net/l/quote/pkuaoqmn
 https://yozm.wishket.com/magazine/detail/2233/
 https://arc.net/l/quote/idcaeqgp
 https://ui.toast.com/posts/ko_20210812
+https://velog.io/@wns450/Context-API-%EC%97%86%EB%8A%94-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC-Zustand
 
 제일 읽기 좋은 자료
 https://ui.toast.com/weekly-pick/ko_20210812
