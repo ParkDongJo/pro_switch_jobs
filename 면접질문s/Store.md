@@ -104,6 +104,11 @@ https://careerly.co.kr/comments/73197
 
 
 
+## Flux 패턴 vs. Atomic 패턴
+
+
+
+
 ## Zustand
 -----
 개인적으로 zustand 의 사용이 제일 마음에 드는데, 그 중 하나는 사용법 때문이다. recoil 를 사용해본 경험이 있는데, atom 방식이 매우 간단하지만, 프로젝트 단위가 커질 수록 관리가 힘들었다.
