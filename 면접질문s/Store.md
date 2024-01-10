@@ -106,11 +106,28 @@ https://careerly.co.kr/comments/73197
 
 ## Flux 패턴 vs. Atomic 패턴
 ----
+### Flux 패턴
 양방향 데이터 흐름의 단점을 보완하고자 나온 단방향 데이터 흐름에서 컴포넌트의 깊이가 깊어짐에 따라 **Props Drilling** 이라는 문제가 발생했다.
 
-이 문제를 해결하고자 Global Store 가 나오게 되었다. 이때 Global Store 읜ㄴ
+이 문제를 해결하고자 Flux 패턴이 제시 된다. Flux 패턴은 단방향 흐름을 유지하면서도 기존 양방향 바인딩의 MVC 패턴의 단점을 보완한다. 
+
+Action - Dispatcher - Store - View 로 이뤄진 구성으로 각각 구분되어 있다. 
+
+Action - Data는 Action 을 통해서 운반되며 
+Dispatcher - 이런 Action 을 전달받아서 Store 로 전달한다.
+Store - 전달된 Action 을 통해, 상태가 변경되고 상태가 변경되면 실행되어야 할 로직을 실행시켜, 해당 상태와 연계된 View 에 반영시킨다.
+View - Store 를 구독하고 있다가 상태가 변경될 때마다 새로운 상태를 조회하고 이를 반영한다
 
 
+### Atomic 패턴
+Flux 패턴은 데이터의 흐름을 담당하는 각각의 모듈들이 분리되어 있다. 단 이런 구조 때문에
+
+- 러닝커브가 발생
+- 장황한 문법
+
+등등이 단점이 될 수 있다. 이에 대해 반대하여, 상태를 원자 단위처럼 작은 단위로 보고 나누어 관리하는 방식인 Atomic 패턴이 제시된다.
+
+문법이 간단하고, selector 라는 파생된 데이터라는 개념을 제공하여, 
 
 
 https://hyunee-p.tistory.com/133
