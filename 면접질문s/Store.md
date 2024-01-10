@@ -106,12 +106,14 @@ https://careerly.co.kr/comments/73197
 
 ## Flux 패턴 vs. Atomic 패턴
 ----
-flux 패턴은 기존의 mvc 패턴의 양방향 데이터 흐름의 단점을 보완하고자 단방향 데이터 흐름을 위한 설계이다.
+양방향 데이터 흐름의 단점을 보완하고자 나온 단방향 데이터 흐름에서 컴포넌트의 깊이가 깊어짐에 따라 **Props Drilling** 이라는 문제가 발생했다.
+
+이 문제를 해결하고자 Global Store 가 나오게 되었다. 이때 Global Store 읜ㄴ
 
 
 
 
-
+https://hyunee-p.tistory.com/133
 
 
 ## Zustand
