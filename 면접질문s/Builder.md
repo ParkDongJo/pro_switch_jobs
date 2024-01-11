@@ -488,3 +488,7 @@ https://arc.net/l/quote/rjktwmij
 
 ## vite
 ------
+사전 번들링 기능은 Esbuild
+개발 서버의 원본 소스는 Native ESM 이용
+프로덕션 배포 시 번들링 진행
+번들링 시 Esbuild 는 사용하지 않고, Rollup 을 사용
