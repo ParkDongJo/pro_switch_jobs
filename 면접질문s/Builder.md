@@ -539,6 +539,11 @@ vite는
 - Rolldown 이라는 rust 기반 작업이 완료되면, 이 그외 다른 builder 들 보다 큰 빌드 성능을 가지게 될 것이다.
 
 
+게다가
+- vite 는 기본적으로 ES6을 타겟으로 번들을 생성하기 때문에,
+	- polyfill 과 함께 설정을 해줘야한다.
+
+
 사전 번들링 기능은 Esbuild
 개발 서버의 원본 소스는 Native ESM 이용
 프로덕션 배포 시 번들링 진행
@@ -546,7 +551,6 @@ vite는
 
 
 
-
-
+https://arc.net/l/quote/qpbbqmeu
 https://ko.vitejs.dev/guide/why.html
 https://bepyan.github.io/blog/2023/bundlers
