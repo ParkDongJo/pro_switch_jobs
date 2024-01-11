@@ -485,6 +485,11 @@ https://arc.net/l/quote/rjktwmij
 
 
 
+## SWC
+----
+
+
+
 
 ## vite
 ------
@@ -512,12 +517,36 @@ vite는
 	- Esbuild 도 차세대 번들러인데, Go 언어로 작성되어 있어서 JS 로 작성된 번들러들보다 훨씬 빠르다.
 - 개발 서버의 번들은 Native ESM을 이용한다.
 	- 브라우저 요청 시 마다 소스코드를 변환하고 제공하기만 한다.
+	- 수정된 모듈과 관련된 부분만 교체한다.
 	- 각 dynamic import 를 실제 화면에서 사용되는 경우에만 처리한다.
-	- 
 
+
+하지만 이런 vite 도 프로덕션에서는 번들링을 한다. 이유는
+
+- 프로덕션에서 개별 ESM을 가져오는것은 네트워크 비용이다.
+- 최적의 프로덕션 성능을 위해서는
+	-  트리쉐이킹
+	- 지연로딩
+	- 청크 분할
+	등등으로 개선해야한다.
+
+
+이때 vite 는 번들링 할때는 Esbuild 를 사용하지 않는다. 이유는
+
+- Esbuild 와 vite 의 플러그인이 호환성이 잘 맞지 않다.
+	- 오히려 Rollup 의 유연한 플러그인 API와 그 인프라를 활용한다.
+- 대신 v4 부터 SWC 로 전환했으며,
+- Rolldown 이라는 rust 기반 작업이 완료되면, 이 그외 다른 builder 들 보다 큰 빌드 성능을 가지게 될 것이다.
 
 
 사전 번들링 기능은 Esbuild
 개발 서버의 원본 소스는 Native ESM 이용
 프로덕션 배포 시 번들링 진행
 번들링 시 Esbuild 는 사용하지 않고, Rollup 을 사용
+
+
+
+
+
+https://ko.vitejs.dev/guide/why.html
+https://bepyan.github.io/blog/2023/bundlers
