@@ -43,6 +43,21 @@ https://medium.com/@Jun_0/react-jest-dac7a8c83910
 
 
 
-## vite 와 babel
+## vite 와 babel -> SWC
 ----
-vite 에서는 babel 대신 swc 를 추천하는
+vite 에서는 babel 대신 swc 를 추천하고 있다.
+
+```
+개발 중에는 Babel 대신 SWC를 사용합니다. 빌드 중 플러그인을 사용하게 된다면 SWC+esbuild를 사용하고, 그렇지 않다면 esbuild만을 사용합니다.
+```
+
+라고 공식 홈페이지에 되어 있다. SWC 가 정확히 어떤 장점이 있고 어떤 용도일지는 좀 더 알아봐야한다.
+babel 과 비교되는걸 보면, 성능이 좋은 트렌스 파일러이다.
+
+실제로 속도를 비교해놓은 사이트가 있는데, 차이가 꽤 크다
+https://swc.rs/blog/perf-swc-vs-babel
+
+일단 빠르게 파악한 바로는 설정 방법은 간단하다
+https://vitejs.dev/plugins/
+
+공식 플러그인으로 등록 되어 있다.
