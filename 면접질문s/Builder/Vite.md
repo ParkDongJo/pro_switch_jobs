@@ -10,3 +10,10 @@ https://velog.io/@thdrldud369/Vite-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90
 
 
 https://arc.net/l/quote/tlujvsno
+
+
+## 추가 설정이 필요한 plugin
+----
+
+SVG
+https://github.com/pd4d10/vite-plugin-svgr
