@@ -84,5 +84,6 @@ https://velog.io/@k7120792/%EB%B2%88%EC%97%AD-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%8A
 - 테스트 코드 변경없이 너무 쉽게 테스트를 수행
 - 실패가 떠도 뭐가 어떻게 잘못됐는지 알길이 없다
 - 빈약한 테스팅 행위
+	- https://blog.imqa.io/testing-framework-jest/
 
 등등을 말하고 있다.
