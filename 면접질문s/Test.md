@@ -68,4 +68,5 @@ Jasmine이 Angular와 자주 사용되고, React가 Jest와 자주 사용되는 
 
 
 
-
+## Jest 의 스냅샷
+----
