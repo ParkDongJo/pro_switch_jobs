@@ -2,7 +2,6 @@
 
 https://www.youtube.com/watch?v=hsh8BS7gyrY
 
-\\
 
 웹
 - 네이티브 앱 보다 생산 비용이 저렴
@@ -15,7 +14,7 @@ https://www.youtube.com/watch?v=hsh8BS7gyrY
 웹뷰
 앱이 웹 컨텐츠를 표시하는데 사용할 수 있는 내장형 브라우저
 
-![[Pasted image 20240112140014.png]]
+![[webview_1.png]]
 
 
 웹뷰 통신 객체
@@ -40,8 +39,8 @@ https://www.youtube.com/watch?v=LbU5E1pWfks
 
 웹엔진
 - webkit (애플) / chromium(webkit을 fork한 blink 기반) (구글)
-- 폴더 구조로 알아보는 webkit ![[Pasted image 20240112141810.png]]
-- 폴더 구조로 알아보는 chromium![[Pasted image 20240112141921.png]]
+- 폴더 구조로 알아보는 webkit ![[webview_2.png]]
+- 폴더 구조로 알아보는 chromium![[webview_3.png]]
 
 
 FE 개발자들의 어려움
@@ -68,14 +67,14 @@ APP 개발자들을 위한 레시피
 앱개발자에 웹뷰에서 무언가 하기위해서
 - 웹 코드 호출이 어려울때,
 	- try - catch() 로 묶지 마라 -> 이슈 분석이 어려워짐
-	- 아래와 같이 대응![[Pasted image 20240112143659.png]]
+	- 아래와 같이 대응![[webview_4.png]]
 
 - 자바스크립트 오버라이딩
 	- 웹로그를 네이티브로 가져오기
 		- 앱개발자가 웹개발자의 로그를 앱에서 확인 가능
 	- 히스토리 관리
 		- 히스토리 이벤트 넘겨서, 화면 이동 앱에서 관리
-	- 아래와 같이 구현 ![[Pasted image 20240112154339.png]]
+	- 아래와 같이 구현 ![[webview_5.png]]
 
 
 앱 스킴이 호출되지 않는 이슈
@@ -115,7 +114,7 @@ APP 개발자들을 위한 레시피
 	- 휴리스틱 캐시
 		- 웹엔진에서 임의의 캐시를 진행
 		- 해당 웹데이터의 10분의 1만 캐싱하도록
-	- 이 페이지의 배포는 최소 2주전에 진행되어야 함을 계산해서 진행![[Pasted image 20240112160724.png]]
+	- 이 페이지의 배포는 최소 2주전에 진행되어야 함을 계산해서 진행![[webview_6.png]]
 	- 캐시를 안한다 하더라도, 캐시 정책를 비워두지 않고 아래와 같은 셋팅을 꼭 확인하고 한다.
 		- no-cache
 		- must revalidate
@@ -135,7 +134,7 @@ APP 개발자들을 위한 레시피
 웹에서 앱으로 스크립트 호출
 - 콜벡함수를 사전에 정의하지 않고 동적으로 받을 수 있도록 정의했을 시
 	- 보안이슈 - XSS 조심해야함
-	- 동적 호출 제거 -> 사전 정의후 호출로 변경![[Pasted image 20240112161625.png]]
+	- 동적 호출 제거 -> 사전 정의후 호출로 변경![[webview_7.png]]
 
 앱에서 웹으로 스크립트 호출
 - 앱-웹이 함수 인터페이스를 맞춘 경우
@@ -145,7 +144,13 @@ APP 개발자들을 위한 레시피
 - dispatchEvent() 로 통신
 	- 앱은 함수 호출에 대한 예외처리 불필요
 	- 웹은 eventListner 사용으로 호출
-	- ![[Pasted image 20240112165644.png]]
+	- ![[webview_8.png]]
 
 
 앱에서 바로 로그 확인
+- 앱로그 + 웹로그
+- https://github.com/kean/Pulse
+	- 앱에서 확인 가능
+	- mac 에서도 확인 가능
+- https://github.com/liriliri/eruda
+	
