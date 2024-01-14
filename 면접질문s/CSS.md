@@ -245,3 +245,10 @@ https://uxkm.io/publishing/css/03-cssMiddleclass/09-css_media_part2#gsc.tab=0
 
 
 ## CSS Transform
+
+
+
+
+## Render blocking CSS
+----
+크게 중요하지 않다!!
