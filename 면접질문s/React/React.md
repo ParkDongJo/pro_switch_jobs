@@ -20,7 +20,7 @@
 - 업데이트 할 때 (Updating)
 - 제거 할때 (Unmounting)
 
-![](./resource/react_lifecycle.jpeg)
+![](react_lifecycle.jpeg)
 
 대표적인 생명주기들을 순서대로 나열해 봅시다.
 1. constructor
@@ -47,7 +47,7 @@
 |UnMounting|componentWillUnmount()|useEffect(() => () => { ... })|
 
 여기서 끝나면 안됩니다. hooks 와 관련해서 좀 더 짚고 가야할 것이 있습니다.
-![](./resource/react_lifecycle_func.png)
+![](react_lifecycle_func.png)
 
 useEffect 와 나란히 눈에 들어오는 hooks 이 있습니다. 바로 useLayoutEffect() 입니다. 이 hooks 는 사실 크게 쓰일 일은 많이 없습니다. 하지만 특정 상황에 사용하면 큰 이점을 가져갈 수 있습니다. 이해하기 쉽게 2개의 hooks 를 비교해 봅시다.
 
@@ -334,7 +334,7 @@ export default User;
 ------
 HTML 스트리밍이란 HTML을 더 작은 청크로 분할하고 이러한 청크를 서버에서 점진적으로 클라이언트에게 전송하는 과정을 의미합니다.
 
-![](./resource/html_streaming.png)
+![](html_streaming.png)
 
 React v18 부터 지원되는 스팩입니다. 기존 SSR 방식은 아래 단계들을 순차적으로 진행합니다. 그리고 각 단계들은 블로킹적입니다.
 
@@ -370,7 +370,7 @@ export function render(res) {
 }
 ```
 
-![](./resource/js_chunk.png)
+![](js_chunk.png)
 
 이때, 클라측에서는 아래와 같이 Suspense 와 lazy로 선택적인 hydration 을 처리해야합니다. 무엇을 지연시킨 후 비동기 처리에 대비하고 무엇을 빠르게 처리할 지 정의해두는 것이죠.
 

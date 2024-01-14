@@ -253,3 +253,25 @@ https://uxkm.io/publishing/css/03-cssMiddleclass/09-css_media_part2#gsc.tab=0
 ----
 기본적으로 CSS는 렌더링 차단 리소스로 취급된다. 즉, CSSOM이 생성될 때까지 브라우저가 처리된 콘텐츠를 렌더링하지 않는다.
 
+최초 렌더링 시간을 최적화 하기 위해
+
+CSS 에서 해볼 수 있는 방법들로는
+미디어 쿼리를 활용하여, CSS 파싱 시점을 필요할 때 하게끔 하는 것이다.
+
+```css
+<link href="style.css" rel="stylesheet" />
+<link href="style.css" rel="stylesheet" media="all" />
+<link href="portrait.css" rel="stylesheet" media="orientation:portrait" />
+<link href="print.css" rel="stylesheet" media="print" />
+<link href="other.css" rel="stylesheet" media="(min-width: 40em)" />
+```
+
+media 속성을 통해
+
+- 화면이 가로로 됐을 시
+- print 시점
+- 최소 화면이 40em 일때
+
+등등을 통해서 조건에 맞춰 css 를 로드 하는 것이다.
+
+https://web.dev/articles/critical-rendering-path/render-blocking-css?hl=ko
