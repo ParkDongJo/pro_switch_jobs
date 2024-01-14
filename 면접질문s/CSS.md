@@ -251,4 +251,5 @@ https://uxkm.io/publishing/css/03-cssMiddleclass/09-css_media_part2#gsc.tab=0
 
 ## Render blocking CSS
 ----
-크게 중요하지 않다!!
+기본적으로 CSS는 렌더링 차단 리소스로 취급된다. 즉, CSSOM이 생성될 때까지 브라우저가 처리된 콘텐츠를 렌더링하지 않는다.
+
