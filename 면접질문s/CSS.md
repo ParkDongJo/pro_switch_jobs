@@ -351,3 +351,6 @@ https://www.google.com/search?q=stylex+vs+tailwind&oq=stylex+vs+tailwind&sourcei
 
 Tailwind
 https://lokendrakushwah.medium.com/why-tailwind-css-is-still-better-than-stylex-and-other-css-libraries-8a8efd5b45a2
+
+둘을 비교
+https://arc.net/l/quote/xjddzzke
