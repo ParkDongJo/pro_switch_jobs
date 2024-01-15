@@ -281,3 +281,12 @@ https://web.dev/articles/critical-rendering-path/render-blocking-css?hl=ko
 
 ## CSS 단위 px, em, rem, vw, vh
 ----
+CSS 에서 단위를 분류하자면, 아래와 같이 분류가 된다. 우리는 웹상에서 다루는 단위만 취급해보자.
+
+#### 절대적
+- px :
+- pt :
+- pc : 1pc == 12pt
+
+#### 상대적
+- em
