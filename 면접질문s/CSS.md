@@ -284,12 +284,53 @@ https://web.dev/articles/critical-rendering-path/render-blocking-css?hl=ko
 CSS 에서 단위를 분류하자면, 아래와 같이 분류가 된다. 우리는 웹상에서 다루는 단위만 취급해보자.
 
 #### 절대적
-- px :
-- pt :
+- px : 1px == 1인치의 1/96 (웹에서는 px 만 주로 사용)
+- pt : 1pt == 1인치의 1/72 
 - pc : 1pc == 12pt
 
 #### 상대적
-- em - 글꼴 크기를 상대적으로 표현화는 단위
-- rem - 글꼴을 html 기준으로
+- % - 부모 요소 기준으로 % 처리
+- em - 글꼴 크기를 부모 요소 기준으로 배수
+```css
+.parent {
+    font-size: 20px;
+
+}
+
+.child {
+	/* 부모 기준 2rem 은 40px 이다 */
+    font-size: 2em;
+}
+```
+- rem - 글꼴 크기를 html(최상위 요소) 기준으로 배수
+```css
+html {
+    font-size: 50px;
+}
+
+.parent {
+    font-size: 20px;
+
+}
+
+.child {
+	/* html 기준 2rem 은 100px 이다 */
+    font-size: 2rem;
+}
+```
 - vw - Viewport weight 의 축약어, 1vw 당 뷰표트 너비의 1% 만큼 계산됨
 - vh - Viewport height 의 축약어, 1vh 당 뷰표트 높이의 1% 만큼 계산됨
+
+
+#### 반응형 웹에서는 rem을 사용
+각 디바이스 크기를 대응하기 위해, 효율적인 코드는
+
+- 공통적인 부분
+- 개별적인 부분
+
+을 분리 시켜놓는 것이다. 여기서 각 디바이스당 개별젹인 스타일이 문제인데 아래와 같은 기법으로 나눌수 있다.
+
+- 개별 스타일 - media-query
+- 개별 폰트 - rem
+
+으로 각각 대응한다.
