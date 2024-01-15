@@ -346,7 +346,8 @@ https://velog.io/@edie_ko/Tip-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EB%B8%8C%EB%9D%BC%EC%
 ## Tailwind vs. StyleX
 ----
 
+styleX
+https://www.google.com/search?q=stylex+vs+tailwind&oq=stylex+vs+tailwind&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:9e385e36,vid:K10yeryaN58,st:0
 
-
-
+Tailwind
 https://lokendrakushwah.medium.com/why-tailwind-css-is-still-better-than-stylex-and-other-css-libraries-8a8efd5b45a2
