@@ -296,6 +296,8 @@ https://javascript.plainenglish.io/why-cant-vite-use-new-syntax-46b50886a1db
 ----
 
 
+vite 에서는 SSR 타이밍 구현에 대한 라이브러리들을 추천하고 있다.
+https://github.com/vitejs/awesome-vite?tab=readme-ov-file#ssr
 
 
 둘을 비교
