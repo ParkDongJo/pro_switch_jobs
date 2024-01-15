@@ -354,3 +354,19 @@ https://lokendrakushwah.medium.com/why-tailwind-css-is-still-better-than-stylex-
 
 둘을 비교
 https://arc.net/l/quote/xjddzzke
+
+
+
+
+## 현재 CSS 의 분류
+----
+
+- SEMANTIC CSS
+- CSS-IN-JS
+	- Run time
+	- Zero time
+- Atomic CSS
+
+
+
+https://velog.io/@sun1301/CSS-in-JSvsAtomicCSS
