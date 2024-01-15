@@ -286,6 +286,7 @@ https://www.youtube.com/watch?v=iX3Nu1FcZKA
 ## vite 에서는 polyfill 을 지원하지 않는다.
 -----
 
+vitejs/plugin-legacy 또는 polyfill.io를 사용하여 Vite 프로젝트에 폴리필을 추가할 수 있습니다.
 
 https://javascript.plainenglish.io/why-cant-vite-use-new-syntax-46b50886a1db
 
