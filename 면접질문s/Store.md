@@ -318,10 +318,15 @@ useSyncExternalStore 는 그 자체로 동기식인데, 이는 타임 슬라이�
 
 그리고 tearing 을 아주 일시적인 현상으로 여기는것 같습니다. 그래서 그런 tearing 보다 더 중요하다고 여기는 비동기식 지원을 더 완벽히 하기 위한 조치인것으로 보입니다.
 
+게다가 짧게만 언급했지만. useReducer 를 통해 내부적으로 해결을 하는 듯한 언급만 남기고 더 자세히 언급하진 않았다
+하지만 Jotai 는 처음에는 useMutableSource(useSyncExternalStore의 이전 버전) 를 고려를 했었고, 이 tearing 에 대하여 꽤 많은 테스트를 했던것으로 보인다.
+https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-rendering
+
 
 jotai
 https://dev.to/dai_shi/why-usesyncexternalstore-is-not-used-in-jotai-23h9
 https://github.com/pmndrs/jotai/discussions/2137
+https://blog.hwahae.co.kr/all/tech/tech-tech/6099
 
 zustand
 https://medium.com/dong-gle/%EC%9D%B4-%EA%B8%80%EC%9D%80-usesyncexternalstore%EB%A5%BC-%EC%9D%B4%EB%AF%B8-%EC%95%8C%EA%B3%A0-%EC%9E%88%EB%8B%A4%EB%8A%94-%EA%B0%80%EC%A0%95-%ED%95%98%EC%97%90-%EC%9E%91%EC%84%B1%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4-460637179d0d
@@ -335,11 +340,12 @@ https://medium.com/dong-gle/%EC%9D%B4-%EA%B8%80%EC%9D%80-usesyncexternalstore%EB
 
 
 
-## setState 관련 질문
+## Composition event 란
 -----
+![[store_react_composition.png]]
 
 
-https://www.inflearn.com/questions/473826/%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94-setstate-%EA%B4%80%EB%A0%A8-%EC%A7%88%EB%AC%B8%EC%9E%85%EB%8B%88%EB%8B%A4
+https://arc.net/l/quote/akdzqexu
 
 
 
