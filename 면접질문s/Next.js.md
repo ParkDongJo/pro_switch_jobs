@@ -106,3 +106,15 @@ https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Server-Side-Render
 
 https://ajdkfl6445.gitbook.io/study/web/csr-vs-ssr-vs-ssg#universal-rendering
 https://www.educative.io/answers/ssr-vs-csr-vs-isr-vs-ssg
+
+
+
+## 하조은의 Next.js 13
+---
+파트 1
+- 서버 컴포넌트
+- 라우팅
+- 페이지 간 이동
+- 스타일링
+- 데이터 패칭
+- 메타데이터
