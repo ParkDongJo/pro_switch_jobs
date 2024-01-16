@@ -169,7 +169,9 @@ useMemo 와 달리 useCallback 은 deps(의존성 배열)에 등록된 props, st
 
 ## Forget 메모 자동화
 ------
+리액트 Forget은 메모화 프로세스를 자동화하여 이러한 문제를 해결하는 것을 목표로 합니다. 새로운 컴파일러를 사용하면 개발자가 수동으로 `useMemo`나 `useCallback`을 사용할 필요가 없습니다. 대신 컴파일러가 메모화가 필요한 시점을 자동으로 판단하여 적용하므로 개발자의 정신적 부담이 줄어들고 코드를 읽고 이해하기 쉬워집니다.
 
+리액트 Forget의 코어는 바벨과 거의 완전히 분리되어 있으며, 핵심 컴파일러 API는 단순히 이전 AST(abstract syntax tree)를 입력하고 새 AST를 출력하는 방식입니다. 이는 원본 로케이션 데이터를 유지하면서 달성됩니다. 내부적으로 컴파일러는 저수준의 의미 분석을 수행하기 위해 사용자 정의 코드 표현 및 변환 파이프라인을 사용합니다.
 
 https://velog.io/@lky5697/how-react-forget-will-make-react-usememo-and-usecallback-hooks-absolutely-redundant#%EB%AF%B8%EB%9E%98%EB%A5%BC-%EC%97%BF%EB%B3%B4%EB%8B%A4-%EB%A6%AC%EC%95%A1%ED%8A%B8-forget%EC%9D%98-%EB%93%B1%EC%9E%A5
 
