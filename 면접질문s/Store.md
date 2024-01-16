@@ -98,6 +98,13 @@ Jotai 는 순수 atom 과 파생된 atom 까지도 상태관리가 가능하며,
 
 이 부분은 아직 깊게 생각해보진 않아서 더 살펴봐야할 것 같다.
 
+#### React 의 향후 트랜드를 고려했을 시
+Jotai 가 괜찮아 보인다. (아직 고민중)
+
+- Server Component 가 향후 방향이라면
+	- 전역 store 의 역할 의 축소
+	- 더 사용하기 간단한 Atomic 패턴이 유리
+- 
 
 https://yozm.wishket.com/magazine/detail/2233/
 https://careerly.co.kr/comments/73197
