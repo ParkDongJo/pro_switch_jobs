@@ -118,3 +118,7 @@ https://www.educative.io/answers/ssr-vs-csr-vs-isr-vs-ssg
 - 스타일링
 - 데이터 패칭
 - 메타데이터
+
+
+
+

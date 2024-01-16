@@ -95,3 +95,16 @@ https://swc.rs/blog/perf-swc-vs-babel
 https://vitejs.dev/plugins/
 
 공식 플러그인으로 등록 되어 있다.
+
+
+
+## Vite vs. Next(turbopack)
+----
+터보팩이 정말 vite 보다 10배 빠른가? 에 대한 의문점을 제시하는 글이다.
+
+여기서는 vercel 에서 제공하는 벤치마크가 공정한 테스트가 아니라고 주장하고 있다.
+추후에 시간 날때 정리해보자
+
+https://velog.io/@arthur/%EB%B2%88%EC%97%AD-%ED%84%B0%EB%B3%B4%ED%8C%A9%EC%9D%80-%EC%A0%95%EB%A7%90%EB%A1%9C-Vite-%EB%B3%B4%EB%8B%A4-10%EB%B0%B0%EB%8A%94-%EB%8D%94-%EB%B9%A0%EB%A5%BC%EA%B9%8C-Is-Turbopack-really-10x-Faster-than-Vite
+
+
