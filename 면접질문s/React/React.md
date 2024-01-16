@@ -198,7 +198,7 @@ hydrate 란 이벤트 핸들러 함수들을 정적인 DOM 에 붙여서 동적�
 이 때 페이지 성능 측정에 사용되는 개념들이 TTFB, FCP, FMP, TTI 가 있습니다.
 
 이때 TTI가 자바스크립트의 실행이 완료되어. 페이지가 상호작용 가능하게 될 때까지의 시간인데, HTML 코드에 JS 코드를 매칭시켜 동적인 이벤트가 가능하게 하는(=이벤트 리스너를 달아주는) hydration 개념이 나오게 된 것입니다.
-
+[하이드레이션]('면접질문s/React/v16')
 
 React는 16v 이후 부터 render() 를 SSR 에 사용하는 것을 더이상 지원하지 않고, hydrate() 를 사용하도록 권장하고 있습니다.
 
@@ -211,6 +211,8 @@ React는 16v 이후 부터 render() 를 SSR 에 사용하는 것을 더이상 �
 	- SSR 타이밍
 
 특히 React 18부터는 이 hydration 이 더 발전하여, Streaming HTML 과 선택적 Hydration 이 도입되었습니다.
+- Streaming HTML
+- 선택적 Hydration
 
 Streaming HTML은 서버단에서 pipeToNodeWritable를 이용해 html 코드를 스트리밍 형식을 통해 작은 청크 형태로 나누어 보내줄수 있습니다.
 
