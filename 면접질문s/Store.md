@@ -104,7 +104,9 @@ Jotai 가 괜찮아 보인다. (아직 고민중)
 - Server Component 가 향후 방향이라면
 	- 전역 store 의 역할 의 축소
 	- 더 사용하기 간단한 Atomic 패턴이 유리
-- 
+- 동시성에 대한 고민
+	- tearing 이라는 이슈
+	- jotai 는 이에 대한 접근을 동시성이 더 중요하다고 말하고 있음
 
 https://yozm.wishket.com/magazine/detail/2233/
 https://careerly.co.kr/comments/73197
