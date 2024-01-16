@@ -370,3 +370,15 @@ https://arc.net/l/quote/xjddzzke
 
 
 https://velog.io/@sun1301/CSS-in-JSvsAtomicCSS
+
+
+## SSR 에서의 Styled-components
+-----
+
+
+https://nextjs.org/docs/app/building-your-application/styling/css-in-js
+
+
+https://handhand.tistory.com/291
+
+https://velog.io/@shagrat/SSR-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98-CSS-in-JS
