@@ -722,3 +722,8 @@ function throttle(callback, timerTick) {
 
 https://yozm.wishket.com/magazine/detail/2373/
 https://yozm.wishket.com/magazine/detail/2374/
+
+
+
+## React setState 는 어떻게 동작할까?
+-----
