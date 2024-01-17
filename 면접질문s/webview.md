@@ -153,4 +153,14 @@ APP 개발자들을 위한 레시피
 	- 앱에서 확인 가능
 	- mac 에서도 확인 가능
 - https://github.com/liriliri/eruda
-	
+
+
+
+
+
+## 웹뷰에서 마주할 수 있는 이슈들
+----
+
+
+
+https://shylog.com/settings-for-a-more-complete-webview/
