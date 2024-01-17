@@ -567,3 +567,9 @@ vite는
 https://arc.net/l/quote/qpbbqmeu
 https://ko.vitejs.dev/guide/why.html
 https://bepyan.github.io/blog/2023/bundlers
+
+
+
+## 번들러의 역할은?
+---
+ESbuild 는 여러개의 ms 를 만들어낸다.
