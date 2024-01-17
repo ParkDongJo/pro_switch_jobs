@@ -262,7 +262,14 @@ const ella = outer();
 
 ## 스코프
 ----
+- 렉시컬 스코프 - 어디에 선언이 되어 있느냐
+	- 전역 스코프
+	- 지역 스코프
+		- 함수 스코프
+		- 블록 스코프
 
+
+https://gingerkang.tistory.com/76
 
 
 
