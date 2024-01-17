@@ -122,8 +122,22 @@ https://velog.io/@bepyan/styled-components-%EA%B3%BC-emotion-%EB%8F%84%EB%8C%80%
 
 ## Css-in-Js 의 한계점
 ----
+CSS-in-JS는 크게 분류가
 
+- run-time
+- zero-time
 
+으로 나뉘는데, 특히 run-time CSS-in-JS 의 단점은
+- 런타임에서의 스타일 직렬화로 인한 오버해드
+- CSS-in-JS 는 번들 크기를 늘린다.
+- 리액트 18v에서 동시성이 중요해지면서,
+	- 이런 동시성에 대한 CSS 라이브러리들에 대해 가이드라인을 제시하고 있다. (https://github.com/reactwg/react-18/discussions/110)
+	- 하지만 emotion 의 컨트리뷰터에 의하면 성능까지 챙기면서 동시성에 대응하고자 하는 것이 CSS-in-JS 에서 해결해볼 수 있는 일이 아니라고 결론 짓고 있다.
+- 리액트 v18 서버컴포넌트에서는 사용이 불가능 하다.
+
+결국 성능적인 측면에서 태생적인 한계를 가지고 있다.
+
+이 컨트리뷰터는 결국 자신이 맡은 프로젝트에서 emotion 을 포기하고, Sass 와 tailwind 를 결합해서 사용하는 걸 선택하고 있다고 한다.
 
 emotion 을 포기
 https://junghan92.medium.com/%EB%B2%88%EC%97%AD-%EC%9A%B0%EB%A6%AC%EA%B0%80-css-in-js%EC%99%80-%ED%97%A4%EC%96%B4%EC%A7%80%EB%8A%94-%EC%9D%B4%EC%9C%A0-a2e726d6ace6
