@@ -345,6 +345,49 @@ https://velog.io/@edie_ko/Tip-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EB%B8%8C%EB%9D%BC%EC%
 
 ## Tailwind vs. StyleX
 ----
+#### StyleX
+styleX 는 메타에서 3년간 내부 주요 프로젝트들에서 사용되어 왔고, 최근 오픈소스로 풀렸다. 이 덕분에 안정성은 메타 내부에서 이미 어느정도 검증됐다고 볼 수 있다.
+
+또한 CSS 분류중에서도 CSS-in-JS에 속하지만, 그 비교 대상은 Atomic CSS 분류에 속하는 tailwind 가 주요 비교 대상이다.
+
+그 이유는 바로 styleX 는 컴파일러의 면모를 가지고 있는데, 빌드 단계에서 StyleX 코드를 컴파일하여 Atomic 한 CSS 모듈 단위들로 변환한다.
+
+이는 기존 사용법은 CSS-in-JS 에 유사하면서도, 빌드 결과물은 Atomic CSS 와 유사하다. 물론 변환된 CSS는 런타임에 페인팅 단계에서 적용되는데, 이 또한 zero-time CSS 과 비교해서도 동적인 CSS적용에서 유리한 측명을 가지게 된다. 결국 StyleX는
+
+- runtime CSS-in-JS 보다 빠르고
+- Atomic CSS 보다 사용성이 좋고
+- zero-time CSS-in-JS 보다 동적 CSS 적용에 유리하다.
+
+위와 같은 장점들을 가진다.
+
+기능적으로도 유용한 면들이 많은데,
+
+- 조건에 따른 CSS를 구현하기 편하고
+- 타입 안정성이 보장된다.
+- create, props, defineVars 등과 같은 간단한 API를 가지고 css 의 역할 설계를 가져갈수 있다.
+
+다만 아쉬운 점은
+- 아직 초창기라 레퍼런스가 많이 없다
+
+
+### tailwind
+tailwind 는 Atomic CSS 분류에 대표적인 라이브러리 이다. 정해진 여러 class 들을 조합하여 스타일을 구축해가는 방법이다. 이렇게 되면 class 들이 많아졌을 시 코드 가독성 문제를 들 수 있지만 이 부분은 IDE 의 plugin 으로 어느정도 보완할 수 있다.
+
+덕분에
+- 각 class 들은 재사용성이 높고
+- css 기반이기 때문에 runtime CSS-in-JS 가 겪는 성능적인 이슈도 없다.
+- 규격화된 class 들 덕분에 일관된 스타일링이 가능해지고
+- Purge CSS 같은 몇가지 도구를 활용하면, css의 class 도 최적화 할 수 있다.
+
+다만 아쉬운 점은
+- 여전히.. 가독성이 떨어진다.
+- 러닝 커브가 높고
+- props 나 변수를 통한 동적 속성을 하기가 힘들다.
+	- inline-style 로 해결할 수 밖에 없다.
+
+특히 위의 단점들 때문에,
+일부 조직들에서는 tailwind 와 다른 라이브러리 들을 결합해서 사용하는 듯 보인다.
+
 
 styleX
 https://www.google.com/search?q=stylex+vs+tailwind&oq=stylex+vs+tailwind&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:9e385e36,vid:K10yeryaN58,st:0
