@@ -437,13 +437,17 @@ https://arc.net/l/quote/xjddzzke
 https://velog.io/@sun1301/CSS-in-JSvsAtomicCSS
 
 
-## SSR 에서의 Styled-components
------
+## SSR 에서 CSS-in-JS
+----
+
+SSR 에서의 CSS-in-JS 의 한계점과 zero-time CSS의 생성
+https://pozafly.github.io/css/explore-how-to-apply-modern-css/
 
 
+SSR 에서 겪을 수 있는 문제
+https://yzlosmik.tistory.com/159
+
+
+여전히 Sytled-components 는 Next.js 13 이상 버전에서
+서버 컴포넌트에서는 사용할 수 없다
 https://nextjs.org/docs/app/building-your-application/styling/css-in-js
-
-
-https://handhand.tistory.com/291
-
-https://velog.io/@shagrat/SSR-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98-CSS-in-JS
