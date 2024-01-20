@@ -417,7 +417,7 @@ https://arc.net/l/quote/xjddzzke
 
 ## 현재 CSS 의 분류
 ----
-[[[[]]]]
+
 - SEMANTIC CSS
 	- css
 	- sass
