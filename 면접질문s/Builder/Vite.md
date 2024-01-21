@@ -108,3 +108,11 @@ https://vitejs.dev/plugins/
 https://velog.io/@arthur/%EB%B2%88%EC%97%AD-%ED%84%B0%EB%B3%B4%ED%8C%A9%EC%9D%80-%EC%A0%95%EB%A7%90%EB%A1%9C-Vite-%EB%B3%B4%EB%8B%A4-10%EB%B0%B0%EB%8A%94-%EB%8D%94-%EB%B9%A0%EB%A5%BC%EA%B9%8C-Is-Turbopack-really-10x-Faster-than-Vite
 
 
+
+
+## vite 에 styleX 설정
+----
+vite-plugin-stylex 를 설치하여, config 에 설정
+
+https://arc.net/l/quote/ppfgdlkw
+https://medium.com/@huseyinsalmansoftdev/react-stylex-vite-npm-db9be1e5c5c6

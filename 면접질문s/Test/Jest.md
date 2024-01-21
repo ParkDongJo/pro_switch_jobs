@@ -36,3 +36,11 @@ https://kyungyeon.dev/posts/102
 
 
 https://voidx.net/jest/
+
+
+
+## Jest 에서 SVG 테스트
+----
+SVG 가 적용된 component 를 모듈단위 테스팅 하고자 한다면
+
+https://arc.net/l/quote/ovvtnqrp
