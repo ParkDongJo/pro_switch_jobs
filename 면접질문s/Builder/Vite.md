@@ -116,3 +116,8 @@ vite-plugin-stylex 를 설치하여, config 에 설정
 
 https://arc.net/l/quote/ppfgdlkw
 https://medium.com/@huseyinsalmansoftdev/react-stylex-vite-npm-db9be1e5c5c6
+
+
+vitest jest파일에 전역 jest 객체 사용
+https://arc.net/l/quote/uvgtkfqw
+https://github.com/vitest-dev/vitest/issues/2667
