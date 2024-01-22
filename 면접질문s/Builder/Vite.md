@@ -121,3 +121,11 @@ https://medium.com/@huseyinsalmansoftdev/react-stylex-vite-npm-db9be1e5c5c6
 vitest jest파일에 전역 jest 객체 사용
 https://arc.net/l/quote/uvgtkfqw
 https://github.com/vitest-dev/vitest/issues/2667
+
+
+
+
+## vite 가 탄생하기 까지
+-----
+
+https://velog.io/@teo/vite?trk=public_post-text
