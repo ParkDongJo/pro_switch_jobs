@@ -39,10 +39,26 @@ vite 는 어플리케이션 모듈을 2가지로 분류하고 이를 각기 다�
 ----
 
 - Console 제거
+	- terser 설치
+```javascript
+export default defineConfig({
+    // terser을 활용하여 console 제거 설정
+    build: {
+        minify: 'terser',
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true,
+            },
+        },
+    },
+});
+```
 - Proxy 설정
+	- 
 - 경로 Alias 설정
 - 코드 스플리팅
-- 
+
 
 
 
