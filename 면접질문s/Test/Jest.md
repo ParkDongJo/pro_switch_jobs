@@ -57,3 +57,14 @@ vitest 는 jest 에서 제공해주는 API 를 제공해준다.
 
 
 https://saucelabs.com/resources/blog/vitest-vs-jest-comparison
+
+
+
+vite.js 에서 jest 를 설정해보고자 했지만, 설정 글마다 설정이 제각각이다!! 
+
+https://jforj.tistory.com/362
+위 링크는 jest 2023.11 설정하는 블로그임에도 불구하고 따라해봤자 전혀 실행이 안된다.
+이딴 것에 시간 빼앗길 바에는 빡쳐서.. 됐다! 그냥 vitest 를 쓰는게 낫다.
+
+현재까지는 vitest 를 사용했을 시 styleX 에 대한 지원이 아직 덜 된듯 하고, 관련 참고 자료도 적어서 styleX 를 안쓰고 tailwindCSS 를 쓰는 쪽으로 가고 있다.
+
