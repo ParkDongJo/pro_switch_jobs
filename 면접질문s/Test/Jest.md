@@ -44,3 +44,16 @@ https://voidx.net/jest/
 SVG 가 적용된 component 를 모듈단위 테스팅 하고자 한다면
 
 https://arc.net/l/quote/ovvtnqrp
+
+
+
+
+## jest Vs. vitest
+-----
+jest 는 react 에서 개발한 test runner
+vitest 는 vite 에서 개발한 test runner
+
+vitest 는 jest 에서 제공해주는 API 를 제공해준다.
+
+
+https://saucelabs.com/resources/blog/vitest-vs-jest-comparison
