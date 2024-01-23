@@ -38,6 +38,12 @@ vite 는 어플리케이션 모듈을 2가지로 분류하고 이를 각기 다�
 ## vite 사용법
 ----
 
+
+### plugin 사용법
+
+
+
+### 설정법
 - Console 제거
 	- terser 설치
 ```javascript
@@ -55,10 +61,84 @@ export default defineConfig({
 });
 ```
 - Proxy 설정
-	- 
+	- 프론트에서 CORS 에러를 해결
+	- builder 에 proxy 설정
+```javascript
+export default defineConfig({
+    // proxy 설정
+    server: {
+        proxy: {
+            // /api/getData → http://localhost:8080/getData로 변경
+            '/api': {
+                target: 'http://localhost:8080', // fetch 요청에 대한 target 경로 설정
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, ''), // /api에 해당하는 경로를 삭제
+            },
+        },
+    },
+});
+```
 - 경로 Alias 설정
-- 코드 스플리팅
+	- 경로에 대한 alias 를 설정하여, 경로 설정을 좀 더 편하게 할수있도록 셋팅
+```javascript
+import path from 'path';
 
+export default defineConfig({
+    resolve: {
+        // /src경로를 @로 alias 처리
+        alias: [{ 
+	        find: '@', 
+	        replacement: path.resolve(__dirname, 'src') 
+	    }],
+    },
+});
+```
+또는
+```javascript
+export default defineConfig({
+    resolve: {
+		alias: {
+			'@root': '/',
+			'@': '/src',
+		},
+	},
+});
+```
+- 코드 스플리팅
+	- 코드 스플리팅을 적용하여 소스 분리를 할 수 있다.
+```javascript
+import { splitVendorChunkPlugin } from 'vite';
+
+export default defineConfig({
+    plugins: [
+        splitVendorChunkPlugin(), // vendor code spliting 설정
+});
+```
+
+```javascript
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router';
+
+const Home = lazy(() => import('@/pages/home')); // lazy를 이용한 코드 스플리팅 설정
+const Setting = lazy(() => import('@/pages/setting')); // lazy를 이용한 코드 스플리팅 설정
+
+const App = () => {
+    return (
+        <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/setting" element={<Setting />} />
+        </Routes>
+    );
+};
+
+export default App;
+```
+
+
+webpack proxy 설정
+https://velog.io/@jjhstoday/webpack-proxy%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-CORS-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0-%ED%95%98%EA%B8%B0
+vite 기본 사용법
+https://jforj.tistory.com/343
 
 
 
