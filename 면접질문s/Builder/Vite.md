@@ -238,3 +238,12 @@ https://github.com/vitest-dev/vitest/issues/2667
 -----
 
 https://velog.io/@teo/vite?trk=public_post-text
+
+
+
+
+## vite dev server run 할때
+------
+
+dev 서버 돌릴 시 네트워크로 요청되는 파일을 보면.. 모든게 다 스플링팅 되어서 전달된다.
+![[Pasted image 20240124135138.png]]
