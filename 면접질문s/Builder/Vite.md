@@ -247,3 +247,12 @@ https://velog.io/@teo/vite?trk=public_post-text
 
 dev 서버 돌릴 시 네트워크로 요청되는 파일을 보면.. 모든게 다 스플링팅 되어서 전달된다.
 ![[Pasted image 20240124135138.png]]
+
+
+
+## vite 아직 사용하지 마세요. 의견
+-----
+이 글을 쓴 날짜가 2023.1.28 이니까 이 글은 참고용으로만 이야기를 들어보기
+
+
+https://11001.tistory.com/212?category=1039501

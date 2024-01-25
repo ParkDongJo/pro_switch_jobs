@@ -125,6 +125,24 @@ https://www.educative.io/answers/ssr-vs-csr-vs-isr-vs-ssg
 
 ## Turbopack 이란
 -----
+터보팩에 대한 공홈 읽어보기
+
+써야하는 이유
+https://turbo.build/pack/docs/why-turbopack
+코어
+https://turbo.build/pack/docs/core-concepts
 
 
 https://careerly.co.kr/comments/71298
+
+
+
+## 싫다 vs. 좋다
+-----
+
+싫다는 의견
+https://www.epicweb.dev/why-i-wont-use-nextjs
+
+
+좋다는 의견
+https://arc.net/l/quote/nhgohjhn
