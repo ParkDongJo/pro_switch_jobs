@@ -127,12 +127,26 @@ https://www.educative.io/answers/ssr-vs-csr-vs-isr-vs-ssg
 -----
 터보팩에 대한 공홈 읽어보기
 
-
-
-써야하는 이유
 https://turbo.build/pack/docs/why-turbopack
-코어
+일단 공홈에서 내세우는 turbopack 의 장점으로는 아래와 같은 것들이 있다.
+
+- Next.js 를 통해 SSR 구축을 손쉽게 이용할 수 있다.
+- Native ESM 은 대규모 프로젝트에서 모듈단위 요청으로 인해 네트워크 요청이 급증하는걸 단점으로 찍고 있다. Turbopack 은 하나의 번들링을 여전히 고수하면서도 빠른 속도를 자랑하고 있다.
+- 캐시와 병렬처리를 통해 속도를 증가시켰다
+- 요청 기반으로 번들링한다.
+
 https://turbo.build/pack/docs/core-concepts
+코어에 대한 내용도 재미있다. 코어 내용으로는 아래와 같은 내용들이 기재 되어 있었다.
+
+- 함수 레벨의 캐싱을 통해서 re bundling 할때 시간을 절약할 수 있다.
+- 요청 기반의 컴파일링
+	- Next.js 11 이전에는 전체 파일을 번들링했고
+	- Next.js 11 에서 부터는 페이지 단위로 번들링했다.
+		- 하지만 이는 페이지에서 의존하고 있는 모든 파일을 불러온다
+	- Next.js 13 이후로 요청 하는 파일에 대해서만 컴파일 한다.
+		- 화면에 표시 될때까지 컴파일을 하지 않는다.
+		- 심지어 크롬 Dev tools 를 열고 있지 않으면
+
 
 
 https://careerly.co.kr/comments/71298
