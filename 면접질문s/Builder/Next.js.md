@@ -128,6 +128,7 @@ https://www.educative.io/answers/ssr-vs-csr-vs-isr-vs-ssg
 터보팩에 대한 공홈 읽어보기
 
 https://turbo.build/pack/docs/why-turbopack
+turbopack 은 rust 기반으로 만들어졌다. 덕분에 빠르고 병렬처리가 가능하다.
 일단 공홈에서 내세우는 turbopack 의 장점으로는 아래와 같은 것들이 있다.
 
 - Next.js 를 통해 SSR 구축을 손쉽게 이용할 수 있다.
@@ -145,7 +146,14 @@ https://turbo.build/pack/docs/core-concepts
 		- 하지만 이는 페이지에서 의존하고 있는 모든 파일을 불러온다
 	- Next.js 13 이후로 요청 하는 파일에 대해서만 컴파일 한다.
 		- 화면에 표시 될때까지 컴파일을 하지 않는다.
-		- 심지어 크롬 Dev tools 를 열고 있지 않으면
+		- 심지어 크롬 Dev tools 를 열고 있지 않으면, 소스맵 컴파일도 하지 않는다
+		- ESM 을 사용해도 비슷한 동작이 발생하지만, 서버에 많은 요청이 가게된다.
+		- 요청 수준의 컴파일을 사용하면 요청 수를 줄이고 기본 속도를 유지하면서 컴파일 할수 있다.
+
+요청 기반의 컴파일 개념이 매우 궁금해졌다. 도대체 어떻게 요청 기반으로 한다느 걸까?
+GPT 한테 일단 물어봤지만.. 일단 내가 직접 찾아보긴 해야한다
+
+![[turbopack_gpt.png]]
 
 
 
