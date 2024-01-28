@@ -66,5 +66,22 @@
 ----
 현재 React, React-Native, JavaScript, HTML & CSS, Jest, playwright
 
+React 에 대해서
 
+React-Native 에 대해서
+JavaScript 에 대해서
+HTML & CSS 에 대해서
+Jest 에 대해서
+playwright 에 대해서
+
+
+
+
+
+## 동료와 의견이 다를 때 어떻게 설득하냐
+
+
+
+
+## 열정을 가지고 
 
