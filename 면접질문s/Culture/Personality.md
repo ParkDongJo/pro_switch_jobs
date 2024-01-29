@@ -21,3 +21,9 @@
 
 
 ## 팀워크 & 협업
+
+
+
+
+## specialist, generalist 중 어떤 방향을 지향하나요?
+
