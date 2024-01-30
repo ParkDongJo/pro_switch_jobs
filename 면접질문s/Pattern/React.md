@@ -1,34 +1,6 @@
 
 
 
-## Template Method
-
-
-
-## Factory Method
-
-
-
-## Decolator
-
-
-
-## Abstract Factory
-
-
-
-## Singleton
-
-
-
-## Command
-
-
-
-
-
-
-
 # React 컴포넌트 패턴
 =======================================================================
 
