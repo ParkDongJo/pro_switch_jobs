@@ -4,7 +4,7 @@
 ----
 
 - Go 언어로 작성됨
-- 코드파싱, 출력, 소스맵 생성을 모두 병렬로  처리
+- 구문분석, 코드파싱, 코드 생성, 소스맵 생성을 모두 병렬로  처리
 - 불필요한 데이터 변환과 할당 없음
 
 [https://www.youtube.com/watch?v=4_d_LT1mxJA](https://www.youtube.com/watch?v=4_d_LT1mxJA)
