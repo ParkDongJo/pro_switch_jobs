@@ -14,6 +14,17 @@
 ## ESbuild 사용해보기
 ----
 
+벌들 포멧은 용도에 따라 3가지로 나뉜다.
+
+- iife (immediately-invoked function expression) 포멧
+- cjs (commonJS) 포멧
+- esm (ECMA Script) 포멧
+
+iife 는 브라우저에서 동작하는 포멧
+cjs 는 Node 에서 default로 동작하는 포멧
+esm 브라우저와 노드 양쪽 모두에서 동작하는 포멧
+
+
 
 
 
