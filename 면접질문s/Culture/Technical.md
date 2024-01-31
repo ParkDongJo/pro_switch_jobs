@@ -74,7 +74,6 @@
 현재 React, React-Native, JavaScript, HTML & CSS, Jest, playwright
 
 React 에 대해서
-
 React-Native 에 대해서
 JavaScript 에 대해서
 HTML & CSS 에 대해서
