@@ -45,4 +45,29 @@ https://xionwcfm.tistory.com/346
 
 
 
-## 
+## Union Type, Intersection Type
+----
+
+#### union 타입
+Union은 합집합이다. | 로 구분하는데 OR 연산자라고 보면 된다. 아래와 같이 사용한다.
+```ts
+type Marvel = "IronMan" | "Hulk";
+type Dc = "BatMan" | "SuperMan";
+```
+
+#### Intersection 타입
+교집합이다. & 를 사용하고 AND 연산자라고 보면 된다. 아래와 같이 사용된다.
+```ts
+type FavoriteSport = "swimming" | "football";
+type BallSport = "football" | "baseball";
+
+type FavoriteBallSport = FavoriteSport & BallSport; // 'football'
+
+
+type FavoriteSport = "swimming" | "ski";
+type BallSport = "football" | "baseball";
+
+type FavoriteBallSport = FavoriteSport & BallSport; // never
+```
+
+https://fe-developers.kakaoent.com/2022/221124-typescript-tip/
