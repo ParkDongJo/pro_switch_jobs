@@ -42,3 +42,7 @@ https://seokzin.tistory.com/entry/React-SOLID-%EC%9B%90%EC%B9%99%EC%9D%84-%EC%BB
 런타임에서도 타입을 강화시키고, 숫자같은 경우 정수냐 실수냐 등도 강력하게 타입체크가 가능해진다.
 
 https://xionwcfm.tistory.com/346
+
+
+
+## 
