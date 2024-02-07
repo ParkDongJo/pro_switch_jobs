@@ -666,7 +666,7 @@ https://velog.io/@dongkyun/setState-%EB%8F%99%EA%B8%B0%EC%A0%81%EC%9C%BC%EB%A1%9
 
 ```javascript
 
-function debounce(callback, timer) {
+function debounce(callback, timerTick) {
 	let timerId = null;
 
 	return (...args) => {
