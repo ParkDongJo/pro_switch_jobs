@@ -737,3 +737,11 @@ https://yozm.wishket.com/magazine/detail/2374/
 
 
 https://shape-coding.tistory.com/entry/React-%EB%A6%AC%EC%95%A1%ED%8A%B8-consolelog-%EB%91%90-%EB%B2%88%EC%94%A9-%EC%B0%8D%ED%9E%88%EB%8A%94-%EC%9D%B4%EC%9C%A0-%EB%A0%8C%EB%8D%94%EB%A7%81%EC%9D%B4-%EB%91%90-%EB%B2%88-%EB%90%98%EB%8A%94-%EC%9D%B4%EC%8A%88#:~:text=%EA%B2%B0%EB%A1%A0%EB%B6%80%ED%84%B0%20%EC%84%A4%EB%AA%85%EC%9D%84%20%EB%93%9C%EB%A6%AC%EB%A9%B4,%EA%B0%90%EC%8B%B8%EC%A0%B8%20%EC%9E%88%EA%B8%B0%20%EB%95%8C%EB%AC%B8%EC%9E%85%EB%8B%88%EB%8B%A4.
+
+
+
+## React 렌더링 방식
+----
+
+
+https://youtu.be/N7qlk_GQRJU?si=S8VZClVUw2vPmcHp
