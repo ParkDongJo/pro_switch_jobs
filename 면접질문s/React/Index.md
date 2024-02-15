@@ -451,6 +451,7 @@ Next.js SSR
 ## useTransition(), useDeferredValue() 
 ------
 React 18 부터 등장하는 hooks 들 입니다. 이 둘은 비슷한 면이 있으면서도 차이점이 있습니다.
+https://1ilsang.dev/posts/js/use-transition
 
 공통점은
 둘다 제어하고자 하는 state나 props의 변경을 우선순위를 낮추고자 하는데 사용합니다.
