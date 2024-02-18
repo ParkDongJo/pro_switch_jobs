@@ -40,3 +40,14 @@
 
 - 501 : Not Implemented, 요청한 동작에 대해 서버가 수행할 수 없는 경우
 - 503 : Service Unavailable, 서버가 과부하 또는 유지 보수로 내려간 경우
+
+
+
+## HTTPS
+----
+
+
+https://nuritech.tistory.com/25
+
+
+https://www.stevenjlee.net/2020/11/01/%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-http-vs-https-%EA%B7%B8%EB%A6%AC%EA%B3%A0-ssl-secure-socket-layer/
