@@ -47,7 +47,7 @@ https://xionwcfm.tistory.com/346
 
 ## Union Type, Intersection Type
 ----
-
+### 리터럴 타입에서
 #### union 타입
 Union은 합집합이다. | 로 구분하는데 OR 연산자라고 보면 된다. 아래와 같이 사용한다.
 ```ts
@@ -71,3 +71,9 @@ type FavoriteBallSport = FavoriteSport & BallSport; // never
 ```
 
 https://fe-developers.kakaoent.com/2022/221124-typescript-tip/
+
+
+### 객체 타입에서
+
+
+https://joshua1988.github.io/ts/guide/operator.html#intersection-type
