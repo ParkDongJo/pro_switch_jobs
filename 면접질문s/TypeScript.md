@@ -117,3 +117,10 @@ type Capt = Person & Developer;
 
 한개만 아는놈.. https://fe-developers.kakaoent.com/2022/221124-typescript-tip/
 캡틴판교 https://joshua1988.github.io/ts/guide/operator.html#intersection-type
+
+
+
+## any vs. unknown 차이점
+------
+
+https://xionwcfm.tistory.com/394
