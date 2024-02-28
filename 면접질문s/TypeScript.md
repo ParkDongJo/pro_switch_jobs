@@ -124,3 +124,11 @@ type Capt = Person & Developer;
 ------
 
 https://xionwcfm.tistory.com/394
+
+
+
+## 타입 추론, 타입 단언, 타입호환, 타입 가드
+----
+
+
+https://arc.net/l/quote/rxmepnps
