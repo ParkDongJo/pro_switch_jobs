@@ -73,7 +73,7 @@ export default defineConfig({
             '/api': {
                 target: 'http://localhost:8080', // fetch 요청에 대한 target 경로 설정
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ''), // /api에 해당하는 경로를 삭제
+                rewrite: (path) => path.replace(/^\/api/, ''), // /api에 해당하는 경로를 삭제     
             },
         },
     },
