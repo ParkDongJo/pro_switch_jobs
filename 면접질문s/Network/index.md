@@ -281,7 +281,6 @@ https://youtu.be/K9L9YZhEjC0?si=m18rqvCUuSWBz5Ye
 
 ## CORS
 ----
-
-
+브라우저 단에서 도메인이
 
 https://www.youtube.com/watch?v=bW31xiNB8Nc
