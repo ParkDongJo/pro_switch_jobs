@@ -139,3 +139,9 @@ https://arc.net/l/quote/rxmepnps
 -----
 
 https://inpa.tistory.com/entry/TS-%F0%9F%93%98-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-Generic-%ED%83%80%EC%9E%85-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0
+
+
+## infer
+----
+
+https://mynewcodings.tistory.com/2#infer
