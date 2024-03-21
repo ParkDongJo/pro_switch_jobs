@@ -19,3 +19,21 @@ XCode 캐시로 인한 이슈
 	- Xcode 캐시
 	- 프로젝트 빌드 데이터 및 인덱스
 	모두 삭제 후 재 빌드
+
+
+
+
+
+# Android
+
+gradle 셋팅 변경후
+
+`Caused by: java.io.IOException: Cannot run program "node"`
+
+아래 명령어 실행
+
+```
+sudo chmod +x /Applications/Android\ Studio.app/Contents/bin/printenv
+```
+
+https://flamingotiger.github.io/frontend/ReactNative/react-native-android-cannot-run-program-node/
