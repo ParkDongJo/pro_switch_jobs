@@ -31,4 +31,13 @@ $ which ruby
 ```
 
 
+이슈 해결
+
+error Failed to launch the app on simulator, An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+
+
+
 ## Android
+
+
+
