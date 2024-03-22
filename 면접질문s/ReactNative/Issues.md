@@ -37,3 +37,10 @@ sudo chmod +x /Applications/Android\ Studio.app/Contents/bin/printenv
 ```
 
 https://flamingotiger.github.io/frontend/ReactNative/react-native-android-cannot-run-program-node/
+
+
+
+
+
+리액트 네이티브 개발자들이 마주하는 이슈와 해결책 5가지
+https://yozm.wishket.com/magazine/detail/1476/
