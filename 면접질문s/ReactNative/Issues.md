@@ -44,3 +44,12 @@ https://flamingotiger.github.io/frontend/ReactNative/react-native-android-cannot
 
 리액트 네이티브 개발자들이 마주하는 이슈와 해결책 5가지
 https://yozm.wishket.com/magazine/detail/1476/
+
+
+
+
+
+# Flipper 설치 후 사용
+
+https://arc.net/l/quote/mlakelzd
+플리퍼가 꽤 업데이트 되었다. 한번 시간내서 정리해보면 좋을것 같다
