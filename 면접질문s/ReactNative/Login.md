@@ -72,7 +72,7 @@ https://github.com/crossplatformkorea/react-native-naver-login/blob/main/README.
 
 
 
-# 소셜 로그인
+# 소셜 로그인 (Webview)
 
 일단 소셜 로그인을  구현한다고 했을 때,
 
@@ -120,6 +120,39 @@ https://velog.io/@runprogrmm/React-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B
 -----
 React Native Webview로 카카오톡 로그인 구현하기
 https://orangebrother.dev/blog/use_kakao_login_react_native_webview
+
+
+
+# 소셜 로그인 (NPM)
+
+라이브러리로 소셜 로그인을 구현하는 방법도 있다. 이 방법으로 할까 말까를 매우 고민했었다.
+
+이유는
+- RN 버전이 바뀔때 마다 이슈가 생긴다. 국내 커뮤니티가 상대적으로 작다보니, 대응이 느리거나 매번 이슈를 직접 두들겨 맞아야 한다.
+- Native 에 대한 공수를 줄이고 싶었다.
+
+하지만, 우선 초기버전에서는 라이브러리를 사용하기로 했다.
+지금 당장 webview 로 하기에는 호스팅 신청이나 CDN, Storage 구축 부터 해야 했기 때문이다. Firebase 와 Google Cloud를 전적으로 사용하겠다고 결정한 이상.. 해당 학습이 선행이 되어야 한다.
+
+이 모든 것이 비용이기 때문에, 우선은 소셜 로그인으로 구현한다.
+
+Google - https://rnfirebase.io/auth/social-auth#google
+Kakao - https://github.com/crossplatformkorea/react-native-kakao-login?tab=readme-ov-file
+- iOS
+- AOS
+Naver - https://github.com/crossplatformkorea/react-native-naver-login?tab=readme-ov-file
+- iOS
+- AOS
+
+로 설치하면 된다. 나름 편한 부분은 각 공홈에서 추가로 더 설정을 하거나 구현을 해야할 부분을 어느정도 자동으로 셋팅이 되어 있다.
+
+그래서, 리드미 파일에 명시된 순서대로 설정을 차근차근 해주면 된다.
+
+
+이제  이 각각의 로그인에서 받아온 auth 정보를 다시 한번더 Firebase 쪽으로 연동시키는 로직을 추가 개발하여 소셜로그인에 대한 정보를 모두 Firebase Auth 에 통합시킨다.
+
+
+
 
 
 
