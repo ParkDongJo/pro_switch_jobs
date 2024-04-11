@@ -169,3 +169,63 @@ https://velog.io/@psb7391/RN-Firebase-Cloud-Funtions%EB%A5%BC-%ED%99%9C%EC%9A%A9
 # RN 오픈소스 만든다면
 
 https://deku.posstree.com/ko/react-native/make-opensource-library/
+
+
+
+# RN firebase/functions 뻑킹 이슈
+
+일단 이유를 알기 힘들었지만, ios 에서 @react-native-firebase 19 버전에서 functions 모듈도 함께 설치해서 사용하고자 했을 시
+
+- 의존성이 있길래 podfile 에 의존성 헤더 설정을 해주니
+- xcode 에서 앱 빌드 자체가 되지 않았다.
+
+각 상황의 조치는 아래와 같다
+
+- 첫번째 상황
+에러 내용
+``` The Swift pod `FirebaseFunctions` depends upon `FirebaseCoreExtension`, `FirebaseAppCheckInterop`, `FirebaseAuthInterop`, `FirebaseMessagingInterop`, and `GTMSessionFetcher`, which do not define modules. To opt into those targets generating module maps (which is necessary to import them from Swift when building as static libraries), you may set `use_modular_headers!` globally in your Podfile, or specify `:modular_headers => true` for particular dependencies. ```
+
+해준 조치
+```
+# Podfile
+
+target 'YourTargetName' do
+  pod 'FirebaseFunctions', :modular_headers => true
+  # Specify modular headers for other dependencies as needed
+  pod 'FirebaseCoreExtension', :modular_headers => true
+  pod 'FirebaseAppCheckInterop', :modular_headers => true
+  pod 'FirebaseAuthInterop', :modular_headers => true
+  pod 'FirebaseMessagingInterop', :modular_headers => true
+  pod 'GTMSessionFetcher', :modular_headers => true
+end
+
+```
+
+
+-  두번째 상황
+에러 내용
+``` Build service could not create build operation: unknown error while handling message: MsgHandlingError(message: "unable to initiate PIF transfer session (operation in progress?)") ```
+
+특정 지을 수 있는 에러가 아니였고, functions 모듈을 제거하면 에러가 나지 않음!! 추측하건데 firebase 의 의존성에 의해, 관련 모듈들을 모두 설치를 해줘야 하는 것 같음!
+
+
+### 그래서 나의 결정은
+굳이 app 에서 functions 의 충돌을 해결해가며, 사용할 필요가 없다고 판단하였음
+
+물론 사용하면 아래와 같은 장점들은 있을것임
+- 인증을 알아서 해준다.
+- 사용이 편리하다
+
+하지만 충돌이 있고, 추후에 또 어떤 이슈가 있을지 예상하기 쉽지 않음 그래서 직접 http 호출로 function 을 사용하기로 함
+
+
+# firebase/functions 함수 로컬 빌드
+
+... 코드를 변경해줘도 계속 에러가 나길래.. 이리저리 수정하고 디버깅하다가...
+문득 build 명령어가 생각남..
+하.. 결국 서빙되는 코드는 빌드가 된 결과물이였음.. dev 라서 바로 로딩 될줄 알았지...
+
+- npm build
+- firebase serve --only functions --port=4002
+
+해주자
