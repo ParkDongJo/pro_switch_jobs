@@ -1,5 +1,6 @@
 
 ## Animated 기본
+----
 Animated 는 커스텀 하기 좋은 컴포넌트이며, RN 에서 애니메이션 구현을 위해 제공해주는 애니메이션 컴포넌트 중 하나이다.
 
 기본적인 사용법은 아래와 같다
@@ -29,8 +30,21 @@ export default App() {
 ```
 
 
+Animated 를 통해 애니메이션을 줄 수 있는 컴포넌트
+
+- Text
+- View
+- Image
+- ScrollView
+- FlatList
+- SectionList
+- 그외 방법
+	- `const Anim = Animated.createAnimatedComponents(대상_컴포넌트)` 를 통해 애니메이션 강제로 줄 수 있음
+
+
 ## Animated 인터렉션
-- timing\
+----
+- timing
 - spring
 - decay
 
