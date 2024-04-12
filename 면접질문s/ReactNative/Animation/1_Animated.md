@@ -1,9 +1,8 @@
 
-
 ## Animated 기본
 
 ## Animated 인터렉션
-- timing
+- timing\
 - spring
 - decay
 
