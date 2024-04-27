@@ -4,6 +4,7 @@
 
 경험상 ReactNative 를 활용하면 react-native-permissions 로도 무리 없이 커버가 가능하지만, 간혼 Native 단에서 제어를 해야하는 경우도 있다. 하지만 특수한 상황일테니 이 부분은 다루지 말자.
 
+https://arc.net/l/quote/eqcknfzq
 
 
 ## react-native-permissions
@@ -17,6 +18,13 @@ react-native-permissions 도 개인이 관리하고 있는 라이브러리이기
 https://adjh54.tistory.com/206
 https://velog.io/@dalbodre_ari/%EC%9A%B0%EC%95%84%ED%95%98%EA%B2%8C-react-native-%EA%B6%8C%ED%95%9C-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0
 
+
+- granted
+- [CASE2] 권한 상태가 수락되지 않은 상태
+	- blocked
+	- denied
+	- imited
+	- unavailable
 
 ## 주요 특장점
 -----
@@ -56,9 +64,15 @@ AOS
 
 현재 기준(2024.4)으로서는 아래와 같다.
 
-사용법은 라이브러리에 example 을 참고하는 것이 가장 좋다.
+1. 필요 권한 선언
+2. 권한 체크
+3. 권한 요청
 
-- 필요 권한 선언
+사용법은 라이브러리에 example 을 참고하는 것이 가장 좋다.
+https://github.com/zoontek/react-native-permissions/blob/master/example/src/App.tsx
+
+
+1. 필요 권한 선언
 react-native 에서 제공하는 Platform.select() 함수를 통해 각 OS 에 따라 필요한 권한만 Permission[] 형태로 리턴하게 한다.
 ```javascript
 
@@ -77,7 +91,7 @@ const PLATFORM_PERMISSIONS = Platform.select<
 ```
 
 
-- 권한 체크
+2. 권한 체크
 권한 체크는 개별 권한 체크와 멀티 체크가 있다.
 
 - 개별 체크 - check()
@@ -91,11 +105,22 @@ const PLATFORM_PERMISSIONS = Platform.select<
 
 ```
 
-주의 사항
-알림인 Notification 같은 경우 따로 함수를 제공해주고 있다. 
+
+3. 권한 요청
+권한 요청도 개별 권한 요청과 멀티 요청이 있다.
+
+- 개별 요청 - request()
+	- 비동기 동작
+- 멀티 요청 - requestMultiple()
+	- 비동기 동작
+	- 주로 첫 진입 시 멀티 체크 후 denied 되어 있는 목록을 받아서, 요청하는 방식으로 사용하는 것이 일반적이다.
 
 
-- 권한 요청
+**주의 사항**
+알림인 Notification 같은 경우 따로 함수를 제공해주고 있다.
+
+- 알림 체크 - checkNotification()
+- 알림 요청 - requestNotification()
 
 ## Android 13 버전 이상 권한 이슈
 
@@ -107,5 +132,50 @@ https://adjh54.tistory.com/465#1.%20checkNotifications()%20%EB%A9%94%EC%84%9C%EB
 
 
 ## 앱 화면전환 (포그라운드 <-> 백그라운드)
+-----
+### AppState
+https://reactnative.dev/docs/appstate
 
-ReactNative 의 AppState
+브라우저라는 통합된 환경에서 돌아가는 웹과 달리 앱은 하나의 OS 에 있는 여러 어플리케이션 중 하나이다. 그렇다보니 가끔 나의 앱에서 잠깐 나갔다가 들어오는 경우가 있다.
+
+그때 포그라운드 -> 백그라운드 / 백그라운드 -> 포그라운드 로 전환하게 되는데, 이때 타이밍에서 특정 작업을 해야할 때가 있다.
+
+다행히 ReactNative 의 AppState 라는 녀석을 제공해주고 있다.
+
+AppState 의 listener 의 파라미터를 통해서 state 값을 받아온다. 이때 state 의 스팩은 아래와 같다.
+
+- active - 앱이 포그라운드에서 실행중일때
+- background - 앱이 백그라운드에서 실행중일때
+- inactive [IOS] - 앱 비활성 기간 동안 발생
+	- 포그라운드 <-> 백그라운드 전환 순간
+	- 멀티태스킹 뷰 진입
+	- 알림센터 열기
+	- 전화 수신
+
+
+```javascript
+  const appStateRef = useRef(AppState.currentState);
+
+  useEffect(() => {
+    const subscription = AppState.addEventListener('change', nextAppState => {
+      if (
+        appStateRef.current.match(/inactive|background/) &&
+        nextAppState === 'active'
+      ) {
+	    // 벡그라운드 -> 포그라운드
+      } else if (
+        appStateRef.current === 'active' &&
+        nextAppState.match(/inactive|background/)
+	  ) {
+		// 포그라운드 -> 백그라운드
+      }
+
+      appStateRef.current = nextAppState;
+    });
+
+    return () => {
+      subscription.remove();
+    };
+  }, []);
+
+```
