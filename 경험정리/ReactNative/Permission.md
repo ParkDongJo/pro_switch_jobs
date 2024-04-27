@@ -104,3 +104,8 @@ https://adjh54.tistory.com/206
 https://adjh54.tistory.com/465
 
 https://adjh54.tistory.com/465#1.%20checkNotifications()%20%EB%A9%94%EC%84%9C%EB%93%9C%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC%20%EA%B6%8C%ED%95%9C%20%ED%99%95%EC%9D%B8-1
+
+
+## 앱 화면전환 (포그라운드 <-> 백그라운드)
+
+ReactNative 의 AppState
