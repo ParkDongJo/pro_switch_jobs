@@ -128,8 +128,23 @@ const PLATFORM_PERMISSIONS = Platform.select<
 https://adjh54.tistory.com/206
 https://adjh54.tistory.com/465
 
-https://adjh54.tistory.com/465#1.%20checkNotifications()%20%EB%A9%94%EC%84%9C%EB%93%9C%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC%20%EA%B6%8C%ED%95%9C%20%ED%99%95%EC%9D%B8-1
 
+
+Android 12 이하 에서는
+
+- AppState 등록하고, check, checkMulti 를 호출 할 경우 AppState 는 영향을 받지 않는다.
+- 저장과 같은 권한을 READ_STORAGE, WRITE_STORAGE 을 등록해준다.
+
+Android 13 이상 에서는
+
+- AppState 등록하고, check, checkMulti 를 호출 할 경우 AppState 에서 'active' -> 'background' -> 'active' 로 내부적으로 호출이  된다.
+- 저장과 같은 권한을 READ 권한만 주면 되고, 단 READ 권한을 이미지, 음성, 미디어 등등의 권한으로 디테일하게 설정해줘야 한다.
+
+아래의 글은  안드 12 이하와  13 이상 부터는 알림의 설정에 차이가 있어서, 13 이상에서 부터는 Notification 권한을 checkNotification(), requestNotification() 으로 사용해야한다고 되어 있다.
+
+하지만  현재(2024.04) 시점에서는 버전 상관없이 checkNotification(), requestNotification()  을 호출하여 관리해준다.
+
+https://adjh54.tistory.com/465#1.%20checkNotifications()%20%EB%A9%94%EC%84%9C%EB%93%9C%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC%20%EA%B6%8C%ED%95%9C%20%ED%99%95%EC%9D%B8-1
 
 ## 앱 화면전환 (포그라운드 <-> 백그라운드)
 -----
