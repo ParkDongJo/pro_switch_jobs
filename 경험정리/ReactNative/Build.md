@@ -48,3 +48,9 @@ eval_gemfile(plugins_path) if File.exist?(plugins_path)
 상세한 설명은 추후에
 
 https://arc.net/l/quote/onbromvz
+
+
+
+
+## iOS Release 와 Debug
+

@@ -1,4 +1,10 @@
 
+react-native-webview 에서 2가지 작업을 기본적으로 해줘야 한다.
+
+- Injected javaScript 설정
+- postmessage 메시지 정의
+- 
+
 참고코드
 
 ```typescript
