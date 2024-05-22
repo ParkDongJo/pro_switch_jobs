@@ -54,3 +54,42 @@ https://arc.net/l/quote/onbromvz
 
 ## iOS Release 와 Debug
 
+
+
+
+
+## build 폴더 clean
+
+```
+scripts: { 
+  "clean:android": "cd android && ./gradlew clean && cd ../",
+  "clean:ios": "cd ios && xcodebuild clean && cd ../", 
+}
+```
+
+
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+<string name="com_braze_api_key">cb7ce316-537d-4e63-9076-aa9b82ee51f5</string>
+
+<string translatable="false" name="com_braze_custom_endpoint">sdk.iad-06.braze.com</string>
+
+  
+
+<!-- Firebase Automatic Token Registration -->
+
+<bool translatable="false" name="com_braze_firebase_cloud_messaging_registration_enabled">true</bool>
+
+<string translatable="false" name="com_braze_firebase_cloud_messaging_sender_id">25976777444</string>
+
+  
+
+<integer name="com_braze_trigger_action_minimum_time_interval_seconds">1</integer>
+
+</resources>
+
+```
