@@ -93,3 +93,22 @@ scripts: {
 </resources>
 
 ```
+
+
+
+
+/opt/homebrew/bin:
+
+{/Users/a13656/.nvm/versions/node/v21.3.0/bin/npm:/Users/a13656/.nvm/versions/node/v21.3.0/bin/node:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:
+
+{/Users/a13656/.nvm/versions/node/v21.3.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/bin:
+
+/opt/homebrew/bin:{
+
+/Users/a13656/.nvm/versions/node/v21.3.0/bin/npm:
+/Users/a13656/42dot/apache-maven-3.6.3/bin:
+/Users/a13656/Library/Android/sdk/emulator:
+/Users/a13656/Library/Android/sdk/tools:
+/Users/a13656/Library/Android/sdk/tools/bin:
+/Users/a13656/Library/Android/sdk/platform-tools
+}

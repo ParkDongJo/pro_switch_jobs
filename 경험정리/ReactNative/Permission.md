@@ -194,3 +194,322 @@ AppState 의 listener 의 파라미터를 통해서 state 값을 받아온다. �
   }, []);
 
 ```
+
+
+
+
+```javascript
+useAppState({
+
+foregroundCB: () => {
+
+(async () => {
+
+const deniedPermission = await checkPermissions([
+
+ios ? IOS_PERMISSION.camera : ANDROID_PERMISSION.camera,
+
+]);
+
+if (deniedPermission.length) {
+
+reset({
+
+index: 0,
+
+routes: [{ name: RootNavEnum.Permission as never }],
+
+});
+
+}
+
+})();
+
+},
+
+});
+```
+
+
+
+```javascript
+import { Platform } from 'react-native';
+
+import {
+
+PERMISSIONS,
+
+PermissionStatus,
+
+Permission,
+
+RESULTS,
+
+requestMultiple,
+
+requestNotifications,
+
+checkMultiple,
+
+checkNotifications,
+
+} from 'react-native-permissions';
+
+import DeviceInfo from 'react-native-device-info';
+
+  
+
+const OsVersion = Number(DeviceInfo.getSystemVersion());
+
+const isAndroid12 = OsVersion < 13;
+
+  
+
+export const IOS_PERMISSION = {
+
+camera: PERMISSIONS.IOS.CAMERA,
+
+photo: PERMISSIONS.IOS.PHOTO_LIBRARY,
+
+};
+
+const IOS_NOTIFICATION_PERMISSION = 'ios.permission.NOTIFICATIONS';
+
+  
+
+export const ANDROID_PERMISSION = {
+
+call: PERMISSIONS.ANDROID.CALL_PHONE,
+
+camera: PERMISSIONS.ANDROID.CAMERA,
+
+storageRead: isAndroid12
+
+? PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE
+
+: PERMISSIONS.ANDROID.READ_MEDIA_IMAGES,
+
+storageWrite: isAndroid12
+
+? PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE
+
+: undefined,
+
+notification: PERMISSIONS.ANDROID.POST_NOTIFICATIONS,
+
+};
+
+  
+
+const PLATFORM_PERMISSIONS = Platform.select<
+
+typeof ANDROID_PERMISSION | typeof IOS_PERMISSION | Record<string, never>
+
+>({
+
+android: ANDROID_PERMISSION,
+
+ios: IOS_PERMISSION,
+
+default: {},
+
+});
+
+  
+
+const PERMISSIONS_VALUES: Permission[] = Object.values(
+
+PLATFORM_PERMISSIONS,
+
+).filter((value) => value !== undefined) as Permission[];
+
+  
+
+export async function validPermissions() {
+
+const deniedPermission = await checkPermissions();
+
+if (deniedPermission.length === 0) {
+
+return true;
+
+}
+
+  
+
+const blockPermission: Permission[] = await requestPermissions(
+
+deniedPermission,
+
+);
+
+  
+
+return blockPermission.length ? false : true;
+
+}
+
+  
+
+/**
+
+* RESULTS.UNAVAILABLE : 해당 기능을 사용할 수 없는 상태
+
+* RESULTS.DENIED : 권한 요청을 하지 않았거나 거부되었지만 재요청이 가능한 상태
+
+* RESULTS.GRANTED : 권한이 부여된 상태
+
+* RESULTS.BLOCKED : 권한이 거부되었으면 재요청이 불가능한 상태 (사용자가 직접 앱 설정해서 변경해야할 경)
+
+*/
+
+  
+
+export const checkPermissions = async (excepted?: Permission[]) => {
+
+try {
+
+let result = await checkPermissionsValues(excepted);
+
+result = await checkNotification(result);
+
+  
+
+return Object.keys(result).filter(
+
+(key) => result[key as Permission] !== RESULTS.GRANTED,
+
+) as Permission[];
+
+} catch (e) {
+
+return [];
+
+}
+
+};
+
+  
+
+export const requestPermissions = async (deniedPermission: Permission[]) => {
+
+let result = await requestMultiple(
+
+deniedPermission.filter((key) => !key.includes('NOTIFICATIONS')),
+
+);
+
+if (deniedPermission.some((key) => key.includes('NOTIFICATIONS'))) {
+
+result = await requestNotification(result);
+
+}
+
+  
+
+return deniedPermission.filter(
+
+(key) =>
+
+result[key] === RESULTS.BLOCKED ||
+
+result[key] === RESULTS.DENIED ||
+
+result[key] === RESULTS.LIMITED,
+
+);
+
+};
+
+  
+
+const checkPermissionsValues = async (excepted?: Permission[]) => {
+
+let values = [...PERMISSIONS_VALUES];
+
+if (excepted) {
+
+values = values.filter((key) => !excepted.includes(key));
+
+}
+
+return await checkMultiple(values);
+
+};
+
+  
+
+const checkNotification = async (
+
+permissionStatus: Record<Permission, PermissionStatus>,
+
+) => {
+
+const result = Object.assign({}, permissionStatus);
+
+const resp = await checkNotifications();
+
+  
+
+if (Platform.OS === 'android') {
+
+result[PERMISSIONS.ANDROID.POST_NOTIFICATIONS] = resp.status;
+
+} else {
+
+result[IOS_NOTIFICATION_PERMISSION as Permission] = resp.status;
+
+}
+
+  
+
+return result;
+
+};
+
+  
+
+const requestNotification = async (
+
+permissionStatus: Record<Permission, PermissionStatus>,
+
+) => {
+
+const result = Object.assign({}, permissionStatus);
+
+const resp = await requestNotifications(['alert', 'badge', 'sound']);
+
+  
+
+if (Platform.OS === 'android') {
+
+result[PERMISSIONS.ANDROID.POST_NOTIFICATIONS] = resp.status;
+
+} else {
+
+result[IOS_NOTIFICATION_PERMISSION as Permission] = resp.status;
+
+}
+
+return result;
+
+};
+```
+
+
+
+
+
+## iOS 권한 종특
+
+https://stackoverflow.com/questions/54673895/ask-for-permission-if-user-have-declined-access-for-the-first-time-reactnative
+
+This is how permissions work in iOS and there is no way to actually get the app to request the permission again once it has been denied. The only way to get the user to enable the permission is to direct them to the settings for their application and manually switch it on.
+
+I do the following for permissions.
+
+When the user clicks the button for the media library, check the status of the permission.
+If the permission hasn't been requested -> request permission
+If the permission has been previously requested show an alert and tell the user to go to settings page.
+If permission has been approved show media library
+I use react-native-permissions to check and request the permissions that I need in iOS. https://github.com/zoontek/react-native-permissions

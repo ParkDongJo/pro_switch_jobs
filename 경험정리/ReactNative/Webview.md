@@ -788,3 +788,8 @@ canGoBack: boolean
 
 }
 ```
+
+
+
+# RN Webview 에서 Cookie
+https://curiosum.com/blog/dedicated-mobile-application-in-react-native-webview-guide

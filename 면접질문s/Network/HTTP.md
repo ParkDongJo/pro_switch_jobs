@@ -51,3 +51,11 @@ https://nuritech.tistory.com/25
 
 
 https://www.stevenjlee.net/2020/11/01/%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-http-vs-https-%EA%B7%B8%EB%A6%AC%EA%B3%A0-ssl-secure-socket-layer/
+
+
+
+
+## 멱등성
+-------
+
+https://docs.tosspayments.com/blog/what-is-idempotency
