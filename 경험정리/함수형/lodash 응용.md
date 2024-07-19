@@ -1,0 +1,194 @@
+
+## \_.partial
+
+부분 적용이 가능한 함수
+
+- _ 가 인자로 들어가면, 그 부분에 대해 평가를 지연시키고 있다가, 인자가 들어오면 순차적으로 해당 위치에 적용
+- 인자로는 데이터도 되지만, 함수도 가능
+
+```js
+function greet(greeting, name) {
+  return greeting + ' ' + name;
+}
+
+var sayHelloTo = _.partial(greet, 'hello');
+console.log(sayHelloTo('fred'));
+// => 'hello fred'
+
+var greetFred = _.partial(greet, _, 'fred');
+console.log(greetFred('hi'));
+// => 'hi fred'
+
+```
+
+또 다른 활용법
+객체의 Method
+```js
+let method = (obj, method) => {
+	return obj[method].apply(obj, _rest(arguments, 2));
+}
+
+let push = _.partial(method, _, 'push');
+let shift = _.partial(method, _, 'shift');
+
+push(a, 3);
+shift(a);
+```
+
+
+## \_.partialRight
+partial 은 끝의 인자를 지연시켜서 받을 수 없다. 이때 partialRight 를 사용하면 된다.
+커링의 효과와 비슷해 보인다.
+```js
+function greet(greeting, name) {
+  return greeting + ' ' + name;
+}
+
+var greetFred = _.partialRight(greet, 'fred');
+greetFred('hi');
+// => 'hi fred'
+
+var sayHelloTo = _.partialRight(greet, 'hello', _);
+sayHelloTo('fred');
+// => 'hello fred'
+```
+
+
+
+## \_.flow
+함수 조합을 compose 라고 표현한다. 실제로 ramda 또는 underscore 라이브러리에는  compose 라는 함수가 있다.
+lodash 에서는 compose 라는 함수는 없고. flow 라는 함수가 있다.
+```js
+function square(n) {
+  return n * n;
+}
+
+var addSquare = _.flow([_.add, square]);
+addSquare(1, 2);
+
+// => 9
+```
+
+
+## \_.pipeline
+
+유인동 님의 책에서는 직접 pipeline 을 만들고 있다. flow처럼 [] 로 넘길 필요 없다.
+arguments 라 인자를 받기 때문에 좀 더 유연하다.
+```js
+_.pipeline = function() {
+	let funs = arguments;
+	return function(seed) {
+		return _.reduce(funs, (l, r) => r(l). seed);
+	}
+}
+```
+
+아래는 좀 더 간결하게 작성한 pipeline 이다
+```js
+_.pipeline = function() {
+	return _.partial(_.reduce, arguments (l, r) => r(l));
+}
+```
+
+
+
+## 타입스크립트에서 사용한다고 했을 시?
+문제는 유인동님이 제안하는 대부분의 함수들은 JavaScript의 유연성을 기반으로 하고 있다. arguments 라던지 lodash 함수로 lodash 함수를 넘기다 던지 등등..
+
+이런 방법들을
+typescirpt 에서 시도하면 금방 type error 장벽에 부딪힌다. 간단한 타입정의들은 별 문제가 안되지만, 유연한 함수일 수록 타입을 정의하기가 애매해진다.
+
+물로 @types/lodash 가 있지만 이것조차 막힐때가 있다.
+
+때문에,
+typescript 에서 어렵지 않게 사용해볼 수 있는 방법들을 정리해두는것이 필요하다.
+
+일단 lodash 에서
+
+curry
+partial
+flow
+reduce
+reject
+remove
+chunk
+sortBy
+deepCopy
+flatten
+throttle
+debounce
+pick
+omit
+isEqual
+
+등등이 있겠다.
+
+쓸만한 함수들은 [여기] 에 따로 정리해놓자!
+우선 여기서는 유인동 강사의 '함수형 자바스크립트 프로그래밍'을 읽고 실용적인 나만의 방법을 만드는 것이다.
+
+실험해본 결과 아래와 같다.
+
+```javascript
+const pipeline = function() {  
+    return _.partial(_.reduce, arguments, (l, r) => r(l));  
+}
+
+const users = [{ name: 'John', age: 25 }, { name: 'Lenny', age: 51 }, { name: 'Andrew', age: 43 }];  
+  
+const rejectAge = (age) => pipeline(  
+    _.partial(_.reject, _, (user) => user.age < age),  
+    _.partial(_.map, _, 'name')  
+)  
+log(rejectAge(50)(users));
+```
+
+책에서 나온 내용을 응용했다. 
+- pipeline
+- reduce
+- partial
+- reject
+- map (= plunk)
+을 활용했다. 매우 만족스러운 활용법이다. 하지만 이를 typescript 에서는 바로 쓸수 없다. typescript는 아래와 같이 타입을 정의해줘야하는데, 약간의 타협을 했다.
+
+
+```typescript
+import _ from 'lodash-es';  
+
+// 참고
+// function 함수는 arguments를 사용할 수 있다.  
+// 화살표 함수는 arguments를 사용할 수 없다. 
+const pipeline = function(...args: any[]) {  
+    return _.partial(_.reduce as any, args, (l: any, r: (arg0: any) => any) => r(l));  
+}
+
+type User = {  
+    name: string;  
+    age: number;  
+}  
+const users: User[] = [{ name: 'John', age: 25 }, { name: 'Lenny', age: 51 }, { name: 'Andrew', age: 43 }];  
+
+const rejectAge = (age: number) => {  
+    return pipeline(  
+        _.partial(_.reject as any, _, (user: User) => user.age < age),  
+        _.partial(_.map as any, _, 'name')  
+    )  
+}
+
+// pipeline 대신 flow 를 써도 무방하다
+const rejectAge = (age: number) => {  
+    return _.flow([  
+        _.partial(_.reject as any, _, (user: User) => user.age < age),  
+        _.partial(_.map as any, _, 'name')  
+    ])  
+}
+console.log(rejectAge(50)(users));
+```
+
+일단 typescript 에서도 argument 를 못쓰는건 아니지만, 결국 타입 컴파일에 걸린다. 암묵적인 인자를 사용하기가 쉽지 않다. 
+
+그래서 pipeline 도 인자를 명시해주는 것이 좋고
+차라리 그럴게 아니라면 flow 를 그냥 쓰는것도 좋을 것 같다.
+
+그리고 만약 lodash 함수끼리 조합을 하고자 하면, 타입정의가 여간 힘든게 아니다.
+
+차라리 여기에 시간을 쏟는것 보다는 any 타입으로 강제 정의를 해주는 것이 나을것 같다. 
