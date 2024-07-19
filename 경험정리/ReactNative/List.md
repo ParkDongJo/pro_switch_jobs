@@ -141,3 +141,10 @@ scrollEnabledOfParents 의 값을 true <-> false 를 줘가면서 스크롤을 �
 하지만 어디까지나 이것또한 편법일 뿐이고,
 
 가장! 매끄럽고 생산적인 방법은.. 권장하는 방법을 쓰는것이다!
+
+
+
+
+https://velog.io/@aborile/React-Native-FlatList-%EB%82%B4%EC%97%90-FlatList-%EC%A4%91%EC%B2%A9-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
+
+https://velog.io/@mywonhyuni/RN-ScrollView-%EC%95%88%EC%97%90-FlatList-%EC%A4%91%EC%B2%A9-%EC%82%AC%EC%9A%A9

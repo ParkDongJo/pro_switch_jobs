@@ -207,6 +207,7 @@ Target Project > Signing & Capabilities >
 
 ![[Pasted image 20240524093019.png]]
 
+각 환경별로 해줘야함
 
 
 
@@ -231,3 +232,13 @@ https://medium.com/%EB%B0%95%EC%83%81%EA%B6%8C%EC%9D%98-%EC%82%BD%EC%A7%88%EB%B8
 
 배포 기준 따로 설정 
 https://mrgamza.tistory.com/614
+
+
+
+
+PUSH Hero
+
+payload 에 alert
+
+Mutable contents
+
