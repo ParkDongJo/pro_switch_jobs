@@ -49,3 +49,25 @@ Lottie JSON 파일을 만드는 법은 아래 lottieFiles 에 영상으로 올�
 개발자인 나는 취미삼아 해본다거나, 또는 이미 나와있는 Lottie 애니메이션을 잘 활용하는 것이 효율적으로 보인다.
 https://lottiefiles.com/tutorials/how-to-make-a-simple-lottie-animation-json-with-after-effects-and-bodymovin-AGsOY4id6CA
 
+
+
+
+```
+Logging event:
+
+origin=app,
+name=click,
+params=Bundle[
+  {
+    screen_name=home, 
+    ga_event_origin(_o)=app, 
+    ga_screen_class(_sc)=MainActivity, 
+    ga_screen_id(_si)=8821527009210762008, 
+    ga_screen(_sn)=home, 
+    adid=9dca650d10690db6, 
+    category=home, 
+    event_name=header_favorite
+    }
+]
+
+```
