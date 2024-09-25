@@ -2,11 +2,25 @@
 # 테스트 방법
 
 ```
-xcrun simctl openurl booted 'hyundaiselection://home/product/1090/591'
+xcrun simctl openurl booted 'hyundaiselection://home/products/100030/100018'
 ```
 
 ```
-adb shell am start -W -a android.intent.action.VIEW -d hyundaiselection://home/product/1090/591
+xcrun simctl openurl booted 'hyundaiselection://home/event/?uri=https%3A%2F%2Fhyundai-selection-event.com%2F0001'
+
+
+xcrun simctl openurl booted 'hyundaiselection://promotion?eventId=e16deb201c9a4ebdb32b0f'
+
+
+xcrun simctl openurl booted 'hyundaiselection://home/event/bdf910a99c264572a2332e'
+
+'hyundaiselection://home/event/bdf910a99c264572a2332e'
+```
+
+
+
+```
+adb shell am start -W -a android.intent.action.VIEW -d hyundaiselection://home/product/100030/100018
 ```
 
 
