@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>텍스트 스타일링 데모</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 24px;
+      background: #f5f5f5;
+      line-height: 1.5;
+    }
+
+    h1 {
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+
+    .section {
+      margin-bottom: 32px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .box {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 14px;
+      flex: 1 1 180px;
+      min-width: 180px;
+      max-width: 260px;
+    }
+
+    .label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #555;
+    }
+
+    /* 1. 줄바꿈 관련 예시 */
+    .wrap-normal {
+      white-space: normal;
+    }
+
+    .wrap-nowrap {
+      white-space: nowrap;
+    }
+
+    .wrap-pre {
+      white-space: pre;
+    }
+
+    .wrap-pre-wrap {
+      white-space: pre-wrap;
+    }
+
+    .word-break-all {
+      word-break: break-all;
+    }
+
+    .overflow-wrap-break-word {
+      overflow-wrap: break-word;
+    }
+
+    /* 2. 말줄임 관련 예시 */
+    .ellipsis-one-line {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ellipsis-multi-line {
+      display: -webkit-box;
+      line-clamp: 3;
+      -webkit-line-clamp: 3;      /* 3줄까지 표시 */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 3. 간격 관련 예시 */
+    .letter-spacing-tight {
+      letter-spacing: -0.05em;
+    }
+
+    .letter-spacing-wide {
+      letter-spacing: 0.15em;
+    }
+
+    .line-height-tight {
+      line-height: 1.1;
+    }
+
+    .line-height-comfort {
+      line-height: 1.8;
+    }
+
+    .word-spacing-wide {
+      word-spacing: 0.4em;
+    }
+
+    .paragraph-wrapper p {
+      margin: 0 0 12px;
+    }
+
+    /* 4. 정렬 예시 */
+    .align-left {
+      text-align: left;
+    }
+
+    .align-center {
+      text-align: center;
+    }
+
+    .align-right {
+      text-align: right;
+    }
+
+    .align-justify {
+      text-align: justify;
+    }
+
+    /* 5. 텍스트 장식 예시 */
+    .decoration-underline {
+      text-decoration: underline;
+    }
+
+    .decoration-line-through {
+      text-decoration: line-through;
+    }
+
+    .decoration-overline {
+      text-decoration: overline;
+    }
+
+    .decoration-fancy {
+      text-decoration: underline wavy #ff4d4f;
+    }
+
+    a.demo-link {
+      color: #1677ff;
+      text-decoration: none;
+    }
+
+    a.demo-link:hover {
+      text-decoration: underline;
+    }
+
+    /* 6. 텍스트 변환 예시 */
+    .transform-upper {
+      text-transform: uppercase;
+    }
+
+    .transform-lower {
+      text-transform: lowercase;
+    }
+
+    .transform-capitalize {
+      text-transform: capitalize;
+    }
+
+    /* 7. 텍스트 그림자 예시 */
+    .shadow-soft {
+      font-size: 18px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+    }
+
+    .shadow-strong {
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.4);
+    }
+
+    /* 8. 실전: 카드 레이아웃 예시 */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      width: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;      /* 2줄 말줄임 */
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;      /* 3줄 말줄임 */
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-meta {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>텍스트 스타일링 실사용 예시 모음</h1>
+
+  <!-- 1. 줄바꿈 관련 -->
+  <div class="section">
+    <h2>1. 줄바꿈 (white-space, word-break, overflow-wrap)</h2>
+    <p>같은 텍스트를 줄바꿈 규칙만 다르게 적용한 예시입니다.</p>
+    <div class="demo-row">
+      <div class="box wrap-normal">
+        <span class="label">white-space: normal (기본)</span>
+        This   is   a   long   text   with   many   spaces. 안녕하세요 이것은 아주아주아주아주긴텍스트입니다1234567890
+      </div>
+      <div class="box wrap-nowrap">
+        <span class="label">white-space: nowrap</span>
+        This   is   a   long   text   with   many   spaces. 안녕하세요 이것은 아주아주아주아주긴텍스트입니다1234567890
+      </div>
+      <div class="box wrap-pre">
+        <span class="label">white-space: pre</span>
+        This   is   a   long   text   with   many   spaces.
+        줄바꿈 띄워쓰기도
+        그대로       유지합니다.
+      </div>
+      <div class="box wrap-pre-wrap">
+        <span class="label">white-space: pre-wrap</span>
+        This   is   a   long   text   with   many   spaces.
+        줄바꿈도
+        유지하면서   자동 줄바꿈도 됩니다.
+      </div>
+      <div class="box word-break-all">
+        <span class="label">word-break: break-all</span>
+        URL: https://www.example-website.com/very/long/path/to/resource
+        긴영어단어 supercalifragilisticexpialidocious 도중에도 끊김
+      </div>
+      <div class="box overflow-wrap-break-word">
+        <span class="label">overflow-wrap: break-word</span>
+        URL: https://www.example-website.com/very/long/path/to/resource
+        긴영어단어 supercalifragilisticexpialidocious 는 단어 단위로 줄바꿈
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 말줄임 -->
+  <div class="section">
+    <h2>2. 말줄임 (ellipsis)</h2>
+    <p>카드 제목, 리스트 등에서 자주 쓰는 말줄임 예시입니다.</p>
+    <div class="demo-row">
+      <div class="box ellipsis-one-line">
+        <span class="label">한 줄 말줄임</span>
+        이것은 한 줄 말줄임 예시입니다. 길어지면 이렇게 ... 으로 잘립니다.
+      </div>
+      <div class="box ellipsis-multi-line">
+        <span class="label">여러 줄 말줄임 (3줄)</span>
+        이것은 여러 줄 말줄임 예시입니다. 텍스트가 길어질 경우
+        세 줄까지만 보여주고 그 이후 내용은 숨겨집니다.
+        카드 설명, 게시글 미리보기, 알림 메시지 요약 등에 자주 사용됩니다.
+        이 문장은 실제로는 보이지 않을 수 있습니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 간격 -->
+  <div class="section">
+    <h2>3. 간격 (letter-spacing, line-height, word-spacing, 문단 간격)</h2>
+    <div class="demo-row">
+      <div class="box letter-spacing-tight">
+        <span class="label">letter-spacing: -0.05em (자간 좁게)</span>
+        자간을 약간 좁게 설정하면 헤드라인 같은 곳에서 타이트한 느낌을 줄 수 있습니다.
+      </div>
+      <div class="box letter-spacing-wide">
+        <span class="label">letter-spacing: 0.15em (자간 넓게)</span>
+        넓은 자간은 로고 타입이나 버튼 레이블에 자주 사용됩니다.
+      </div>
+      <div class="box line-height-tight">
+        <span class="label">line-height: 1.1 (행간 좁게)</span>
+        행간이 좁은 텍스트입니다.  
+        여러 줄로 작성했을 때  
+        꽉꽉 붙어 보입니다.
+      </div>
+      <div class="box line-height-comfort">
+        <span class="label">line-height: 1.8 (행간 넉넉)</span>
+        행간을 넉넉하게 주면 긴 본문 텍스트의 가독성이 좋아집니다.  
+        블로그 글, 설명문, 문서 본문 등에 추천되는 스타일입니다.
+      </div>
+      <div class="box word-spacing-wide">
+        <span class="label">word-spacing: 0.4em</span>
+        This sentence has wider word spacing to make each word stand out a bit more.
+      </div>
+      <div class="box paragraph-wrapper">
+        <span class="label">문단 간 간격 (margin-bottom)</span>
+        <p>첫 번째 문단입니다. 아래쪽에 여백이 살짝 들어갑니다.</p>
+        <p>두 번째 문단입니다. 문단 사이가 붙지 않아 읽기 좋게 보입니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 정렬 -->
+  <div class="section">
+    <h2>4. 정렬 (text-align)</h2>
+    <div class="demo-row">
+      <div class="box align-left">
+        <span class="label">text-align: left</span>
+        왼쪽 정렬은 기본적인 텍스트 정렬 방식으로, 대부분의 본문에서 사용됩니다.
+      </div>
+      <div class="box align-center">
+        <span class="label">text-align: center</span>
+        가운데 정렬은 제목, 버튼 라벨, 카드 헤더 등에 자주 사용됩니다.
+      </div>
+      <div class="box align-right">
+        <span class="label">text-align: right</span>
+        오른쪽 정렬은 날짜, 가격, 메타 정보 정렬 등에 사용하기 좋습니다.
+      </div>
+      <div class="box align-justify">
+        <span class="label">text-align: justify (양쪽 정렬)</span>
+        양쪽 정렬은 신문, 잡지 같은 느낌을 줄 수 있지만, 한글에서는 단어 간 간격이 부자연스럽게 보일 수 있습니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 텍스트 장식 -->
+  <div class="section">
+    <h2>5. 텍스트 장식 (text-decoration)</h2>
+    <div class="demo-row">
+      <div class="box decoration-underline">
+        <span class="label">밑줄</span>
+        이 텍스트는 밑줄이 그어진 상태입니다.
+      </div>
+      <div class="box decoration-line-through">
+        <span class="label">취소선(line-through)</span>
+        29,000원 <span class="decoration-line-through">39,000원</span>
+      </div>
+      <div class="box decoration-overline">
+        <span class="label">overline</span>
+        텍스트 위쪽에 선이 표시됩니다.
+      </div>
+      <div class="box decoration-fancy">
+        <span class="label">wavy underline + color</span>
+        텍스트 장식에 물결 효과와 색을 줄 수 있습니다.
+      </div>
+      <div class="box">
+        <span class="label">링크 밑줄 제어</span>
+        <a href="#" class="demo-link">이 링크는 기본적으로 밑줄이 없고,</a><br />
+        <a href="#" class="demo-link">hover 시에만 밑줄이 생깁니다.</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 텍스트 변환 -->
+  <div class="section">
+    <h2>6. 텍스트 변환 (text-transform)</h2>
+    <div class="demo-row">
+      <div class="box transform-upper">
+        <span class="label">uppercase</span>
+        button primary
+      </div>
+      <div class="box transform-lower">
+        <span class="label">lowercase</span>
+        WARNING MESSAGE
+      </div>
+      <div class="box transform-capitalize">
+        <span class="label">capitalize</span>
+        user profile settings page
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. 텍스트 그림자 -->
+  <div class="section">
+    <h2>7. 텍스트 그림자 (text-shadow)</h2>
+    <div class="demo-row">
+      <div class="box shadow-soft">
+        <span class="label">soft shadow</span>
+        부드러운 텍스트 그림자 효과입니다.
+      </div>
+      <div class="box shadow-strong">
+        <span class="label">strong shadow</span>
+        강한 텍스트 그림자 효과입니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. 실전 카드 레이아웃 예시 -->
+  <div class="section">
+    <h2>8. 실전 예시: 카드 레이아웃에서의 텍스트 스타일링</h2>
+    <p>실제로 서비스에서 많이 쓰는 “카드 목록” 예시입니다. 제목/설명/메타 정보에 각각 다른 텍스트 스타일이 적용되어 있어요.</p>
+    <div class="card-container">
+      <div class="card">
+        <div class="card-meta">notice</div>
+        <div class="card-title">
+          긴 제목이 들어가는 카드 컴포넌트 예시입니다. 두 줄까지만 표시되고 그 이후는 잘립니다.
+        </div>
+        <div class="card-desc">
+          이 영역은 카드의 설명 텍스트입니다. 최대 세 줄까지 보여주고 나머지는 숨겨집니다.
+          실제 서비스에서는 공지사항, 게시물 요약, 상품 설명 등에 활용할 수 있습니다.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-meta">update</div>
+        <div class="card-title">
+          프로필 설정 기능이 새로 추가되었습니다.
+        </div>
+        <div class="card-desc">
+          마이페이지 &gt; 계정 설정에서 프로필 사진, 닉네임, 상태 메시지를 변경할 수 있습니다.
+          모바일 환경에서도 동일하게 사용할 수 있도록 반응형으로 적용되었습니다.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-meta">blog</div>
+        <div class="card-title">
+          텍스트 스타일링만 잘해도 서비스 퀄리티가 한 단계 올라가는 이유
+        </div>
+        <div class="card-desc">
+          타이포그래피는 UI 디자인에서 가장 중요한 요소 중 하나입니다.
+          글자 크기, 간격, 줄 수 제한, 정렬만 잘 조합해도 사용자 경험이 크게 개선됩니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>word-break: keep-all 데모</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+      background: #f5f5f5;
+    }
+
+    .demo-box {
+      width: 180px;
+      padding: 12px;
+      margin-bottom: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    /* keep-all 적용 */
+    .keep-all {
+      word-break: keep-all;
+    }
+
+    /* keep-all + break-word 조합 (실전에서 제일 많이 씀) */
+    .keep-all-break-word {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>word-break: keep-all 예시</h1>
+
+  <div class="demo-box keep-all">
+    <span class="label">word-break: keep-all</span>
+    한국어 문장은 단어 단위로 줄바꿈이 됩니다.  
+    하지만EnglishVeryLongWordWithoutSpaces는 단어가 너무 길어서
+    박스를 넘칠 수 있습니다.
+  </div>
+
+  <div class="demo-box keep-all-break-word">
+    <span class="label">keep-all + overflow-wrap: break-word (추천)</span>
+    한국어 문장은 어절 단위로 깔끔하게 줄이 바뀝니다.  
+    그리고EnglishVeryLongWordWithoutSpaces도  
+    공간이 부족하면 적절히 줄이 바뀝니다.
+  </div>
+
+  <div class="demo-box">
+    <span class="label">참고: 기본 줄바꿈 (기본값)</span>
+    한국어 문장은 keep-all이 없으면 띄어쓰기가 없어도 종종 이상하게 줄바꿈될 수 있습니다.  
+    EnglishLongWordWithoutSpaces도 박스를 넘길 수 있습니다.
+  </div>
+
+</body>
+</html>
