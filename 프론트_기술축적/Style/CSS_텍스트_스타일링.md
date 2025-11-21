@@ -36,7 +36,7 @@
   word-break: break-all;
 }
 
-/* keep-all 적용 */
+/* 한글 어절단위로 줄바꿈 */
 .word-keep-all {
   word-break: keep-all;
 }
