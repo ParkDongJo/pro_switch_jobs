@@ -1,3 +1,0 @@
-
-
-## fireEvent vs. useEvent
