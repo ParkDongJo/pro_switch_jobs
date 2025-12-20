@@ -1,3 +1,4 @@
+
 # Babel 의 역할
 
 Babel 이 ES6 최신 문법을 ES5 문법으로 변환해주는 트랜스파일링(변환) 작업을 해결해준다. 점점 나아가서는 React의 JSX, Typescript 정적타입 언어 등등의 다양한 변환을 제공하면서 프론트에 있어서는 필수적인 기술로 자리 잡았다. [[프론트_기술축적/Builder/Index|Index]]
@@ -95,7 +96,7 @@ BabelParser.parse로 파싱을해서 AST 를 만든다. @babel/parser 에서 Par
 
 @babel/core 에서 transformFromAstSync 함수를 꺼내왔고 ast 를 넘기고 있다. 이때 plugin 으로 BabelPluginReactCompiler 를 넘기고 있다.
 
-# [[React Compiler]]
+# [[React_Compiler_개념정리]]
 
 애플리케이션을 최적화하기 위해 코드를 자동으로 메모이제이션(Memoization)을 한다. useMemo, useCallback, React.memo 와 같은 최적화를 Compiler 가 자동으로 해준다.
 
