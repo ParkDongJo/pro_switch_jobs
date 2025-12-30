@@ -133,7 +133,7 @@
     - bday-month
     - bday-year
     - tel
-- **inputmode**: 모바일 키보드 타입 제어 (numeric, tel, email, url 등)
+- **[[inputmode]]**: 모바일 키보드 타입 제어 (numeric, tel, email, url 등)
     
 **label**
 입력 필드에 대한 설명 텍스트, 클릭 시 연결된 입력 필드로 포커스 이동
