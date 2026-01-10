@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"8236f58746da9d4b","type":"group","x":1380,"y":-2340,"width":2180,"height":2500,"label":"스냅샷"},
+		{"id":"7bcc172fa06ef87d","x":1420,"y":-2260,"width":1400,"height":100,"type":"group","label":"UI 상호작용"},
+		{"id":"06c1a08d1467aa90","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_객체_State_업데이트하기.md","x":2480,"y":-2070,"width":1029,"height":1520},
+		{"id":"6a657280832c370e","type":"text","text":"\b배열 타입","x":1780,"y":-920,"width":250,"height":60},
+		{"id":"bdb6732685816c38","type":"text","text":"리터럴 타입","x":1780,"y":-1440,"width":250,"height":60},
+		{"id":"2ba652128d1824f7","type":"text","text":"리터럴 타입","x":1780,"y":-2000,"width":250,"height":60},
+		{"id":"6b61e3bbf016b4b0","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_스냅샷으로서의_State.md","x":4040,"y":-1170,"width":1200,"height":1040},
+		{"id":"6cc354e6bafeca71","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_컴포넌트의_기억_저장소.md","x":2600,"y":-3810,"width":1440,"height":1330},
+		{"id":"efb29720b4558871","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_State_업데이트_큐.md","x":1120,"y":-4600,"width":1240,"height":1400},
+		{"id":"c12e740a9451fea0","type":"text","text":"Queue 로 관리","x":1530,"y":-2920,"width":250,"height":60},
+		{"id":"7095078b74ccdd52","type":"text","text":"Batch","x":1740,"y":-2760,"width":250,"height":60},
+		{"id":"573d004b3b1a7119","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_상호작용_추가하기.md","x":-480,"y":-2120,"width":1680,"height":1800},
+		{"id":"aa76a1b550519ed1","type":"text","text":"React의 상호작용\n[공식문서](https://ko.react.dev/learn/adding-interactivity)","x":-1080,"y":-2210,"width":276,"height":90},
+		{"id":"c0f78bb766b6493a","type":"text","text":"\bState","x":1820,"y":-2240,"width":250,"height":60},
+		{"id":"d329dc9884e3fb3c","type":"text","text":"렌더링","x":2140,"y":-2240,"width":250,"height":60},
+		{"id":"9319b33b6b8f3fdc","type":"text","text":"컴포넌트","x":1440,"y":-2240,"width":250,"height":60},
+		{"id":"04b8edd452522656","type":"text","text":"커밋","x":2475,"y":-2240,"width":250,"height":60},
+		{"id":"f77468c39c77dc32","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_렌더링_그리고_커밋.md","x":4840,"y":-3520,"width":1000,"height":2420}
+	],
+	"edges":[
+		{"id":"5409457d4e970faf","fromNode":"c0f78bb766b6493a","fromSide":"left","toNode":"2ba652128d1824f7","toSide":"left"},
+		{"id":"e9e1fc034936ea9e","fromNode":"c0f78bb766b6493a","fromSide":"left","toNode":"bdb6732685816c38","toSide":"left"},
+		{"id":"5b67af9420bfbaf7","fromNode":"c0f78bb766b6493a","fromSide":"left","toNode":"6a657280832c370e","toSide":"left"},
+		{"id":"77e3ee5c7eb7864b","fromNode":"8236f58746da9d4b","fromSide":"right","toNode":"6b61e3bbf016b4b0","toSide":"left"},
+		{"id":"c929d3e112460e84","fromNode":"bdb6732685816c38","fromSide":"right","toNode":"06c1a08d1467aa90","toSide":"left"},
+		{"id":"fbfa3527135c0c9f","fromNode":"9319b33b6b8f3fdc","fromSide":"right","toNode":"6cc354e6bafeca71","toSide":"left"},
+		{"id":"79f3604f633cb543","fromNode":"9319b33b6b8f3fdc","fromSide":"right","toNode":"c0f78bb766b6493a","toSide":"left"},
+		{"id":"d05944129fa84a1e","fromNode":"c0f78bb766b6493a","fromSide":"right","toNode":"d329dc9884e3fb3c","toSide":"left"},
+		{"id":"919d597c05c97c49","fromNode":"c12e740a9451fea0","fromSide":"top","toNode":"efb29720b4558871","toSide":"bottom"},
+		{"id":"a68d6d82dd32173b","fromNode":"c0f78bb766b6493a","fromSide":"top","toNode":"7095078b74ccdd52","toSide":"left"},
+		{"id":"924f3674b6fc0bd7","fromNode":"c0f78bb766b6493a","fromSide":"top","toNode":"c12e740a9451fea0","toSide":"left"},
+		{"id":"8e1183b1723a1803","fromNode":"aa76a1b550519ed1","fromSide":"right","toNode":"573d004b3b1a7119","toSide":"left"},
+		{"id":"57989708d3b05095","fromNode":"573d004b3b1a7119","fromSide":"right","toNode":"8236f58746da9d4b","toSide":"left"},
+		{"id":"ecf7efa81ee33666","fromNode":"d329dc9884e3fb3c","fromSide":"right","toNode":"04b8edd452522656","toSide":"left"},
+		{"id":"e8d51d7f73c16016","fromNode":"7bcc172fa06ef87d","fromSide":"right","toNode":"f77468c39c77dc32","toSide":"left"}
+	]
+}
