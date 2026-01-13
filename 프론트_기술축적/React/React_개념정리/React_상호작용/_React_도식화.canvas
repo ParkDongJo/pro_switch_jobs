@@ -1,10 +1,9 @@
 {
 	"nodes":[
-		{"id":"8236f58746da9d4b","type":"group","x":1380,"y":-2340,"width":2180,"height":2500,"label":"스냅샷"},
-		{"id":"7bcc172fa06ef87d","x":1420,"y":-2260,"width":1400,"height":100,"type":"group","label":"UI 상호작용"},
-		{"id":"06c1a08d1467aa90","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_객체_State_업데이트하기.md","x":2480,"y":-2070,"width":1029,"height":1520},
+		{"id":"8236f58746da9d4b","type":"group","x":1380,"y":-2340,"width":2380,"height":2740,"label":"스냅샷"},
+		{"id":"7bcc172fa06ef87d","type":"group","x":1420,"y":-2260,"width":1400,"height":100,"label":"UI 상호작용"},
 		{"id":"6a657280832c370e","type":"text","text":"\b배열 타입","x":1780,"y":-920,"width":250,"height":60},
-		{"id":"bdb6732685816c38","type":"text","text":"리터럴 타입","x":1780,"y":-1440,"width":250,"height":60},
+		{"id":"bdb6732685816c38","type":"text","text":"객체 타입","x":1780,"y":-1440,"width":250,"height":60},
 		{"id":"2ba652128d1824f7","type":"text","text":"리터럴 타입","x":1780,"y":-2000,"width":250,"height":60},
 		{"id":"6b61e3bbf016b4b0","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_스냅샷으로서의_State.md","x":4040,"y":-1170,"width":1200,"height":1040},
 		{"id":"6cc354e6bafeca71","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_컴포넌트의_기억_저장소.md","x":2600,"y":-3810,"width":1440,"height":1330},
@@ -17,14 +16,21 @@
 		{"id":"d329dc9884e3fb3c","type":"text","text":"렌더링","x":2140,"y":-2240,"width":250,"height":60},
 		{"id":"9319b33b6b8f3fdc","type":"text","text":"컴포넌트","x":1440,"y":-2240,"width":250,"height":60},
 		{"id":"04b8edd452522656","type":"text","text":"커밋","x":2475,"y":-2240,"width":250,"height":60},
-		{"id":"f77468c39c77dc32","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_렌더링_그리고_커밋.md","x":4840,"y":-3520,"width":1000,"height":2420}
+		{"id":"f77468c39c77dc32","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_렌더링_그리고_커밋.md","x":4840,"y":-3520,"width":1000,"height":2420},
+		{"id":"53d4b233aae1e9e5","type":"text","text":"Immer 사용\n[vs.immutable](https://velog.io/@suyeon9456/Immer-vs-Immutable)","x":2160,"y":-1240,"width":250,"height":60},
+		{"id":"8919115f946b71eb","x":2160,"y":-1580,"width":250,"height":60,"type":"text","text":"... 전개 문법으로 교체"},
+		{"id":"06c1a08d1467aa90","type":"file","file":"프론트_기술축적/React/React_개념정리/React_상호작용/학습)_객체_State_업데이트하기.md","x":2540,"y":-2080,"width":1029,"height":1520},
+		{"id":"4c5d505fb6f79042","type":"text","text":"Store (State Management)","x":2160,"y":-1080,"width":250,"height":60},
+		{"id":"513fb3f84da3ee1f","type":"text","text":"unControlled component","x":2160,"y":-990,"width":250,"height":50},
+		{"id":"c6e9e0ce13a8a744","type":"text","text":"Reducer","x":2160,"y":-910,"width":250,"height":60},
+		{"id":"60e34669a0f1d289","x":2882,"y":-480,"width":345,"height":100,"type":"text","text":"Class 자료구조 State 는 어떤까?\n- 예를 들어 Socket 관리라던지"},
+		{"id":"ced42eb87deb70ec","type":"text","text":"\nSocket 에서 활용하는 건 괜찮은거 같다.\n하지만 React 기반 State를 class 로 사용한다는 별로라고 생각한다.\n\nTypescript 에서 interface, class 모두 Object 이고 완벽한 객체지향을 구현해내지도 못한다\n\nAngular 를 쓰는 쪽에서는 괜찮다고 생각할 수 있겠다.\n\nCanvas 에서는 class 를 적극 활용할 순 있겠다","x":2835,"y":-320,"width":440,"height":240}
 	],
 	"edges":[
 		{"id":"5409457d4e970faf","fromNode":"c0f78bb766b6493a","fromSide":"left","toNode":"2ba652128d1824f7","toSide":"left"},
 		{"id":"e9e1fc034936ea9e","fromNode":"c0f78bb766b6493a","fromSide":"left","toNode":"bdb6732685816c38","toSide":"left"},
 		{"id":"5b67af9420bfbaf7","fromNode":"c0f78bb766b6493a","fromSide":"left","toNode":"6a657280832c370e","toSide":"left"},
 		{"id":"77e3ee5c7eb7864b","fromNode":"8236f58746da9d4b","fromSide":"right","toNode":"6b61e3bbf016b4b0","toSide":"left"},
-		{"id":"c929d3e112460e84","fromNode":"bdb6732685816c38","fromSide":"right","toNode":"06c1a08d1467aa90","toSide":"left"},
 		{"id":"fbfa3527135c0c9f","fromNode":"9319b33b6b8f3fdc","fromSide":"right","toNode":"6cc354e6bafeca71","toSide":"left"},
 		{"id":"79f3604f633cb543","fromNode":"9319b33b6b8f3fdc","fromSide":"right","toNode":"c0f78bb766b6493a","toSide":"left"},
 		{"id":"d05944129fa84a1e","fromNode":"c0f78bb766b6493a","fromSide":"right","toNode":"d329dc9884e3fb3c","toSide":"left"},
@@ -34,6 +40,15 @@
 		{"id":"8e1183b1723a1803","fromNode":"aa76a1b550519ed1","fromSide":"right","toNode":"573d004b3b1a7119","toSide":"left"},
 		{"id":"57989708d3b05095","fromNode":"573d004b3b1a7119","fromSide":"right","toNode":"8236f58746da9d4b","toSide":"left"},
 		{"id":"ecf7efa81ee33666","fromNode":"d329dc9884e3fb3c","fromSide":"right","toNode":"04b8edd452522656","toSide":"left"},
-		{"id":"e8d51d7f73c16016","fromNode":"7bcc172fa06ef87d","fromSide":"right","toNode":"f77468c39c77dc32","toSide":"left"}
+		{"id":"e8d51d7f73c16016","fromNode":"7bcc172fa06ef87d","fromSide":"right","toNode":"f77468c39c77dc32","toSide":"left"},
+		{"id":"c66f7ee4e1e8dcc0","fromNode":"bdb6732685816c38","fromSide":"right","toNode":"53d4b233aae1e9e5","toSide":"left"},
+		{"id":"877b12ef74749727","fromNode":"bdb6732685816c38","fromSide":"right","toNode":"8919115f946b71eb","toSide":"left"},
+		{"id":"abf840dfef807a88","fromNode":"8919115f946b71eb","fromSide":"right","toNode":"06c1a08d1467aa90","toSide":"left"},
+		{"id":"4e5ef8e688a3db1a","fromNode":"53d4b233aae1e9e5","fromSide":"right","toNode":"06c1a08d1467aa90","toSide":"left"},
+		{"id":"a6adaa1b3f68026e","fromNode":"bdb6732685816c38","fromSide":"right","toNode":"4c5d505fb6f79042","toSide":"left"},
+		{"id":"bdedcd89a870937f","fromNode":"bdb6732685816c38","fromSide":"right","toNode":"513fb3f84da3ee1f","toSide":"left"},
+		{"id":"3a7fb7b5b83c733d","fromNode":"bdb6732685816c38","fromSide":"right","toNode":"c6e9e0ce13a8a744","toSide":"left"},
+		{"id":"90e42ca942e44312","fromNode":"06c1a08d1467aa90","fromSide":"bottom","toNode":"60e34669a0f1d289","toSide":"top"},
+		{"id":"cf3f3006278bdab5","fromNode":"60e34669a0f1d289","fromSide":"bottom","toNode":"ced42eb87deb70ec","toSide":"top"}
 	]
 }
