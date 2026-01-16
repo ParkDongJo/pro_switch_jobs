@@ -53,5 +53,8 @@ pnpm 은 패키지 매니저 이다. npm 의 한계점을 극복하려고 npm �
 ## 참고자료
 ---
 https://po4tion.dev/pnpm
+https://mugglim.tistory.com/46
+https://velog.io/@minhoo0333/pnpm
+https://jeonghwan-kim.github.io/2023/10/20/pnpm
 https://pnpm.io/ko/motivation
 
